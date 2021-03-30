@@ -1,0 +1,2 @@
+Get Syntax Highlighting from CodeMirror @ HS Builder:
+copy(document.querySelectorAll('.CodeMirror-code pre > span').repeatEach((item)=>item.innerHTML).join('\n').replace(/action<\/span>:/,"action:</span>"))
