@@ -1,603 +1,86 @@
-<!doctype html><html><head><style>body{font-family:sans-serif}</style><meta charset="utf-8"/><title>Webplayer Action Reference</title>
-<style>
- .highlight table td { padding: 5px; }
-.highlight table pre { margin: 0; }
-.highlight .gh {
-  color: #999999;
-}
-.highlight .sr {
-  color: #f6aa11;
-}
-.highlight .go {
-  color: #888888;
-}
-.highlight .gp {
-  color: #555555;
-}
-.highlight .gs {
-}
-.highlight .gu {
-  color: #aaaaaa;
-}
-.highlight .nb {
-  color: #f6aa11;
-}
-.highlight .cm {
-  color: #75715e;
-}
-.highlight .cp {
-  color: #75715e;
-}
-.highlight .c1 {
-  color: #75715e;
-}
-.highlight .cs {
-  color: #75715e;
-}
-.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
-  color: #75715e;
-}
-.highlight .err {
-  color: #960050;
-}
-.highlight .gr {
-  color: #960050;
-}
-.highlight .gt {
-  color: #960050;
-}
-.highlight .gd {
-  color: #49483e;
-}
-.highlight .gi {
-  color: #49483e;
-}
-.highlight .ge {
-  color: #49483e;
-}
-.highlight .kc {
-  color: #66d9ef;
-}
-.highlight .kd {
-  color: #66d9ef;
-}
-.highlight .kr {
-  color: #66d9ef;
-}
-.highlight .no {
-  color: #66d9ef;
-}
-.highlight .kt {
-  color: #66d9ef;
-}
-.highlight .mf {
-  color: #ae81ff;
-}
-.highlight .mh {
-  color: #ae81ff;
-}
-.highlight .il {
-  color: #ae81ff;
-}
-.highlight .mi {
-  color: #ae81ff;
-}
-.highlight .mo {
-  color: #ae81ff;
-}
-.highlight .m, .highlight .mb, .highlight .mx {
-  color: #ae81ff;
-}
-.highlight .sc {
-  color: #ae81ff;
-}
-.highlight .se {
-  color: #ae81ff;
-}
-.highlight .ss {
-  color: #ae81ff;
-}
-.highlight .sd {
-  color: #e6db74;
-}
-.highlight .s2 {
-  color: #e6db74;
-}
-.highlight .sb {
-  color: #e6db74;
-}
-.highlight .sh {
-  color: #e6db74;
-}
-.highlight .si {
-  color: #e6db74;
-}
-.highlight .sx {
-  color: #e6db74;
-}
-.highlight .s1 {
-  color: #e6db74;
-}
-.highlight .s, .highlight .sa, .highlight .dl {
-  color: #e6db74;
-}
-.highlight .na {
-  color: #a6e22e;
-}
-.highlight .nc {
-  color: #a6e22e;
-}
-.highlight .nd {
-  color: #a6e22e;
-}
-.highlight .ne {
-  color: #a6e22e;
-}
-.highlight .nf, .highlight .fm {
-  color: #a6e22e;
-}
-.highlight .vc {
-  color: #ffffff;
-}
-.highlight .nn {
-  color: #ffffff;
-}
-.highlight .ni {
-  color: #ffffff;
-}
-.highlight .bp {
-  color: #ffffff;
-}
-.highlight .vg {
-  color: #ffffff;
-}
-.highlight .vi {
-  color: #ffffff;
-}
-.highlight .nv, .highlight .vm {
-  color: #ffffff;
-}
-.highlight .w {
-  color: #ffffff;
-}
-.highlight {
-  color: #ffffff;
-}
-.highlight .n, .highlight .py, .highlight .nx {
-  color: #ffffff;
-}
-.highlight .nl {
-  color: #f92672;
-}
-.highlight .ow {
-  color: #f92672;
-}
-.highlight .nt {
-  color: #f92672;
-}
-.highlight .k, .highlight .kv {
-  color: #f92672;
-}
-.highlight .kn {
-  color: #f92672;
-}
-.highlight .kp {
-  color: #f92672;
-}
-.highlight .o {
-  color: #f92672;
-}
-    </style>
+<!doctype html>
+<html>
+  <head>
+    <style>body{font-family:sans-serif}</style>
+    <meta charset="utf-8">
+    <title>Introduction – Webplayer Action Reference</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style media="print">
-      * {
-        -webkit-transition:none!important;
-        transition:none!important;
-      }
-      .highlight table td { padding: 5px; }
-.highlight table pre { margin: 0; }
-.highlight, .highlight .w {
-  color: #586e75;
-}
-.highlight .err {
-  color: #002b36;
-  background-color: #dc322f;
-}
-.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
-  color: #657b83;
-}
-.highlight .cp {
-  color: #b58900;
-}
-.highlight .nt {
-  color: #b58900;
-}
-.highlight .o, .highlight .ow {
-  color: #93a1a1;
-}
-.highlight .p, .highlight .pi {
-  color: #93a1a1;
-}
-.highlight .gi {
-  color: #859900;
-}
-.highlight .gd {
-  color: #dc322f;
-}
-.highlight .gh {
-  color: #268bd2;
-  background-color: #002b36;
-  font-weight: bold;
-}
-.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
-  color: #6c71c4;
-}
-.highlight .kc {
-  color: #cb4b16;
-}
-.highlight .kt {
-  color: #cb4b16;
-}
-.highlight .kd {
-  color: #cb4b16;
-}
-.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
-  color: #859900;
-}
-.highlight .sa {
-  color: #6c71c4;
-}
-.highlight .sr {
-  color: #2aa198;
-}
-.highlight .si {
-  color: #d33682;
-}
-.highlight .se {
-  color: #d33682;
-}
-.highlight .nn {
-  color: #b58900;
-}
-.highlight .nc {
-  color: #b58900;
-}
-.highlight .no {
-  color: #b58900;
-}
-.highlight .na {
-  color: #268bd2;
-}
-.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
-  color: #859900;
-}
-.highlight .ss {
-  color: #859900;
-}
-img {
-  max-width: 80vw;
-}
-a {
-  text-decoration: none;
-  color: #191D1F
-}
-</style>
-
-    <link href="https://slatedocs.github.io/slate/stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
-    <link href="https://slatedocs.github.io/slate/stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
-	<script src="https://slatedocs.github.io/slate/javascripts/all-a9fde460.js"></script>
-	<style>
-	/*.content blockquote > p {color:#20b2aa}*/
-.cm-qualifier{color:#eee!important}
-.cm-punctuation,.cm-unit,.cm-negative{color:#e09142!important}
-.cm-string{color:#ffa852!important}
-.cm-positive{color:#6a51e6!important}
-.cm-def{color:#eee!important}
-.cm-variable{color:#fb4!important}
-.cm-variable-2,.cm-variable-3,.cm-string-2,.cm-url{color:#6a51e6!important}
-.cm-tag{color:#eee!important}
-.cm-bracket,/*.cm-comment,*/ .CodeMirror{color:#20b2aa!important}
-.cm-string{color:#ffc0cb!important}
-.cm-atom{color:#fafad2!important}
-.cm-number{color:#0ff!important}
-.cm-property{color:#add8e6!important}
-.cm-keyword,.cm-operator,.cm-attribute{color:#ff4ade!important}
-	</style>
-</head>
+      * {-webkit-transition:none!important;transition:none!important;}
+      .highlight table td {padding:5px;}
+      .highlight table pre {margin:0;}
+      .highlight,.highlight .w{color:#586e75;}
+      img{max-width:100%;}
+      a{text-decoration:none;color:#191D1F}
+    </style>
+    <link href="slate-styles-screen.css" rel="stylesheet" media="screen">
+    <link href="slate-styles-print.css" rel="stylesheet" media="print">
+    <script src="slatedocs.js"></script>
+    <style>
+        .cm-qualifier{color:#eee!important}
+        .cm-punctuation,.cm-unit,.cm-negative{color:#e09142!important}
+        .cm-string{color:#ffa852!important}
+        .cm-positive{color:#6a51e6!important}
+        .cm-def{color:#eee!important}
+        .cm-variable{color:#fb4!important}
+        .cm-variable-2,.cm-variable-3,.cm-string-2,.cm-url{color:#6a51e6!important}
+        .cm-tag{color:#eee!important}
+        .cm-bracket,/*.cm-comment,*/ .CodeMirror{color:#20b2aa!important}
+        .cm-string{color:#ffc0cb!important}
+        .cm-atom{color:#fafad2!important}
+        .cm-number{color:#0ff!important}
+        .cm-property{color:#add8e6!important}
+        .cm-keyword,.cm-operator,.cm-attribute{color:#ff4ade!important}
+        .toc-link,.toc-footer li{transition-property:background, color;}
+        .toc-wrapper .toc-link.active {background-color:#1b5b62;}
+        .highlight {position:relative;}
+        .copy-clipboard {position:absolute;top:24px;right:24px;}
+        .content pre {padding:0;overflow:hidden;}
+        .content pre > div:not(.copy-clipboard) {padding:2em 28px;overflow:auto;}
+        #nav-button {padding: 0 1.5em 1.5em 0}
+    </style>
+    <style media="(prefers-color-scheme: dark)">
+        html,body{color:#979084;background-color:black}
+        body img{opacity:.67}
+        #nav-button span{background-color:rgba(25,25,25,0.7);color:#ddd}
+        .toc-wrapper{background-color:#111}
+        .toc-wrapper .toc-link.active{background-color:#083d41}
+        .toc-link,.toc-footer li{color:#ababab;}
+        .toc-wrapper .toc-link.active-parent,.toc-wrapper .toc-footer li,.toc-wrapper .toc-footer a{color:#c5c5c5}
+        .page-wrapper{background-color:black}
+        .content h1{border-top-color:#1e2120;border-bottom-color:#1e2120;background-color:black}
+        .content h2{border-top-color:#1e2120;background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0))}
+        .content aside.warning{background-color:#3e1414}
+        .content aside{background-color:#122b36}
+        .content aside.success{background-color:#1a3220}
+        .content table tr:nth-child(2n+1)>td,.content table tr:nth-child(2n+1)>th,.content table tr:last-child{background-color:black;border-bottom-color:#1e2120}
+        .page-wrapper .dark-box{background-color:#111}
+        .content pre,.content blockquote,.content blockquote>p{background-color:#060606;color:#aaa}
+    </style>
+  </head>
 
 
-<body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+<body class="index">
     <a href="#" id="nav-button">
       <span>
         III
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="" />
-        <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
-        </div>
+      <img src="assets/documentation-logo.png" class="logo" alt="logo" />
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
         <ul class="search-results"></ul>
-      <ul id="toc" class="toc-list-h1">
-          <!-- <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#requirements" class="toc-h2 toc-link" data-title="Requirements">Requirements</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
-          </li> -->
-      </ul>
+      <ul id="toc" class="toc-list-h1"></ul>
         <ul class="toc-footer">
-            <!-- <li><a href='#'>Sign Up for a Developer Key</a></li> -->
             <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
             <li><a href="/hopscotch/">Back to Site Homepage</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
-	  
-	  <div id="content" class="content"></div>
-	  
-      <div hidden class="-content" >
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
-
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-X</span> DELETE <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
-</tr>
-</tbody></table>
-
-      </div>
-      <div class="dark-box">
-          <div class="lang-selector" style="display:none">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
-          </div>
-      </div>
+	    <div id="content" class="content"></div>
     </div>
   </body>
 
@@ -614,7 +97,9 @@ The *first* parameter of the comment block (shown above) contains all of the web
 ><br>
 
 >The code below shows the basic structure of a webplayer command:
-<pre><span class="cm-variable">_ae_webplayer_action:</span> {<br><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"isComputer"</span><br>}</pre>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"isComputer"</span>
+}</div></pre>
 
 
 **In order to be recognized by the webplayer, there are a few requirements:**
@@ -638,13 +123,15 @@ Any additional traits are ignored.
 Any additional data is passed through the *second* parameter of the comment block (shown above). It replaces any location where the string \`"_data"\` (with quotes) shows up.
 
 >Usage:
-<pre><span class="cm-variable">_ae_webplayer_action:</span> {<br><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"checkKey"</span>,<br>  <span class="cm-property">"args"</span>: [<span class="cm-keyword">"_data"</span>]<br>}</pre>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"checkKey"</span>,
+  <span class="cm-property">"args"</span>: [<span class="cm-keyword">"_data"</span>]
+}</div></pre>
 This is **NOT required**. If you are new to using webplayer actions, I recommend **skipping** this section until you need to pass **variable data** into your webplayer action.
 
-<aside class="warning">Anything replacing <code>"_data"</code> will replace it literally and exactly. So, if you are passing in a string through the parameter, make sure that you embed it in quotes to avoid a parsing error.</aside>
+<aside class="warning">Anything replacing <code>"_data"</code> will replace it literally/exactly. So, if you are passing in a string through the parameter, make sure that you embed it in quotes to avoid a parsing error.</aside>
 
 Examples:
-<code>""_data""</code> &rarr; <code>"foo"</code>
 1. \`"args":["_data"]\` with parameter data LAST_TOUCH_X will be replaced with the output \`"args":[512]\`
 2. \`"args":["_data"]\` with parameter data USERNAME will be replaced with the output \`"args":[Awesome_E]\` and **will throw a parsing error** because \`Awesome_E\` is not a defined variable in the player's JS file
 3. \`"args":[""_data""]\` with parameter data USERNAME will be replaced with the output\`"args":["Awesome_E"]\` and **will run successfully**
@@ -657,22 +144,26 @@ These actions will return the same value every time and are useful for identifyi
 
 >![block3](assets/block3.png)
 Because you want to use the data that the webplayer action returns, you should use the "&raquo;" block, as that will convert the output into something Hopscotch can read. If you are in the modded player, the variable gets set to \`1\`; otherwise it gets set to \`0\`.
-<pre><span class="cm-variable">_ae_webplayer_action:</span> {<br><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"isWebExp"</span><br>}</pre>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"isWebExp"</span>
+}</div></pre>
 
 This action returns true every time, allowing for a quick and easy method to detect whether a user is in my modded player. In my modded player, it simply returns \`1\`.
 
 You can use this action to determine whether other modded features will work in the current player.
 
-name|args
-:-:|:-:
-isWebExp|<This command has no arguments\\>
+name|args|output
+:-:|:-:|:-:
+isWebExp|<This command has no arguments\\>|\`1\`
 
 
 ## Is Computer
 
 >![block4](assets/block4.png)
 This will set the variable "On Computer" to \`1\` or \`0\`, depending on whether the user is on a computer. If run from the Hopscotch App, the blank string returned from the "&raquo;" block is still not equal to \`1\`, so it gets set to \`0\`.
-<pre><span class="cm-variable">_ae_webplayer_action:</span> {<br><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"isComputer"</span><br>}</pre>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"isComputer"</span>
+}</div></pre>
 
 This action returns \`1\` if the user is on a computer and \`0\` if they are not.
 
@@ -680,25 +171,43 @@ This action returns \`1\` if the user is on a computer and \`0\` if they are not
 
 One use case of this is removing touch controls for a platformer for computer players in order to free up screen space, then adding keyboard support to better the user experience (UX).
 
-name|args
-:-:|:-:
-isComputer|<This command has no arguments\\>
+name|args|output
+:-:|:-:|:-:
+isComputer|<This command has no arguments\\>|\`0\` or \`1\`
 
 
 ## User Time Zone
 
 >![block5](assets/block5.png)
 This Hopscotch code will set the variable "Time Zone" to the device's time zone.
-<pre><span class="cm-variable">_ae_webplayer_action:</span> {<br><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"user-tz"</span><br>}</pre>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"user-tz"</span>
+}</div></pre>
 
 This action returns the user's time zone, rounded to the nearest hour offset from UTC/GMT time. For example, EDT returns \`-4\` because it is 4 hours behind UTC/GMT.
 
 While the recent addition of user variables allows you to do this by checking the hour and the Unix Timestamp, this option is available for non-subscribers as well as older player versions.
 
-name|args
-:-:|:-:
-user-tz|<This command has no arguments\\>
+name|args|output
+:-:|:-:|:-:
+user-tz|<This command has no arguments\\>|integer, \`-12\` to \`12\`
 
+## Dark Mode Enabled
+>![block8](assets/block8.png)
+This Hopscotch code will set the variable "Dark Mode" to \`1\` if the user is in dark mode in the modded player when the action is run.
+
+>Usage:
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"user-darkmode"</span>
+}</div></pre>
+
+This actions returns \`1\` if the user is in dark mode, and \`0\` if the user is not.
+
+This is useful in projects that default to a light-theme because it would allow the default to be set to dark mode if the user prefers dark mode, and it would also allow the user to switch the project theme by toggling their system setting.
+
+name|args|output
+:-:|:-:|:-:
+user-darkmode|<This command has no arguments\\>|\`0\` or \`1\`
 
 # JavaScript Debug
 
@@ -710,13 +219,19 @@ The following actions perform standard JavaScript methods to help with just that
 >![block1](assets/block1.png)
 
 >This will log \`hello,123\` to the browser console:
-<pre><span class="cm-variable">_ae_webplayer_action</span>: {<br><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"js-console-log"</span>,<br><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<br><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-string">"hello"</span>,<br><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-number">123</span><br>  ]<br>}</pre>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"js-console-log"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-string">"hello"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-number">123</span>
+  ]
+}</div></pre>
 
 As the name implies, this simply logs a message to the browser console.
 
-name|args
-:-:|:-:
-js-console-log|Items to log in the browser console. Array entries are joined with commas.
+name|args|output
+:-:|:-:|:-:
+js-console-log|Items to log in the browser console. Array entries are joined with commas.|<nothing\\>
 
 <aside class="success">Infinite arguments are supported, meaning you can log multiple values with one webplayer action.</aside>
 
@@ -725,22 +240,28 @@ js-console-log|Items to log in the browser console. Array entries are joined wit
 >![block6](assets/block6.png)
 
 >This will alert the current object's \`X Position\` to the user:
-<pre><span class="cm-variable">_ae_webplayer_action</span>: {<br><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"js-alert"</span>,<br><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-keyword">"_data"</span>]<br>}</pre>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"js-alert"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-keyword">"_data"</span>]
+}</div></pre>
 
 This behaves exactly like \`js-console-log\`, but it alerts the arguments in a popup dialog instead of logging them to the browser console.
 
 This is more useful for testing projects from iOS, since you need a Mac to access the browser's console (which is not accessible to everyone) whereas a popup dialog will show up on the iOS device itself.
 
-name|args
-:-:|:-:
-js-alert|Items to display in the popup. Entries are joined with commas.
+name|args|output
+:-:|:-:|:-:
+js-alert|Items to display in the popup. Entries are joined with commas.|<nothing\\>
 
 
 ## Prompt
 >![block7](assets/block7.png)
 
 >This will freeze the project to ask for the user's favorite fruit (prefilled with "Apple"), then save that user input to the variable "Preference"
-<pre><span class="cm-variable">_ae_webplayer_action</span>: <span class=" CodeMirror-matchingbracket">{</span><br><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"js-prompt"</span>,<br><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"Enter your preferred fruit:"</span>, <span class="cm-string">"Apple"</span>]<br><span class=" CodeMirror-matchingbracket">}</span></pre>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"js-prompt"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"Enter your preferred fruit:"</span>, <span class="cm-string">"Apple"</span>]
+}</div></pre>
 
 Stops the project to ask for a user input, which is returned as output.
 
@@ -748,33 +269,431 @@ Stops the project to ask for a user input, which is returned as output.
 
 This is useful in cases where you don't want other objects to continue executing code while the user is inputting text. For example, if you want to space objects apart when game starts, you wouldn't want any objects to set position before the user inputs the global value.
 
-name|arg0|arg1
-:-:|:-:|:-:
-js-prompt|The message to display with the prompt|The default (prefilled) value
+name|arg0|arg1|output
+:-:|:-:|:-:|:-:
+js-prompt|The prompt message [string\\]|Default (prefilled) value [string\\]|<nothing\\>
 
+# User Interface
+
+These actions interact with the user interface in the player.
+
+## Restart Project
+>![block1](assets/block1.png)
+
+>This code restarts the project:
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> <span class=" CodeMirror-matchingbracket">{</span>
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"restart"</span><span class="cm-tab" role="presentation" cm-text="	"> </span>
+<span class=" CodeMirror-matchingbracket">}</span></div></pre>
+
+As the name indicates, this action will restart the project. It runs the click action for the restart button, giving the project a full restart.
+
+This may be useful for an "instant retry" mechanism in a speedrun project in a place where the player cannot progress.
+
+name|args|output
+:-:|:-:|:-:
+restart|<This command has no arguments\\>|<nothing\\>
+
+## Achievement
+>![block1](assets/block1.png)
+
+>This is the current syntax of the achievement command:
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> <span class=" CodeMirror-matchingbracket">{</span>
+  <span class="cm-property">"name"</span>: <span class="cm-string">"achievement"</span>,
+  <span class="cm-property">"args"</span>: [
+    <span class="cm-string">"&lt;img src=\\"https://i.imgur.com/S3Q882k.png\\" width=\\"48\\"/&gt;&lt;div&gt;&lt;span class=\\"achievement-name\\"&gt;Starbound&lt;/span&gt;&lt;span class=\\"achievement-description\\"&gt;Collect 10 stars&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;i class=\\"fa fa-close\\" onclick=\\"banner(false)\\"&gt;&lt;/i&gt;"</span>
+  ]
+<span class=" CodeMirror-matchingbracket">}</span></div></pre>
+
+<aside class="notice">This is still a work in progress, and syntax is likely to change.</aside>
+
+The achievement action creates a dropdown from the upper-righthand corner, alerting the user that they unlocked a rare achievemnt in your game.
+
+**Current Syntax (supports custom HTML):**
+
+name|arg0|output
+:-:|:-:|:-:
+achievement|HTML to display inside of the achievement banner <string\\>|<nothing\\>
+
+>The following syntax is a potential upcoming revision:
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> <span class=" CodeMirror-matchingbracket">{</span>
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"achievement"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [
+  <span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-string">"Starbound"</span>,
+  <span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-string">"Collect 10 stars"</span>,
+  <span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-string">"https://i.imgur.com/S3Q882k.png"</span>
+<span class="cm-tab" role="presentation" cm-text="	">  </span>]
+<span class=" CodeMirror-matchingbracket">}</span></div></pre>
+
+The proposed syntax change aims to simplify the creation of an achievement. It does get rid of custom HTML support, but it will most likely be supported **alongside** the original syntax.
+
+**Revised Syntax (not implemented yet):**
+
+name|arg0|arg1|arg2|output
+:-:|:-:|:-:|:-:|:-:
+achievement|Name <string\\>|Description <string\\>|Image URL [string\\]|<nothing\\>
+
+# Checking Hardware
+
+## Check One Key in a List
+>![block9](assets/block9.png)
+
+>The following code will return whether the right arrow or the letter "D" is pressed:
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"checkKey"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-number">39</span>,<span class="cm-number">68</span>]
+}</div></pre>
+
+This action will return \`1\` if ***ANY*** of the keys in the arguments are currently being pressed.
+
+name|args|output
+:-:|:-:|:-:
+checkKey|Every [keycode](https://keycode.info) to check for, in a comma-separated list|\`0\` or \`1\`
+
+**Advanced:** If you want to have the keys being checked to be controlled by variables, use the "&raquo;" block with a data parameter, then pass in \`"_data"\` into the arguments list.
+
+## Check All Keys in a List
+>![block9](assets/block9.png)
+
+>The following code will check if the shift key ***AND*** the letter "H" are prressed:
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"checkKeyAll"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-number">16</span>,<span class="cm-number">72</span>]
+}</div></pre>
+
+This action, like \`checkKey\`, will check if certain keys are pressed. However, it will only return \`1\` if ***ALL KEYS*** on the list are being pressed.
+
+name|args|output
+:-:|:-:|:-:
+checkKeyAll|Every [keycode](https://keycode.info) to check for, separated by commas|\`0\` or \`1\`
+
+**Advanced:** If you want to have the keys being checked to be controlled by variables, use the "&raquo;" block with a data parameter, then pass in \`"_data"\` into the arguments list.
+
+## Read the Last Scroll Point
+
+<aside class="notice">This action is not fully developed yet.</aside>
+
+<!--
+>![block_](assets/block_.png)
+
+WARNING MAY CHANGE IN FUTURE
+scrollData
+
+-->
+
+# Local Save Data
+
+*Local save data is currently being reworked, as these methods have a complicated syntax for such a limited functionality.*
+
+<!--
+## Read from Save Data
+>![block10](assets/block10.png)
+
+savedata-read
+
+## Write to Save Data
+>![block14](assets/block14.png)
+
+savedata-write
+-->
+
+
+# URL Actions
+
+These actions allow you to display approved webpages in frames or navigate to them. I am keeping a list of apprroved and rejected subdomains that determine whether the action will run or throw a popup error.
+
+## URL Popup
+>![block1](assets/block1.png)
+
+>The following code will create a popup of HS Tools:
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"url-iframe"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"https://awesome-e.github.io/hs-tools/"</span>]
+}</div></pre>
+
+The URL Popup action displays a given URL in an iframe on the current page, which will be put on top of the project being played.
+
+name|arg0|output
+:-:|:-:|:-:
+url-iframe|url <string\\>|<nothing\\>
+
+## Go to URL
+>![block1](assets/block1.png)
+
+>The following code will redirect the user to HS Tools:
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"url-goto"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"https://awesome-e.github.io/hs-tools/"</span>]
+}</div></pre>
+
+This action will redirect the page to the URL passed in as input.
+
+name|arg0|output
+:-:|:-:|:-:
+url-goto|url <string\\>|<nothing\\>
+
+# Hopscotch Data
+With these actions, you can display any user information provided by Hopscotch's \`v2/users\` API, which currently only includes nickname, avatar type, and plants.
+
+## Load User Data
+>![block1](assets/block1.png)
+
+>The code below will load the user data for user 5947972
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"userdata-read"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: <span class=" CodeMirror-matchingbracket">[</span><span class="cm-string">"5947972"</span><span class=" CodeMirror-matchingbracket">]</span>
+}</div></pre>
+
+This block retrieves the user data of a specified User ID and stores it temporarily (until you leave or reload the page).
+
+name|arg0|output
+:-:|:-:|:-:
+userdata-load|user_id <integer\\>|<nothing\\>
+
+You must load user data ***before*** reading it with the read user data command. Also, since it retrieves data from the internet, you will need some wait time between loading the data and reading traits. See the demo for a "wait until loaded" block (not a rainbow block/ability, just one block).
+
+## Read User Traits
+>![block11](assets/block11.png)
+
+>This code will set the variable "Nickname" to the nickname of user 5947972, which is \`Jeffery Jr.\`
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"userdata-read"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"5947972"</span>,<span class="cm-string">"nickname"</span>]
+}</div></pre>
+
+This block allows you to read user traits of users that have already been loaded usingthe \`userdata-read\` command. If no trait is specified in the second argument, this action will return the entire dictionary (JSON object).
+
+<aside class="warning">You <b>must</b> run <code>userdata-load</code> for <b>every</b> user you want to read traits from. Otherwise, the traits cannot be read, as there is no local reference.</aside>
+
+name|arg0|arg1|output
+:-:|:-:|:-:|:-:
+userdata-read|user_id <integer\\>|trait [string\\]|string or integer; the trait's value
+
+*Currently, you can specify \`trait\` as \`"nickname"\`, \`"avatar_type"\`, or \`"plants"\`. You can also omit the \`trait\`.
+
+# Global Variables
+
+Global Variables provide you access to realtime variables that can be read from any device in the modded player. These are tied to the **user** and not the project, meaning that the same variables are **shared across all of your projects**. You can access variables that you set in one project in the future from any project, as long as the creator's user ID is the same. If you want your variables to be project-specific, I recommend adding the project UUID before the variable name. (Example: \`10iu14ay37-world_record\`)
+
+However, these are not intended for multiplayer use, as there are dedicated blocks to better manage multiplayer than just using global variables.
+
+## Connect to the Server
+>![block1](assets/block1.png)
+>Run this exact command to connect to the global variables server:
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"globalvar-connect"</span>
+}</div></pre>
+
+This action will connect the project to the global variables server.
+
+<aside class="success">This will work straight out of the box; no modifications are required</aside>
+
+Run this command before reading or writing any global variables. I recommend running this block on game starts so you have access to global variables almost immediately.
+
+<small>(I don't automatically run this for every project because I don't want every project, most of which are not modded in any way, to connect automatically and use bandwidth.)</small>
+
+
+name|args|output
+:-:|:-:|:-:
+globalvar-connect|<This command has no arguments\\>|<nothing\\>
+
+## Read Global Values
+>![block12](assets/block12.png)
+
+>This Hopscotch block (above) will set the project's "High Score" variable to the global variable called \`global_best\`, using the code below:
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"globalvar-read"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: <span class=" CodeMirror-matchingbracket">[</span><span class="cm-string">"global_best"</span><span class=" CodeMirror-matchingbracket">]</span>
+}</div></pre>
+
+Once you have connected to the global variables server, run this command along with a key (variable name) to read the data stored under it.
+
+name|arg0|output
+:-:|:-:|:-:
+globalvar-read|key <string\\>|any; the key's value
+
+*Note: \`key\` simply refers to a string that the value is stored under. Essentially, it is just the variable name.
+
+## Write Global Values
+>![block15](assets/block15.png)
+
+>Using the command below, the Hopscotch block (shown above) will set the global variable called \`global_best\` to the current project's high score.
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"globalvar-write"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"global_best"</span>,<span class="cm-keyword">"_data"</span>]
+}</div></pre>
+
+After connecting to the global variable server, running the \`globalvar-write\` block will override the specified key with the value you provide. More times than not, you will run this block inside of a conditional.
+
+<aside class="notice">To prevent code modification, writing to global variables will not execute if the project is run from the Project Builder. This applies to all variables <b>EXCEPT</b> for those whose names begin with <code>@UNLOCKED_</code></aside>
+
+name|arg0|arg1|output
+:-:|:-:|:-:|:-:
+globalvar-write|key <string\\>|new value <any\\>|<nothing\\>
+
+# Multiplayer Actions
+
+This set of actions was designed specifically to run lightweight multiplayer games, with small loads being passed between games. Large, constant data reads/writes will cause a huge drop in performance. Try to limit data transfers to player attributes only in addition to the occasional global setting (avoid excessive amounts of projectiles and spawned items).
+
+Given that, it still provides the foundation for the core aspects of multiplayer: creating, joining, and leaving rooms, in addition to reading and writing user-specific and global (limited to each room, of course) data.
+
+To prevent code modification, multiplayer actions will not execute if the project is run from the Project Builder.
+
+## Start a Session
+>![block1](assets/block1.png)
+
+>Use this exact code in your game to start a session:
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"session-new"</span>
+}</div></pre>
+
+This action starts a multiplayer session with a random 6-character-long join code consisting of only numbers and lowercase letters. For safety reasons, there is no configuration to change this join code.
+
+name|arg0|output
+:-:|:-:|:-:
+session-new|max_players [integer\\]|<nothing\\>
+
+If you are already in a session, you will be asked to confirm that you want to leave it.
+
+## Join a Session
+>![block1](assets/block1.png)
+
+>Use this exact code in your game to join a session:
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"session-join"</span>
+}</div></pre>
+
+This action prompts the user to join a multiplayer room by entering/pasting in the 6-character join code generated by the host's device. Be aware that reading session data in the same rule may cause issues in the project, as joining a session requires a small amount of time.
+
+name|args|output
+:-:|:-:|:-:
+session-join|<This command has no arguments\\>|<nothing\\>
+
+## Leave the Session
+>![block1](assets/block1.png)
+
+>Run this exact code to leave the multiplayer room:
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"session-leave"</span>
+}</div></pre>
+
+This command will disconnect you from the multiplayer room. If you are currently the host of this room, it will end the game for everyone.
+
+name|args|output
+:-:|:-:|:-:
+session-leave|<This command has no arguments\\>|<nothing\\>
+
+
+## Get the User's ID
+>![block17](assets/block17.png)
+
+>This Hopscotch code will save the user's index to the project variable called "Player ID"
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"session-myindex"</span>
+}</div></pre>
+
+As the name implies, this command returns the user's index in the multiplayer room. The host is \`0\`, and the player indices are in chronological order of time joined.
+
+name|args|output
+:-:|:-:|:-:
+session-myindex|<This command has no arguments\\>|<nothing\\>
+
+If you are the first person to join a host's game, this command will return \`1\`. If you are the second person to join, it will return \`2\`. And so on...
+
+
+## Lock the Session
+>![block1](assets/block1.png)
+
+>The code below will lock the multiplayer room and prevent new people from joining:
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"session-close"</span>
+}</div></pre>
+
+As the name states, this command will make it so that no one else can join the multiplayer session.
+
+name|args|output
+:-:|:-:|:-:
+session-close|<This command has no arguments\\>|<nothing\\>
+
+## Unlock the Session
+>![block1](assets/block1.png)
+
+>The code below will reopen the multiplayer room if it has been closed:
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"session-open"</span>
+}</div></pre>
+
+As the name states, this command will reopen the multiplayer room (if it has been closed), allowing people to join again.
+
+name|args|output
+:-:|:-:|:-:
+session-open|<This command has no arguments\\>|<nothing\\>
+
+
+## Read Session Data
+>![block13](assets/block13.png)
+>Assuming the Clone Index is the Player ID it renders, this command will set the self variable "Powerup" to the session's value for *that player's* \`power\`:
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"session-read"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"session.data.game[session.getUser("</span>,<span class="cm-keyword">"_data"</span>,<span class="cm-string">")].power"</span>]
+}</div></pre>
+
+This command reads the path provided by concatenating (joining) all of the arguments passed through as input.
+
+In the example shown, the second parameter of the "&raquo;" block refers to the Player's index, with \`0\` being the host and \`-1\` being a shorthand for "self" (your actual index will be greater than or equal to zero)
+
+name|args|output
+:-:|:-:|:-:
+session-read|path to data <string>|<nothing\\>
+
+In the example, suppose the Clone Index is \`1\`. The \`args\` are then joined to form the string \`"session.data.game[session.getUser(1)].power"\`, which will then get the value for \`power\` that is assigned to player with index 1
+
+## Write Session Data
+>![block16](assets/block16.png)
+
+>This block will set the current (self, as defined in the first argument) user's \`power\` (in the remote server, for this game) to the value of the self variable passed into the data parameter.
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"session-write"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-number">-1</span>,<span class="cm-string">"power"</span>,<span class="cm-string">"_data"</span>]
+}</div></pre>
+
+This command writes data to the server when given the following: a player index to write to, the key, and the value.
+
+name|arg0|arg1|arg2|output
+:-:|:-:|:-:|:-:|:-:
+session-write|user_index <integer\\>|key <string\\>|value <any\\>|<nothing\\>
+
+\`user_index\` refers to the target user, that is, the user whose data will be overwritten. Use \`-2\` to set a global game variable, \`-1\` to set self, and any other integer greater than or equal to \`0\` to reference a player by index. In most cases, you will be using \`-2\` or \`-1\` because you will only write data to the game as a whole or to update information about your player.
+
+\`key\` just refers to what you are setting; it's essentially the name of the variable.
+
+\`value\` will override the existing value, and it can be a number, string, boolean, or null.
 
 `);</script>
 	<script>
 	  {
-		let lastH1 = null;
-		document.querySelectorAll('.content h1, .content h2').forEach(heading=>{
-			if (heading.tagName == "H1") {
-				let li = document.createElement('li');
-				li.innerHTML = `<a href="#${heading.id}" class="toc-h1 toc-link" data-title="${heading.innerHTML}">${heading.innerHTML}</a>`;
-				lastH1 = li;
-				document.querySelector('.toc-list-h1').appendChild(li);
-			} else {
-				if (!lastH1.querySelector('ul')) {
-					let newUl = document.createElement('ul');
-					newUl.classList.add("toc-list-h2");
-					lastH1.appendChild(newUl);
-				}
-				let li = document.createElement('li');
-				li.innerHTML = `<a href="#${heading.id}" class="toc-h2 toc-link" data-title="${heading.innerHTML}">${heading.innerHTML}</a>`;
-				lastH1.querySelector('ul').appendChild(li);
-			}
-		});
+      let lastH1 = null;
+      document.querySelectorAll('.content h1, .content h2').forEach(heading=>{
+        if (heading.tagName == "H1") {
+          let li = document.createElement('li');
+          li.innerHTML = `<a href="#${heading.id}" class="toc-h1 toc-link" data-title="${heading.innerHTML}">${heading.innerHTML}</a>`;
+          lastH1 = li;
+          document.querySelector('.toc-list-h1').appendChild(li);
+        } else {
+          if (!lastH1.querySelector('ul')) {
+            let newUl = document.createElement('ul');
+            newUl.classList.add("toc-list-h2");
+            lastH1.appendChild(newUl);
+          }
+          let li = document.createElement('li');
+          li.innerHTML = `<a href="#${heading.id}" class="toc-h2 toc-link" data-title="${heading.innerHTML}">${heading.innerHTML}</a>`;
+          lastH1.querySelector('ul').appendChild(li);
+        }
+      });
 	  }
+      function logText() {
+        console.log(document.querySelector('.toc-list-h1').innerHTML);
+        console.log(document.querySelector('.content').innerHTML);
+      }
       $(function() { setupCodeCopy(); });
     </script>
 </html>

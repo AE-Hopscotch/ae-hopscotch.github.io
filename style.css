@@ -63,7 +63,7 @@ div.topnav {
 	text-align: center;
 	transition: transform .2s, color .2s;
 	font-family: Barlow;
-	height: 30px;
+	height: 32px;
 	font-weight: 600;
 }
 .topnav .icon {
