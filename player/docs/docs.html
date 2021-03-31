@@ -37,6 +37,7 @@
         .copy-clipboard {position:absolute;top:24px;right:24px;}
         .content pre {padding:0;overflow:hidden;}
         .content pre > div:not(.copy-clipboard) {padding:2em 28px;overflow:auto;}
+        a{color:#3b6072}
         #nav-button {padding: 0 1.5em 1.5em 0}
     </style>
     <style media="(prefers-color-scheme: dark)">
@@ -653,7 +654,7 @@ In the example, suppose the Clone Index is \`1\`. The \`args\` are then joined t
 >This block will set the current (self, as defined in the first argument) user's \`power\` (in the remote server, for this game) to the value of the self variable passed into the data parameter.
 <pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
 <span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"session-write"</span>,
-<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-number">-1</span>,<span class="cm-string">"power"</span>,<span class="cm-string">"_data"</span>]
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [<span class="cm-number">-1</span>,<span class="cm-string">"power"</span>,<span class="cm-keyword">"_data"</span>]
 }</div></pre>
 
 This command writes data to the server when given the following: a player index to write to, the key, and the value.
