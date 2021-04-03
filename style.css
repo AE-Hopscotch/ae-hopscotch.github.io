@@ -38,6 +38,9 @@ table th, table td {
     padding: 6px 16px;
 	text-align: center;
 }
+html body .parallax_layer .invis-img {
+	display: none;
+}
 
 /* Top Navigation */
 div.topnav {
@@ -261,8 +264,12 @@ div.topnav {
 	background-repeat: no-repeat;
 	filter: blur(2px) brightness(0.7);
 	-webkit-filter: blur(2px) brightness(0.7);
+	opacity: 0;
+}
+.header-bg.loaded {
 	animation-name: fade-in;
 	animation-duration: 0.5s;
+	opacity: 1;
 }
 .header h1 {
 	text-align: center;
@@ -448,7 +455,7 @@ hr {
 }
 
 /* Moving BG */
-.moving-bg {
+/* .moving-bg {
 	top:0;left:0;width:200vw;display:block;height:350vh;
 	background-image:url(images/space-bg.jpeg);
 	animation-timing-function: linear;
@@ -464,7 +471,7 @@ hr {
 @keyframes bg-scroll {
 	0% {transform:translate(-402px,0px)}
 	100% {transform:translate(0,-804px)}
-}
+} */
 
 /* Hopscotch Player Frames */
 #aehs-player-frame {
