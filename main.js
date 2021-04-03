@@ -79,11 +79,11 @@ function addSiteVisit(branch) {
 // var lastPageExceptions = /https:\/\/awesome-e\.github\.io\/hs-tools\/?($|play-project|explore-channel\/about)/;
 // if (!lastPageExceptions.test(window.location.href) && self === top) setCookie('lastPage', window.location.href, 30);
 
-if (getCookie('visitedWithinHour') != 'true' && /https:\/\/awesome-e.github.io\/hopscotch\//gi.test(location.href)) {
+if (getCookie('hsSiteWithinHour') != 'true' && /https:\/\/awesome-e.github.io\/hopscotch\//gi.test(location.href)) {
 	if (window.location.href != "https://awesome-e.github.io/hopscotch/") addSiteVisit(location.href.replace(/^.*?hopscotch\//,'/'));
 	addSiteVisit();
 }
-setCookie('visitedWithinHour', 'true', 0.04);
+setCookie('hsSiteWithinHour', 'true', 0.04);
 
 //Prototype Functions
 Element.prototype.remove = function() {

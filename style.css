@@ -236,11 +236,13 @@ div.topnav {
 	width: 100%;
 	position: absolute;
 	/* top: min(400px, 85vw); */
+}
+.wrapper .section {
+	line-height: 34px;
 	font-size: 26px;
 	color: white;
 	text-shadow: 1px 1px 3px black;
 	font-family: Overpass;
-	line-height: 34px;
 }
 .header {
 	height: 400px;
@@ -259,6 +261,8 @@ div.topnav {
 	background-repeat: no-repeat;
 	filter: blur(2px) brightness(0.7);
 	-webkit-filter: blur(2px) brightness(0.7);
+	animation-name: fade-in;
+	animation-duration: 0.5s;
 }
 .header h1 {
 	text-align: center;
@@ -342,7 +346,7 @@ a.button:hover {
 	transform: scale(1.12);
 	background-color: #87bdd8ab;
 }
-html body .wrapper .center {
+.center, html body .wrapper .center {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
@@ -573,4 +577,8 @@ hr {
 	/* .topnav > div:hover, .topnav > div .submenu {
 		background-color: rgb(90,0,0);
 	} */
+}
+@keyframes fade-in {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
 }
