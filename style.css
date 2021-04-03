@@ -13,7 +13,7 @@ html, body {
 	width: 100%;
 	height: 100vh;
 	--section-bg-1: #2b3e4e;
-	--section-bg-2: #486085;
+	--section-bg-2: #374c6d;
 	--section-bg-3: #435769;
 	overflow: hidden;
 }
@@ -29,6 +29,14 @@ a {
 .scroll-lock {
 	overflow: hidden;
 	touch-action: none;
+}
+table {
+	border-collapse: collapse;
+}
+table th, table td {
+	border: 1px solid white;
+    padding: 6px 16px;
+	text-align: center;
 }
 
 /* Top Navigation */
@@ -228,6 +236,11 @@ div.topnav {
 	width: 100%;
 	position: absolute;
 	/* top: min(400px, 85vw); */
+	font-size: 26px;
+	color: white;
+	text-shadow: 1px 1px 3px black;
+	font-family: Overpass;
+	line-height: 34px;
 }
 .header {
 	height: 400px;
@@ -281,24 +294,22 @@ div.topnav {
 .section-upper, .section-lower {
 	width: 50%;
 }
-.section h3 {
+.section h2, .section h3 {
 	margin: 8px;
 	text-align: center;
-	font-size: 32px;
+	font-size: 48px;
 	font-family: sans-serif;
 	color: white;
 	text-shadow: 2px 2px 3px black;
 }
+.section h3 {
+	font-size: 32px;
+}
 .section p {
-	font-size: 26px;
 	margin: 8px 0;
-	color: white;
-	text-shadow: 1px 1px 3px black;
 	/* font-family: Quicksand; */
-	font-family: Overpass;
 	text-align: justify;
 	text-indent: 60px;
-	line-height: 34px;
 }
 .flex, .vflex {
 	display: flex;
@@ -324,15 +335,18 @@ a.button {
 	font-size: 16px;
 	border-radius: 24px;
 	transition: background-color 0.5s, transform 0.5s;
+	transform: scale(1.01);
+	line-height: 1em;
 }
 a.button:hover {
 	transform: scale(1.12);
 	background-color: #87bdd8ab;
 }
-.center {
+html body .wrapper .center {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
+	text-indent: 0;
 }
 .wrapper img {
 	border-radius: 8px;
@@ -532,11 +546,29 @@ hr {
 	cursor: pointer;
 	box-shadow: 2px 2px 16px 4px #fff7;
 }
+#under-construction {
+	height: 100vh;
+}
 
 /* Dark Mode */
 @media (prefers-color-scheme:dark) {
 	html, body {
 		background-color: black;
+		--section-bg-1: #000;
+		--section-bg-2: #000;
+		--section-bg-3: #000;
+	}
+	a.button {
+		/* background-color: #0d1925;
+		box-shadow: 0 0 2px 1px rgba(43, 79, 100, 0.6);
+		color: #aaa; */
+		opacity: 0.6;
+	}
+	.header h1, .section h2, .section h3, .wrapper, .topnav a, .topnav div {
+		color: #999;
+	}
+	img, .header-bg {
+		opacity: 0.6;
 	}
 	/* .topnav > div:hover, .topnav > div .submenu {
 		background-color: rgb(90,0,0);

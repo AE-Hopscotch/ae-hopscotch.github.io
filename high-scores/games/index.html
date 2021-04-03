@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/hopscotch/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/hopscotch/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/hopscotch/icons/favicon-16x16.png">
+    <link rel="manifest" href="/hopscotch/icons/site.webmanifest">
+    <link rel="shortcut icon" href="/hopscotch/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="msapplication-config" content="/hopscotch/icons/browserconfig.xml">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="stylesheet" href="/hopscotch/style.css">
+    <title>Game Score Leaderboards &ndash; Awesome_E Hopscotch</title>
+    <style>
+        table {
+            width: 100%;
+        }
+        td {
+            padding: 6px 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax">
+        <div class="header parallax_layer parallax_layer_0">
+            <div class="header-bg" style="background-image:url('/hopscotch/images/banners/retro_space.jpg')"></div>
+        </div>
+        <div class="wrapper">
+            <div class="header">
+                <h1>Game Leaderboards</h1><h2 class="hidden"></h2>
+            </div>
+            <!-- YOU CAN DELETE THESE IF YOU ARE NOT USING THE DEFAULT FLEX LAYOUT -->
+            <div class="section section-flex" data-id="11j3s45ah5">
+                <div class="section-upper vflex">
+                    <h3>Clover Launch</h3>
+                    <p class="center">This is the top 3 leaderboard for Temm's St. Patrick's Day Game, Clover Launch. In this game, your objective is to collect as many points and power ups as possible before Bear comes to a stop on the grass.</p>
+                    <div class="flex">
+                        <p></p>
+                        <table>
+                            <thead>
+                                <tr><th>Rank</th><th>Username</th><th>Score</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1</td><td id="Temm_CloverLaunch_user1" class="score-data">Loading...</td><td id="Temm_CloverLaunch_rank1" class="score-data">Loading...</td></tr>
+                                <tr><td>2</td><td id="Temm_CloverLaunch_user2" class="score-data">Loading...</td><td id="Temm_CloverLaunch_rank2" class="score-data">Loading...</td></tr>
+                                <tr><td>3</td><td id="Temm_CloverLaunch_user3" class="score-data">Loading...</td><td id="Temm_CloverLaunch_rank3" class="score-data">Loading...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="center" data-screen="large"><a class="button game-link" href="/hs-tools/play-project/?id=11j3s45ah5" data-url="{href}&play=1">Play Clover Launch <i class="fa fa-arrows-alt"></i></a></div>
+                </div>
+                <div class="section-lower vflex">
+                    <div class="center">
+                        <img alt="project thumbnail" data-screen="tiny medium large" style="margin-bottom:16px" width="100%" src="/hopscotch/images/hs-thumbnails/11j3s45ah5.png"/>
+                        <a data-screen="tiny small medium" class="button game-link" href="/hs-tools/play-project/?id=11j3s45ah5" data-url="{href}&play=1">Play Clover Launch <i class="fa fa-arrows-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <br/><br/>
+                <h3>More games coming soon...</h3>
+                <br/><br/>
+            </div>
+        </div>
+    </div>
+    <script src="/hopscotch/main.js"></script>
+    <script src="/hopscotch/navigation-menu.js"></script>
+    <script src="/hopscotch/aehs-player.js"></script> <!-- ONLY DO THIS IF INCLDING EMBEDDED GAMES -->
+    <script>
+        XHR.requestExt("GET","https://ae-hs-tools.firebaseio.com/global-variables/452673.json", function(r,s){
+            let ae_globalvars = JSON.parse(r);
+            document.querySelectorAll('.score-data').forEach(elm=>{
+                if (ae_globalvars[elm.id]) {
+                    elm.innerText = ae_globalvars[elm.id]
+                } else {
+                    elm.innerHTML = '<i>No data</i>';
+                    elm.style.opacity = 0.5;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

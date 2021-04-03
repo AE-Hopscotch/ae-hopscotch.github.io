@@ -31,18 +31,13 @@
 			"url": "/player/",
 			"subpages": [
 				{
-					"title": "Why Modding?",
-					"icon": "fa-sliders",
-					"url": "/player/why-modding/"
-				},
-				{
 					"title": "Documentation",
 					"icon": "fa-file-text-o",
 					"url": "/player/docs/"
 				}
 			]
 		},
-		{
+		/*{
 			"title": "Builder",
 			"url": "/hs-builder/",
 			"subpages": [
@@ -78,15 +73,15 @@
 					"url": "/hpcx/addons/"
 				}
 			]
-		}, 
+		},*/
 		{
 			"title": "Scores",
 			"url": "/high-scores/",
 			"subpages": [
 				{
-					"title": "My Projects",
+					"title": "Games",
 					"icon": "fa-h-square",
-					"url": "/high-scores/ae-games/"
+					"url": "/high-scores/games/"
 				},
 				{
 					"title": "Speedruns",
@@ -100,7 +95,7 @@
 				}
 			]
 		}, 
-		{
+		/* {
 			"title": "Other",
 			"url": "/other/",
 			"subpages": [
@@ -120,7 +115,7 @@
 					"url": "/other/faq/"
 				}
 			]
-		}
+		} */
 	];
 	const info = {
 		iconUrl: "/hopscotch/images/icon.png",

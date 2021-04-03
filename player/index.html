@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/hopscotch/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/hopscotch/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/hopscotch/icons/favicon-16x16.png">
+    <link rel="manifest" href="/hopscotch/icons/site.webmanifest">
+    <link rel="shortcut icon" href="/hopscotch/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="msapplication-config" content="/hopscotch/icons/browserconfig.xml">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="stylesheet" href="/hopscotch/style.css">
+    <title>The Modded Webplayer &ndash; Awesome_E Hopscotch</title>
+</head>
+<body>
+    <div class="parallax">
+        <div class="header parallax_layer parallax_layer_0">
+            <div class="header-bg" style="background-image:url('/hopscotch/images/banners/modded-player.png')"></div>
+        </div>
+        <div class="wrapper">
+            <div class="header">
+                <h1>The Modded Webplayer</h1><h2 class="hidden"></h2>
+            </div>
+            <div class="section">
+                <h3>Why did I make it?</h3>
+                <p>The original goal of the project was to replicate the Hopscotch project embed page, while allowing custom data to be put into the project. This meant that I would gather JSON data via a request or local variables, and then initiate the webplayer with that Hopscotch JSON code. While it definitely took some work, the replication of the player worked, and you can <a href="/hs-tools/play-project/">play any Hopscotch project</a> from your web browser.</p>
+                <p>But, that was just the beginning. As I began to explore the webplayer (and modifying it), I figured out how certain aspects work (specifically, I was looking at how blocks were run), and thought to myself, &ldquo;Why don't I add features that I always wish Hopscotch had?&rdquo; That's where the modded part of the player began. Things like keyboard support, an improved error tracing / debug system, and (eventually) multiplayer!</p>
+            </div>
+            <div class="section">
+                <h3>What is Modding?</h3>
+                <p>Modding is just a shorthand for &ldquo;modifying&rdquo; something &ndash; in this case, the Hopscotch web player. To get the whole rig working, I had to change how the player read the file, then I had to initiate it, and so on, and so on. But, modding is more than just getting things to work.</p>
+            </div>
+            <div class="section">
+                <h3>What can I do?</h3>
+                <p>You can do a lot! Anything you dream up and are willing to learn the mechanics of, you can add to something that already exists. People have modded games such as Minecraft, operating systems like iOS (the whole jailbreak community), and much more. As for me, I modified Hopscotch to support many different custom actions that only work inside of my player as well as developing my own Chrome Extension for personal use, which adds lots of functionality to several different websites, including the Hopscotch play page.</p>
+            </div>
+            <div class="section">
+                <h3>What's the point?</h3>
+                <p>Well, in addition to creating an Awesome <small><small><sup><sub>(E)</sub></sup></small></small> fork of an Awesome <small><small><sup><sub>(E)</sub></sup></small></small> app, you actually learn a lot more than by just using that same app. Also, modifications of projects often do get the attention of the original creators, <a href="https://forum.gethopscotch.com/t/hopscotch-web-explorer/53971/69">as seen with the Web Explorer</a>; the goal of many modders, including myself, is to develop a proof of concept, hoping that it can one day make its way into the vanilla (unmodified) application. In the case of iOS, homescreen widgets and dark mode were jailbreak tweaks developed by modders long before Apple incorporated it into their operating system.</p>
+            </div>
+            <div class="section">
+                <h3>What does this Player Offer?</h3>
+                <p>You can use it to test drafts, load projects that are filtered or unpublished, and run custom actions! All of my HS Tools projects use this player when playing a Hopscotch project because of conveniece features such as easier debug, autoplay, project info, and the support of my custom actions. If you want to learn more about how you can use the modded player actions, check out <a href="docs/">the documentation</a>.</p>
+            </div>
+        </div>
+    </div>
+    <script src="/hopscotch/main.js"></script>
+    <script src="/hopscotch/navigation-menu.js"></script>
+    <script src="/hopscotch/aehs-player.js"></script>
+</body>
+</html>
