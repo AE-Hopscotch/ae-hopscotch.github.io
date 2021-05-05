@@ -575,7 +575,10 @@ hr {
 		color: #aaa; */
 		opacity: 0.6;
 	}
-	.header h1, .section h2, .section h3, .wrapper .section, .topnav a, .topnav div {
+	.header h1 {
+		color: #ddd;
+	}
+	.section h2, .section h3, .wrapper .section, .topnav a, .topnav div {
 		color: #999;
 	}
 	img, .header-bg {
