@@ -19,9 +19,9 @@
       img{max-width:100%;}
       a{text-decoration:none;color:#191D1F}
     </style>
-    <link href="slate-styles-screen.css" rel="stylesheet" media="screen">
-    <link href="slate-styles-print.css" rel="stylesheet" media="print">
-    <script src="slatedocs.js"></script>
+    <link href="/hopscotch/player/docs/slate-styles-screen.css" rel="stylesheet" media="screen">
+    <link href="/hopscotch/player/docs/slate-styles-print.css" rel="stylesheet" media="print">
+    <script src="/hopscotch/player/docs/slatedocs.js"></script>
     <style>
         .cm-qualifier{color:#eee!important}
         .cm-punctuation,.cm-unit,.cm-negative{color:#e09142!important}
@@ -307,8 +307,6 @@ restart|<This command has no arguments\\>|<nothing\\>
   ]
 <span class=" CodeMirror-matchingbracket">}</span></div></pre>
 
-<aside class="notice">This is still a work in progress, and syntax is likely to change.</aside>
-
 The achievement action creates a dropdown from the upper-righthand corner, alerting the user that they unlocked a rare achievemnt in your game.
 
 **Current Syntax (supports custom HTML):**
@@ -317,7 +315,7 @@ name|arg0|output
 :-:|:-:|:-:
 achievement|HTML to display inside of the achievement banner <string\\>|<nothing\\>
 
->The following syntax is a potential upcoming revision:
+>The following syntax can also be used:
 <pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> <span class=" CodeMirror-matchingbracket">{</span>
 <span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"achievement"</span>,
 <span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [
@@ -327,9 +325,9 @@ achievement|HTML to display inside of the achievement banner <string\\>|<nothing
 <span class="cm-tab" role="presentation" cm-text="	">  </span>]
 <span class=" CodeMirror-matchingbracket">}</span></div></pre>
 
-The proposed syntax change aims to simplify the creation of an achievement. It does get rid of custom HTML support, but it will most likely be supported **alongside** the original syntax.
+The new syntax aims to simplify the creation of an achievement. It does get rid of custom HTML support, but it is supported **alongside** the original syntax.
 
-**Revised Syntax (not implemented yet):**
+**Revised Syntax:**
 
 name|arg0|arg1|arg2|output
 :-:|:-:|:-:|:-:|:-:
@@ -385,20 +383,67 @@ scrollData
 
 # Local Save Data
 
-*Local save data is currently being reworked, as these methods have a complicated syntax for such a limited functionality.*
+<!-- *Local save data is currently being reworked, as these methods have a complicated syntax for such a limited functionality.* -->
 
-<!--
+These actions allow you to work with data that gets stored locally in the user's web browser. This data will persist between plays and whenever the user closes the browser (unless in private browsing mode, in which case the data gets cleared by the browser). While Hopscotch offers an easier-to-use implementation called "User Variables", this feature is free, although it only works in my modded player.
+
 ## Read from Save Data
 >![block10](assets/block10.png)
 
-savedata-read
+>This code will set the variable "Level" to the local save called "Stage". If that doesn't exist, it will default to 1, as specified in the arguments:
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"newdata-read"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"Stage"</span>,<span class="cm-number">1</span>]
+}</div></pre>
+
+Reading from local savedata allows you to retrieve information previously stored locally in the user's browser. For example, you can load a stage/level so that a user can save their progress.
+<aside class="warning">Be careful! This action returns a <b>string</b>, so make sure to <i>round</i> or <i>save</i> it under a Hopscotch variable before performing any math operations.</aside>
+
+name|arg0|arg1|output
+:-:|:-:|:-:|:-:
+savedata-read|property <string\\>|default <number/string\\>|value <string\\>
+
+\`property\` refers to the name of the local save, e.g. "Level"
+
+\`default\` is the value returned if the local save does not exist.
+
+\`value\` is the value saved under the specified property name.
 
 ## Write to Save Data
 >![block14](assets/block14.png)
 
-savedata-write
--->
+>When put into the block shown above, this code will create a local save called "Stage", and it will have the value of the variable "Level":
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"newdata-write"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"Stage"</span>,<span class="cm-keyword">"_data"</span>]
+}</div></pre>
 
+Writing to Save Data refers to either creating a new property or modifying an existing one. This action allows you to specify a property to update, as well as its new value.
+
+If the property does not already exist, it will be created. Otherwise, it will be overwritten.
+
+name|arg0|arg1|output
+:-:|:-:|:-:|:-:
+savedata-write|property <string\\>|value <number/string\\>|<nothing\\>
+
+\`property\` refers to the name of the local save, e.g. "Level"
+
+\`value\` is the new value to be stored under that local save.
+
+## Delete Save Data
+>![block14](assets/block1.png)
+
+>This will delete the locally stored "Stage":
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"newdata-delete"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"Stage"</span>]
+}</div></pre>
+
+This action simply deletes any value that was stored under the specified \`property\`, which makes for a fast and simply reset mechanism in a game.
+
+name|arg0|output
+:-:|:-:|:-:
+savedata-write|property <string\\>|<nothing\\>
 
 # URL Actions
 
@@ -675,6 +720,9 @@ session-write|user_index <integer\\>|key <string\\>|value <any\\>|<nothing\\>
 	<script>
 	  {
       let lastH1 = null;
+      document.querySelectorAll('img').forEach(img=>{
+        if(img.getAttribute('src').match(/^assets\//))img.src='/hopscotch/player/docs/'+img.getAttribute('src');
+      });
       document.querySelectorAll('.content h1, .content h2').forEach(heading=>{
         if (heading.tagName == "H1") {
           let li = document.createElement('li');
@@ -694,8 +742,17 @@ session-write|user_index <integer\\>|key <string\\>|value <any\\>|<nothing\\>
       });
 	  }
       function logText() {
+        //Temporarily Change Images to relative references for copying purposes
+        document.querySelectorAll('img').forEach(img=>{
+          img.src = img.getAttribute('src').replace(/^\/hopscotch\/player\/docs\/assets\//,'assets/')
+        });
+        //Log the Text
         console.log(document.querySelector('.toc-list-h1').innerHTML);
         console.log(document.querySelector('.content').innerHTML);
+        //Revert Images back to absolute references
+        document.querySelectorAll('img').forEach(img=>{
+          if(img.getAttribute('src').match(/^assets\//))img.src='/hopscotch/player/docs/'+img.getAttribute('src');
+        });
       }
       $(function() { setupCodeCopy(); });
     </script>
