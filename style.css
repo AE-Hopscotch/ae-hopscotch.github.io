@@ -529,7 +529,7 @@ hr {
 @media only screen and (min-width: 1200px) {
 	[data-screen]:not([data-screen*="large"]) {display: none;}
 }
-@media only screen and (max-width: 925px) {
+@media only screen and (max-width: 924px) {
 	.section-flex {
 		flex-direction: column;
 	}
@@ -540,6 +540,7 @@ hr {
 		padding: 20px 20px 8px;
 	}
 	.section-lower {
+		order: 2;
 		padding: 0 20px 20px;
 	}
 	.section-flex > * {
