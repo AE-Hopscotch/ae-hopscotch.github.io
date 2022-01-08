@@ -87,7 +87,7 @@
     </div>
   </body>
 
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script><script>
+<script src="https://cdn.jsdelivr.net/npm/marked@3.0.8/marked.min.js"></script><script>
 document.getElementById('content').innerHTML =marked(`
 
 # Introduction
@@ -368,6 +368,117 @@ name|args|output
 checkKeyAll|Every [keycode](https://keycode.info) to check for, separated by commas|\`0\` or \`1\`
 
 **Advanced:** If you want to have the keys being checked to be controlled by variables, use the "&raquo;" block with a data parameter, then pass in \`"_data"\` into the arguments list.
+
+## Check Controller Buttons
+>![block9](assets/block9.png)
+
+>This conditional will be run if the <code>&bigtriangleup;</code> or \`Y\` button is pressed:
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"checkControllerButton"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-number">0</span>,<span class="cm-number">0</span>,<span class="cm-number">2</span>]
+}</div></pre>
+
+>The code below will check if both the left and right bumper buttons are pressed.
+<br>\`LB\` + \`RB\` (XBOX) / \`L1\` + \`R1\` (PS)
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"checkControllerButton"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-number">0</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-number">2</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span>[<span class="cm-number">4</span>,<span class="cm-number">5</span>]
+<span class="cm-tab" role="presentation" cm-text="	">  </span>]
+}</div></pre>
+
+>This code will check if either the left or right joysticks are pressed on the **2nd connected controller** (index 1):
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"checkControllerButton"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-number">1</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-number">2</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-tab" role="presentation" cm-text="	">  </span>[<span class="cm-number">10</span>,<span class="cm-number">11</span>]
+<span class="cm-tab" role="presentation" cm-text="	">  </span>]
+}</div></pre>
+>Both pressed &rarr; \`1\`, either &rarr; \`1\`, none &rarr; \`0\`<br><br>
+
+>![block18](assets/block18.png)
+
+>This will set the variable \`P1 Left Trigger\` to the left trigger's X value on the first controller (controller 0):
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"checkControllerButton"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-number">0</span>,<span class="cm-number">0</span>,<span class="cm-number">6</span>]
+}</div></pre>
+>The value stored can range from anywhere between \`0\` (not pressed) and \`1\` (fully pressed), inclusive. If checking if a button press is equal to \`1\`, triggers will need to be fully pressed. Otherwise, check above a certain threshold or if the button press is **\`not 0\`**.
+
+This action checks the press state of buttons on a controller. It can:
+1. Check the press state of any one button
+2. Check if any buttons in a given array are pressed
+3. Check if all buttons in a given array are pressed
+
+name|arg0|arg1|arg2|output
+:-:|:-:|:-:|:-:|:-:
+checkControllerButtons|Controller ID|Mode|Button ID|number
+
+### Controller ID
+This is the index of the controller, as determined by the browser. The first controller connected will have and ID of \`0\`, the second controller \`1\`, and so on.
+
+### Mode
+You can check controller buttons using the following modes:
+<ol start="0">
+  <li>
+    Checks the value of the specified controller button. This will return a floating point number between <code>0</code> and <code>1</code>, inclusive.
+    <br/><em><strong>NOTE:</strong></em> Most buttons will either return <code>0</code> or <code>1</code>, but some buttons, such as triggers, can return decimals.
+  </li>
+  <li>Checks if <em>any</em> of the specified button IDs are pressed. Returns <code>1</code> if any button is pressed, otherwise returns <code>0</code></li>
+  <li>Checks if <em>all</em> of the specified button IDs are pressed. Returns <code>1</code> if every button is pressed, otherwise returns <code>0</code></li>
+</ol>
+
+### Button ID
+Every button on the controller is mapped to an ID. You can test your gamepad inputs using [this website](https://gamepad-tester.com/) or refer to the following controller mappings:
+
+![controller1](assets/controller1.png)
+
+[Original XBOX Controller Image](https://images.app.goo.gl/WE8dF1uMV7Pypt7d7)
+
+![controller2](assets/controller2.png)
+
+[Original PlayStation Controller Image](https://images.app.goo.gl/3o6zqZLBPxBkRqpC7)
+
+**Advanced:** If you want to have the buttons being checked to be controlled by variables, use the "&raquo;" block with a data parameter, then pass in \`"_data"\` into the arguments list.
+
+## Check Controller Axes
+>![block19](assets/block19.png)
+
+>The following command will set \`Left Joystick Y\` to the vertical (Y) value of the left joystick on the first connected controller:
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"checkControllerAxis"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-number">0</span>,<span class="cm-number">1</span>]
+}</div></pre>
+
+
+>![block20](assets/block20.png)
+
+>This command will set \`P2 Right Stick X\` to the hoizontal (X) value of the right joystick on the second connected controller:
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"checkControllerAxis"</span>,
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-number">1</span>,<span class="cm-number">2</span>]
+}</div></pre>
+
+This action returns the value of one of your controller's axes. Each joystick is separated into 2 axes, one for X direction (horizontal inputs) and one for Y direction (vertical inputs).
+
+name|arg0|arg1|output
+:-:|:-:|:-:|:-:
+checkControllerButtons|Controller ID|Axis ID|number
+
+### Controller ID
+This is the index of the controller, as determined by the browser. The first controller connected will have and ID of \`0\`, the second controller \`1\`, and so on.
+
+### Axis ID
+For most controllers, axes \`0\` and \`1\` are the X and Y values (respectively) of the left joystick, and axes \`2\` and \`3\` are the X and Y values (respectively) of the right joystick.
+
+### Output
+A floating point number between \`-1\` and \`1\`, depending on the position of each joystick or axis.
+
+<aside class="warning">Note: the vertical axes will return <b>positive</b> values when the joystick is moved <b>down</b>, and they will return <b>negative</b> values when the joystick is moved <b>up</b>.</aside>
 
 ## Read the Last Scroll Point
 
