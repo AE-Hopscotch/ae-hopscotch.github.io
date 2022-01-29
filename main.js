@@ -76,11 +76,8 @@ function addSiteVisit(branch) {
 	xhttp.send();
 }
 
-// var lastPageExceptions = /https:\/\/awesome-e\.github\.io\/hs-tools\/?($|play-project|explore-channel\/about)/;
-// if (!lastPageExceptions.test(window.location.href) && self === top) setCookie('lastPage', window.location.href, 30);
-
-if (getCookie('hsSiteWithinHour') != 'true' && /https:\/\/awesome-e.github.io\/hopscotch\//gi.test(location.href)) {
-	if (window.location.href != "https://awesome-e.github.io/hopscotch/") addSiteVisit(location.href.replace(/^.*?hopscotch\//,'/'));
+if (getCookie('hsSiteWithinHour') != 'true' && /https:\/\/ae-hopscotch.github.io\/hopscotch\//gi.test(location.href)) {
+	if (window.location.href != "https://ae-hopscotch.github.io/") addSiteVisit(location.href.replace(/^.*?hopscotch\//,'/'));
 	addSiteVisit();
 }
 setCookie('hsSiteWithinHour', 'true', 0.04);

@@ -5,23 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/hopscotch/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/hopscotch/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/hopscotch/icons/favicon-16x16.png">
-    <link rel="manifest" href="/hopscotch/icons/site.webmanifest">
-    <link rel="shortcut icon" href="/hopscotch/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <link rel="shortcut icon" href="/icons/favicon.ico">
     <meta name="msapplication-TileColor" content="#603cba">
-    <meta name="msapplication-config" content="/hopscotch/icons/browserconfig.xml">
+    <meta name="msapplication-config" content="/icons/browserconfig.xml">
     <meta name="theme-color" content="#000000">
 
     <meta name="description" content="Here you will find the automatically-updated list of top scores for community games using the global variables mod in my custom project player."/>
     <meta name="keywords" content="hopscotch, website, coding, projects, modding"/>
     <meta property="og:title" content="Game Leaderboards">
     <meta property="og:description" content="Here you will find the automatically-updated list of top scores for community games using the global variables mod in my custom project player.">
-    <meta property="og:image" content="/hopscotch/images/icon.png">
+    <meta property="og:image" content="/images/icon.png">
     <meta property="og:site_name" content="Awesome_E's Hopscotch Website">
 
-    <link rel="stylesheet" href="/hopscotch/style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>Game Score Leaderboards &ndash; Awesome_E Hopscotch</title>
     <style>
         table {
@@ -35,8 +35,8 @@
 <body>
     <div class="parallax">
         <div class="header parallax_layer parallax_layer_0">
-            <div class="header-bg" style="background-image:url('/hopscotch/images/banners/retro_space.jpg')"></div>
-            <img class="invis-img" src="/hopscotch/images/banners/retro_space.jpg" onload="this.previousElementSibling.classList.add('loaded'),this.remove()">
+            <div class="header-bg" style="background-image:url('/images/banners/retro_space.jpg')"></div>
+            <img class="invis-img" src="/images/banners/retro_space.jpg" onload="this.previousElementSibling.classList.add('loaded'),this.remove()">
         </div>
         <div class="wrapper">
             <div class="header">
@@ -63,7 +63,7 @@
                 </div>
                 <div class="section-lower vflex">
                     <div class="center">
-                        <img alt="project thumbnail" data-screen="tiny medium large" style="margin-bottom:16px" width="100%" src="/hopscotch/images/hs-thumbnails/11j3s45ah5.png"/>
+                        <img alt="project thumbnail" data-screen="tiny medium large" style="margin-bottom:16px" width="100%" src="/images/hs-thumbnails/11j3s45ah5.png"/>
                         <a data-screen="tiny small medium" class="button game-link" href="/hs-tools/play-project/?id=11j3s45ah5" data-url="{href}&play=1">Play Clover Launch <i class="fa fa-arrows-alt"></i></a>
                     </div>
                 </div>
@@ -75,9 +75,9 @@
             </div>
         </div>
     </div>
-    <script src="/hopscotch/main.js"></script>
-    <script src="/hopscotch/navigation-menu.js"></script>
-    <script src="/hopscotch/aehs-player.js"></script> <!-- ONLY DO THIS IF INCLDING EMBEDDED GAMES -->
+    <script src="/main.js"></script>
+    <script src="/navigation-menu.js"></script>
+    <script src="/aehs-player.js"></script> <!-- ONLY DO THIS IF INCLDING EMBEDDED GAMES -->
     <script>
         XHR.requestExt("GET","https://ae-hs-tools.firebaseio.com/global-variables/452673.json", function(r,s){
             let ae_globalvars = JSON.parse(r);

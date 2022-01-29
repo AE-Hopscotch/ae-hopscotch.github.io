@@ -118,9 +118,9 @@
 		} */
 	];
 	const info = {
-		iconUrl: "/hopscotch/images/icon.png",
-		smallIconUrl: "/hopscotch/images/icon.png",
-		rootPath: "/hopscotch/",
+		iconUrl: "/images/icon.png",
+		smallIconUrl: "/images/icon.png",
+		rootPath: "/",
 		siteName: "Awesome_E",
 		navItemClass: "nav-item",
 		sidenavBgColor: "#080808fd"

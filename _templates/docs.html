@@ -9,7 +9,7 @@
     <meta name="keywords" content="hopscotch, website, coding, projects, modding"/>
     <meta property="og:title" content="Webplayer Action Documentation">
     <meta property="og:description" content="Documentation on how to use modded webplayer actions, complete with sample code and use cases for each action.">
-    <meta property="og:image" content="/hopscotch/images/icon.png">
+    <meta property="og:image" content="/images/icon.png">
     <meta property="og:site_name" content="Awesome_E's Hopscotch Website">
     <style media="print">
       * {-webkit-transition:none!important;transition:none!important;}
@@ -19,9 +19,9 @@
       img{max-width:100%;}
       a{text-decoration:none;color:#191D1F}
     </style>
-    <link href="/hopscotch/player/docs/slate-styles-screen.css" rel="stylesheet" media="screen">
-    <link href="/hopscotch/player/docs/slate-styles-print.css" rel="stylesheet" media="print">
-    <script src="/hopscotch/player/docs/slatedocs.js"></script>
+    <link href="/player/docs/slate-styles-screen.css" rel="stylesheet" media="screen">
+    <link href="/player/docs/slate-styles-print.css" rel="stylesheet" media="print">
+    <script src="/player/docs/slatedocs.js"></script>
     <style>
         .cm-qualifier{color:#eee!important}
         .cm-punctuation,.cm-unit,.cm-negative{color:#e09142!important}
@@ -78,7 +78,7 @@
       <ul id="toc" class="toc-list-h1"></ul>
         <ul class="toc-footer">
             <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
-            <li><a href="/hopscotch/">Back to Site Homepage</a></li>
+            <li><a href="/">Back to Site Homepage</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -832,7 +832,7 @@ session-write|user_index <integer\\>|key <string\\>|value <any\\>|<nothing\\>
 	  {
       let lastH1 = null;
       document.querySelectorAll('img').forEach(img=>{
-        if(img.getAttribute('src').match(/^assets\//))img.src='/hopscotch/player/docs/'+img.getAttribute('src');
+        if(img.getAttribute('src').match(/^assets\//))img.src='/player/docs/'+img.getAttribute('src');
       });
       document.querySelectorAll('.content h1, .content h2').forEach(heading=>{
         if (heading.tagName == "H1") {
@@ -862,7 +862,7 @@ session-write|user_index <integer\\>|key <string\\>|value <any\\>|<nothing\\>
         console.log(document.querySelector('.content').innerHTML);
         //Revert Images back to absolute references
         document.querySelectorAll('img').forEach(img=>{
-          if(img.getAttribute('src').match(/^assets\//))img.src='/hopscotch/player/docs/'+img.getAttribute('src');
+          if(img.getAttribute('src').match(/^assets\//))img.src='/player/docs/'+img.getAttribute('src');
         });
       }
       $(function() { setupCodeCopy(); });
