@@ -76,8 +76,8 @@ function addSiteVisit(branch) {
 	xhttp.send();
 }
 
-if (getCookie('hsSiteWithinHour') != 'true' && /https:\/\/ae-hopscotch.github.io\/hopscotch\//gi.test(location.href)) {
-	if (window.location.href != "https://ae-hopscotch.github.io/") addSiteVisit(location.href.replace(/^.*?hopscotch\//,'/'));
+if (getCookie('hsSiteWithinHour') != 'true' && /https:\/\/ae-hopscotch.github.io\//gi.test(location.href)) {
+	if (window.location.href != "https://ae-hopscotch.github.io/") addSiteVisit(new URL(location.href).pathname);
 	addSiteVisit();
 }
 setCookie('hsSiteWithinHour', 'true', 0.04);

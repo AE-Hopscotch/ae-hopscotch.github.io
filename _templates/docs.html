@@ -691,6 +691,8 @@ globalvar-write|key <string\\>|new value <any\\>|<nothing\\>
 
 # Multiplayer Actions
 
+<aside class="notice">These methods will be deprecated when the multiplayer functionality is rewritten.</aside>
+
 This set of actions was designed specifically to run lightweight multiplayer games, with small loads being passed between games. Large, constant data reads/writes will cause a huge drop in performance. Try to limit data transfers to player attributes only in addition to the occasional global setting (avoid excessive amounts of projectiles and spawned items).
 
 Given that, it still provides the foundation for the core aspects of multiplayer: creating, joining, and leaving rooms, in addition to reading and writing user-specific and global (limited to each room, of course) data.
@@ -853,9 +855,16 @@ session-write|user_index <integer\\>|key <string\\>|value <any\\>|<nothing\\>
       });
 	  }
       function logText() {
+        // Remove active navigation classes
+        document.querySelectorAll('.toc-list-h1 li > *').forEach(child => {
+          child.classList.remove('active', 'active-parent')
+          child.removeAttribute('style')
+        })
+        // Remove clipboard copy buttons
+        document.querySelectorAll('.copy-clipboard').forEach(elm => elm.remove())
         //Temporarily Change Images to relative references for copying purposes
         document.querySelectorAll('img').forEach(img=>{
-          img.src = img.getAttribute('src').replace(/^\/hopscotch\/player\/docs\/assets\//,'assets/')
+          img.src = img.getAttribute('src').replace(/^\/player\/docs\/assets\//,'assets/')
         });
         //Log the Text
         console.log(document.querySelector('.toc-list-h1').innerHTML);

@@ -961,6 +961,8 @@ Run this exact command to connect to the global variables server:</p>
 </tr>
 </tbody></table>
 <h1 id="multiplayer-actions">Multiplayer Actions</h1>
+<aside class="notice">These methods will be deprecated when the multiplayer functionality is rewritten.</aside>
+
 <p>This set of actions was designed specifically to run lightweight multiplayer games, with small loads being passed between games. Large, constant data reads/writes will cause a huge drop in performance. Try to limit data transfers to player attributes only in addition to the occasional global setting (avoid excessive amounts of projectiles and spawned items).</p>
 <p>Given that, it still provides the foundation for the core aspects of multiplayer: creating, joining, and leaving rooms, in addition to reading and writing user-specific and global (limited to each room, of course) data.</p>
 <p>To prevent code modification, multiplayer actions will not execute if the project is run from the Project Builder.</p>
