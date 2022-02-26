@@ -1,105 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-    <link rel="manifest" href="/icons/site.webmanifest">
-    <link rel="shortcut icon" href="/icons/favicon.ico">
-    <meta name="msapplication-TileColor" content="#603cba">
-    <meta name="msapplication-config" content="/icons/browserconfig.xml">
-    <meta name="theme-color" content="#000000">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+  <link rel="manifest" href="/icons/site.webmanifest">
+  <link rel="shortcut icon" href="/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#603cba">
+  <meta name="msapplication-config" content="/icons/browserconfig.xml">
+  <meta name="theme-color" content="#000000">
 
-    <meta name="description" content="Awesome_E's Hopscotch Website"/>
-    <meta name="keywords" content="hopscotch, website, coding, projects, modding"/>
-    <meta property="og:title" content="Awesome_E's Hopscotch Website">
-    <meta property="og:description" content="Awesome_E's Hopscotch Website">
-    <meta property="og:image" content="/images/icon.png">
-    <meta property="og:site_name" content="Awesome_E's Hopscotch Website">
+  <meta name="description" content="Awesome_E's Hopscotch Website"/>
+  <meta name="keywords" content="hopscotch, website, coding, projects, modding"/>
+  <meta property="og:title" content="Awesome_E's Hopscotch Website">
+  <meta property="og:description" content="Awesome_E's Hopscotch Website">
+  <meta property="og:image" content="/images/icon.png">
+  <meta property="og:site_name" content="Awesome_E's Hopscotch Website">
 
-    <link rel="stylesheet" href="/style.css">
-    <title>Awesome_E Hopscotch</title>
-    <style>
-        .wrapper > .section {
-            padding: 20px min(40px, 5vw);
-        }
-        .section:not(.footer) p {
-            font-size: 24px;
-            line-height: 32px;
-            /* text-align: left; */
-        }
-        @media only screen and (min-width: 925px) {
-            .section-upper {
-                width: 80%;
-                max-width: calc(100% - 280px);
-            }
-            .section-lower {
-                width: 20%;
-                min-width: 280px;
-            }
-        }
-        .section-lower img {
-            max-width: 60vw;
-        }
-    </style>
+  <link rel="stylesheet" href="/style.css">
+  <title>Awesome_E Hopscotch</title>
+  <style>
+    .wrapper > .section {
+      padding: 20px min(40px, 5vw);
+    }
+    .section:not(.footer) p {
+      font-size: 24px;
+      line-height: 32px;
+      /* text-align: left; */
+    }
+    @media only screen and (min-width: 925px) {
+      .section-upper {
+        width: 80%;
+        max-width: calc(100% - 280px);
+      }
+      .section-lower {
+        width: 20%;
+        min-width: 280px;
+      }
+    }
+    .section-lower img {
+      max-width: 60vw;
+    }
+  </style>
 </head>
 <body>
-    {{> navigation_header }}
-    <div class="parallax">
-        <div class="header parallax_layer parallax_layer_0">
-            <div class="header-bg" style="background-image:url('images/banners/home.png')"></div>
-            <img class="invis-img" src="images/banners/home.png" onload="this.previousElementSibling.classList.add('loaded'),this.remove()">
-        </div>
-        <div class="wrapper">
-            <div class="header">
-                <h1 style="text-shadow:0 0 4px #fd6a;letter-spacing: 2px;">Awesome_E&rsquo;s Hopscotch Site</h1><h2 class="hidden"></h2>
-            </div>
-            <div class="section">
-                <h3>Modded Player Documentation</h3>
-                <div class="section-flex">
-                    <div class="section-upper vflex">
-                        <div class="flex">
-                            <p><img alt="HS Tools icon" data-screen="" width="190px" src="/hs-tools/icons/android-chrome-192x192.png" style="float:right;margin:24px 12px 16px 20px;"/>It's finally here! These docs cover all of my modded player actions, as well as different ways you can use my player in your own projects! Learn about every single webplayer action I've coded and how you can incorporate them into your own project to make them stand out!</p>
-                        </div>
-                        <div class="center" data-screen="medium large"><a class="button" href="/player/docs/">Go to Documentation &nbsp;<i class="fa fa-file-text-o"></i></a></div>
-                    </div>
-                    <div class="section-lower vflex">
-                        <div class="center">
-                            <img alt="HS Tools icon" style="box-shadow:none" data-screen="tiny small medium large" style="margin-bottom:16px" width="100%" src="/hs-tools/icons/android-chrome-512x512.png"/>
-                            <br data-screen="tiny small medium"/><br data-screen="tiny small medium"/>
-                            <a data-screen="tiny small" class="button game-link" href="/player/docs/">Go to Documentation &nbsp;<i class="fa fa-file-text-o"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- <hr/> -->
-            <div class="section">
-                <h3>High Score Competitions</h3>
-                <div class="section-flex">
-                    <div class="section-lower vflex">
-                        <div class="center">
-                            <img alt="scores image" style="box-shadow:none" data-screen="tiny small medium large" style="margin-bottom:16px" width="100%" src="/images/rank_scores.png"/>
-                            <br data-screen="tiny small medium"/><br data-screen="tiny small medium"/>
-                            <a data-screen="tiny small" class="button game-link" href="/high-scores/">More on Scores <i class="fa fa-trophy"></i></a>
-                        </div>
-                    </div>
-                    <div class="section-upper vflex">
-                        <div class="flex">
-                            <p><img alt="scores image" data-screen="" width="190px" src="/images/rank_scores.png" style="float:right;margin:24px 12px 16px 20px;"/>With the all-new high score leaderboard, you can compare your scores against other players with suppored games. It's time to turn up the intensity with realtime leaderboards as well as a revamped score ranking system for select games!</p>
-                        </div>
-                        <div class="center" data-screen="medium large"><a class="button" href="/high-scores/">More on Scores <i class="fa fa-trophy"></i></a></div>
-                    </div>
-                </div>
-            </div>
-            <!-- <hr/> -->
-            {{> footer }}
-        </div>
+  {{> navigation_header }}
+  <div class="parallax">
+    <div class="header parallax_layer parallax_layer_0">
+      <div class="header-bg" style="background-image:url('images/banners/home.png')"></div>
+      <img class="invis-img" src="images/banners/home.png" onload="this.previousElementSibling.classList.add('loaded'),this.remove()">
     </div>
-    <script src="/main.js"></script>
-    <script src="/navigation-menu.js"></script>
+    <div class="wrapper">
+      <div class="header">
+        <h1 style="text-shadow:0 0 4px #fd6a;letter-spacing: 2px;">Awesome_E&rsquo;s Hopscotch Site</h1><h2 class="hidden"></h2>
+      </div>
+      <div class="section">
+        <h3>Modded Player Documentation</h3>
+        <div class="section-flex">
+          <div class="section-upper vflex">
+            <div class="flex">
+              <p><img alt="HS Tools icon" data-screen="" width="190px" src="/hs-tools/icons/android-chrome-192x192.png" style="float:right;margin:24px 12px 16px 20px;"/>It's finally here! These docs cover all of my modded player actions, as well as different ways you can use my player in your own projects! Learn about every single webplayer action I've coded and how you can incorporate them into your own project to make them stand out!</p>
+            </div>
+            <div class="center" data-screen="medium large"><a class="button" href="/player/docs/">Go to Documentation &nbsp;<i class="fa fa-file-text-o"></i></a></div>
+          </div>
+          <div class="section-lower vflex">
+            <div class="center">
+              <img alt="HS Tools icon" style="box-shadow:none" data-screen="tiny small medium large" style="margin-bottom:16px" width="100%" src="/hs-tools/icons/android-chrome-512x512.png"/>
+              <br data-screen="tiny small medium"/><br data-screen="tiny small medium"/>
+              <a data-screen="tiny small" class="button game-link" href="/player/docs/">Go to Documentation &nbsp;<i class="fa fa-file-text-o"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <hr/> -->
+      <div class="section">
+        <h3>High Score Competitions</h3>
+        <div class="section-flex">
+          <div class="section-lower vflex">
+            <div class="center">
+              <img alt="scores image" style="box-shadow:none" data-screen="tiny small medium large" style="margin-bottom:16px" width="100%" src="/images/rank_scores.png"/>
+              <br data-screen="tiny small medium"/><br data-screen="tiny small medium"/>
+              <a data-screen="tiny small" class="button game-link" href="/high-scores/">More on Scores <i class="fa fa-trophy"></i></a>
+            </div>
+          </div>
+          <div class="section-upper vflex">
+            <div class="flex">
+              <p><img alt="scores image" data-screen="" width="190px" src="/images/rank_scores.png" style="float:right;margin:24px 12px 16px 20px;"/>With the all-new high score leaderboard, you can compare your scores against other players with suppored games. It's time to turn up the intensity with realtime leaderboards as well as a revamped score ranking system for select games!</p>
+            </div>
+            <div class="center" data-screen="medium large"><a class="button" href="/high-scores/">More on Scores <i class="fa fa-trophy"></i></a></div>
+          </div>
+        </div>
+      </div>
+      <!-- <hr/> -->
+      {{> footer }}
+    </div>
+  </div>
+  <script src="/main.js"></script>
+  <script src="/navigation-menu.js"></script>
 </body>
 </html>

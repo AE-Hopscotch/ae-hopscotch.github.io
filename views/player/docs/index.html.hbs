@@ -1,98 +1,98 @@
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <style>body{font-family:sans-serif}</style>
-        <meta charset="utf-8">
-        <title>Webplayer Action Reference</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Documentation on how to use modded webplayer actions, complete with sample code and use cases for each action."/>
-        <meta name="keywords" content="hopscotch, website, coding, projects, modding"/>
-        <meta property="og:title" content="Webplayer Action Documentation">
-        <meta property="og:description" content="Documentation on how to use modded webplayer actions, complete with sample code and use cases for each action.">
-        <meta property="og:image" content="/images/icon.png">
-        <meta property="og:site_name" content="Awesome_E's Hopscotch Website">
-        <style media="print">
-            * {-webkit-transition:none!important;transition:none!important;}
-            .highlight table td {padding:5px;}
-            .highlight table pre {margin:0;}
-            .highlight,.highlight .w{color:#586e75;}
-            img{max-width:100%;}
-            a{text-decoration:none;color:#191D1F}
-        </style>
-        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-        <link rel="manifest" href="/icons/site.webmanifest">
-        <link rel="shortcut icon" href="/icons/favicon.ico">
-        <meta name="msapplication-TileColor" content="#603cba">
-        <meta name="msapplication-config" content="/icons/browserconfig.xml">
-        <meta name="theme-color" content="#000000">
-        <link href="slate-styles-screen.css" rel="stylesheet" media="screen">
-        <link href="slate-styles-print.css" rel="stylesheet" media="print">
-        <script src="slatedocs.js"></script>
-        <style>
-            .cm-qualifier{color:#eee!important}
-            .cm-punctuation,.cm-unit,.cm-negative{color:#e09142!important}
-            .cm-string{color:#ffa852!important}
-            .cm-positive{color:#6a51e6!important}
-            .cm-def{color:#eee!important}
-            .cm-variable{color:#fb4!important}
-            .cm-variable-2,.cm-variable-3,.cm-string-2,.cm-url{color:#6a51e6!important}
-            .cm-tag{color:#eee!important}
-            .cm-bracket,/*.cm-comment,*/ .CodeMirror{color:#20b2aa!important}
-            .cm-string{color:#ffc0cb!important}
-            .cm-atom{color:#fafad2!important}
-            .cm-number{color:#0ff!important}
-            .cm-property{color:#add8e6!important}
-            .cm-keyword,.cm-operator,.cm-attribute{color:#ff4ade!important}
-            .toc-link,.toc-footer li{transition-property:background, color;}
-            .toc-wrapper .toc-link.active {background-color:#1b5b62;}
-            .highlight {position:relative;}
-            .copy-clipboard {position:absolute;top:24px;right:24px;}
-            .content pre {padding:0;overflow:hidden;}
-            .content pre > div:not(.copy-clipboard) {padding:2em 28px;overflow:auto;}
-            a{color:#3b6072}
-            #nav-button {padding: 0 1.5em 1.5em 0}
-        </style>
-        <style media="(prefers-color-scheme: dark)">
-            html,body{color:#949390;background-color:black}
-            body img{opacity:.67}
-            #nav-button span{background-color:rgba(25,25,25,0.7);color:#ddd}
-            .toc-wrapper{background-color:#111}
-            .toc-wrapper .toc-link.active{background-color:#083d41}
-            .toc-link,.toc-footer li{color:#ababab;}
-            .toc-wrapper .toc-link.active-parent,.toc-wrapper .toc-footer li,.toc-wrapper .toc-footer a{color:#c5c5c5}
-            .page-wrapper{background-color:black}
-            .content h1{border-top-color:#1e2120;border-bottom-color:#1e2120;background-color:black}
-            .content h2{border-top-color:#1e2120;background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0))}
-            .content aside.warning{background-color:#3e1414}
-            .content aside{background-color:#122b36}
-            .content aside.success{background-color:#1a3220}
-            .content table tr:nth-child(2n+1)>td,.content table tr:nth-child(2n+1)>th,.content table tr:last-child{background-color:black;border-bottom-color:#1e2120}
-            .page-wrapper .dark-box{background-color:#111}
-            .content pre,.content blockquote,.content blockquote>p{background-color:#060606;color:#aaa}
-        </style>
-    </head>
-    <body class="index">
-        <a href="#" id="nav-button"><span>III</span></a>
-        <div class="toc-wrapper">
-            <a href="/"><img src="assets/documentation-logo.png" class="logo" alt="logo"></a>
-            <div class="search">
-            <input type="text" class="search" id="input-search" placeholder="Search">
-            </div>
-            <ul class="search-results"></ul>
-            <ul id="toc" class="toc-list-h1">
-                <!-- AUTO-GENERATED NAVIGATION -->
-                <li><a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a><ul class="toc-list-h2"><li><a href="#requirements" class="toc-h2 toc-link" data-title="Requirements">Requirements</a></li><li><a href="#additional-data" class="toc-h2 toc-link" data-title="Additional Data">Additional Data</a></li></ul></li><li><a href="#constants" class="toc-h1 toc-link" data-title="Constants">Constants</a><ul class="toc-list-h2"><li><a href="#is-web-explorer" class="toc-h2 toc-link" data-title="Is Web Explorer">Is Web Explorer</a></li><li><a href="#is-computer" class="toc-h2 toc-link" data-title="Is Computer">Is Computer</a></li><li><a href="#user-time-zone" class="toc-h2 toc-link" data-title="User Time Zone">User Time Zone</a></li><li><a href="#dark-mode-enabled" class="toc-h2 toc-link" data-title="Dark Mode Enabled">Dark Mode Enabled</a></li></ul></li><li><a href="#javascript-debug" class="toc-h1 toc-link" data-title="JavaScript Debug">JavaScript Debug</a><ul class="toc-list-h2"><li><a href="#console-log" class="toc-h2 toc-link" data-title="Console Log">Console Log</a></li><li><a href="#alert" class="toc-h2 toc-link" data-title="Alert">Alert</a></li><li><a href="#prompt" class="toc-h2 toc-link" data-title="Prompt">Prompt</a></li></ul></li><li><a href="#user-interface" class="toc-h1 toc-link" data-title="User Interface">User Interface</a><ul class="toc-list-h2"><li><a href="#restart-project" class="toc-h2 toc-link" data-title="Restart Project">Restart Project</a></li><li><a href="#achievement" class="toc-h2 toc-link" data-title="Achievement">Achievement</a></li></ul></li><li><a href="#checking-hardware" class="toc-h1 toc-link" data-title="Checking Hardware">Checking Hardware</a><ul class="toc-list-h2"><li><a href="#check-one-key-in-a-list" class="toc-h2 toc-link" data-title="Check One Key in a List">Check One Key in a List</a></li><li><a href="#check-all-keys-in-a-list" class="toc-h2 toc-link" data-title="Check All Keys in a List">Check All Keys in a List</a></li><li><a href="#check-controller-buttons" class="toc-h2 toc-link" data-title="Check Controller Buttons">Check Controller Buttons</a></li><li><a href="#check-controller-axes" class="toc-h2 toc-link" data-title="Check Controller Axes">Check Controller Axes</a></li><li><a href="#read-the-last-scroll-point" class="toc-h2 toc-link" data-title="Read the Last Scroll Point">Read the Last Scroll Point</a></li></ul></li><li><a href="#local-save-data" class="toc-h1 toc-link" data-title="Local Save Data">Local Save Data</a><ul class="toc-list-h2"><li><a href="#read-from-save-data" class="toc-h2 toc-link" data-title="Read from Save Data">Read from Save Data</a></li><li><a href="#write-to-save-data" class="toc-h2 toc-link" data-title="Write to Save Data">Write to Save Data</a></li><li><a href="#delete-save-data" class="toc-h2 toc-link" data-title="Delete Save Data">Delete Save Data</a></li></ul></li><li><a href="#url-actions" class="toc-h1 toc-link" data-title="URL Actions">URL Actions</a><ul class="toc-list-h2"><li><a href="#url-popup" class="toc-h2 toc-link" data-title="URL Popup">URL Popup</a></li><li><a href="#go-to-url" class="toc-h2 toc-link" data-title="Go to URL">Go to URL</a></li></ul></li><li><a href="#hopscotch-data" class="toc-h1 toc-link" data-title="Hopscotch Data">Hopscotch Data</a><ul class="toc-list-h2"><li><a href="#load-user-data" class="toc-h2 toc-link" data-title="Load User Data">Load User Data</a></li><li><a href="#read-user-traits" class="toc-h2 toc-link" data-title="Read User Traits">Read User Traits</a></li></ul></li><li><a href="#global-variables" class="toc-h1 toc-link" data-title="Global Variables">Global Variables</a><ul class="toc-list-h2"><li><a href="#connect-to-the-server" class="toc-h2 toc-link" data-title="Connect to the Server">Connect to the Server</a></li><li><a href="#read-global-values" class="toc-h2 toc-link" data-title="Read Global Values">Read Global Values</a></li><li><a href="#write-global-values" class="toc-h2 toc-link" data-title="Write Global Values">Write Global Values</a></li></ul></li><li><a href="#multiplayer-actions" class="toc-h1 toc-link" data-title="Multiplayer Actions">Multiplayer Actions</a><ul class="toc-list-h2"><li><a href="#start-a-session" class="toc-h2 toc-link" data-title="Start a Session">Start a Session</a></li><li><a href="#join-a-session" class="toc-h2 toc-link" data-title="Join a Session">Join a Session</a></li><li><a href="#leave-the-session" class="toc-h2 toc-link" data-title="Leave the Session">Leave the Session</a></li><li><a href="#get-the-users-id" class="toc-h2 toc-link" data-title="Get the User's ID">Get the User's ID</a></li><li><a href="#lock-the-session" class="toc-h2 toc-link" data-title="Lock the Session">Lock the Session</a></li><li><a href="#unlock-the-session" class="toc-h2 toc-link" data-title="Unlock the Session">Unlock the Session</a></li><li><a href="#read-session-data" class="toc-h2 toc-link" data-title="Read Session Data">Read Session Data</a></li><li><a href="#write-session-data" class="toc-h2 toc-link" data-title="Write Session Data">Write Session Data</a></li></ul></li>
-            </ul>
-            <ul class="toc-footer">
-                <li><a href="https://github.com/slatedocs/slate">Documentation Powered by Slate</a></li>
-                <li><a href="/">Back to Site Homepage</a></li>
-            </ul>
-        </div>
-        <div class="page-wrapper">
-            <div class="dark-box"></div>
-            <div id="content" class="content">
+  <head>
+    <style>body{font-family:sans-serif}</style>
+    <meta charset="utf-8">
+    <title>Webplayer Action Reference</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documentation on how to use modded webplayer actions, complete with sample code and use cases for each action."/>
+    <meta name="keywords" content="hopscotch, website, coding, projects, modding"/>
+    <meta property="og:title" content="Webplayer Action Documentation">
+    <meta property="og:description" content="Documentation on how to use modded webplayer actions, complete with sample code and use cases for each action.">
+    <meta property="og:image" content="/images/icon.png">
+    <meta property="og:site_name" content="Awesome_E's Hopscotch Website">
+    <style media="print">
+      * {-webkit-transition:none!important;transition:none!important;}
+      .highlight table td {padding:5px;}
+      .highlight table pre {margin:0;}
+      .highlight,.highlight .w{color:#586e75;}
+      img{max-width:100%;}
+      a{text-decoration:none;color:#191D1F}
+    </style>
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <link rel="shortcut icon" href="/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="msapplication-config" content="/icons/browserconfig.xml">
+    <meta name="theme-color" content="#000000">
+    <link href="slate-styles-screen.css" rel="stylesheet" media="screen">
+    <link href="slate-styles-print.css" rel="stylesheet" media="print">
+    <script src="slatedocs.js"></script>
+    <style>
+      .cm-qualifier{color:#eee!important}
+      .cm-punctuation,.cm-unit,.cm-negative{color:#e09142!important}
+      .cm-string{color:#ffa852!important}
+      .cm-positive{color:#6a51e6!important}
+      .cm-def{color:#eee!important}
+      .cm-variable{color:#fb4!important}
+      .cm-variable-2,.cm-variable-3,.cm-string-2,.cm-url{color:#6a51e6!important}
+      .cm-tag{color:#eee!important}
+      .cm-bracket,/*.cm-comment,*/ .CodeMirror{color:#20b2aa!important}
+      .cm-string{color:#ffc0cb!important}
+      .cm-atom{color:#fafad2!important}
+      .cm-number{color:#0ff!important}
+      .cm-property{color:#add8e6!important}
+      .cm-keyword,.cm-operator,.cm-attribute{color:#ff4ade!important}
+      .toc-link,.toc-footer li{transition-property:background, color;}
+      .toc-wrapper .toc-link.active {background-color:#1b5b62;}
+      .highlight {position:relative;}
+      .copy-clipboard {position:absolute;top:24px;right:24px;}
+      .content pre {padding:0;overflow:hidden;}
+      .content pre > div:not(.copy-clipboard) {padding:2em 28px;overflow:auto;}
+      a{color:#3b6072}
+      #nav-button {padding: 0 1.5em 1.5em 0}
+    </style>
+    <style media="(prefers-color-scheme: dark)">
+      html,body{color:#949390;background-color:black}
+      body img{opacity:.67}
+      #nav-button span{background-color:rgba(25,25,25,0.7);color:#ddd}
+      .toc-wrapper{background-color:#111}
+      .toc-wrapper .toc-link.active{background-color:#083d41}
+      .toc-link,.toc-footer li{color:#ababab;}
+      .toc-wrapper .toc-link.active-parent,.toc-wrapper .toc-footer li,.toc-wrapper .toc-footer a{color:#c5c5c5}
+      .page-wrapper{background-color:black}
+      .content h1{border-top-color:#1e2120;border-bottom-color:#1e2120;background-color:black}
+      .content h2{border-top-color:#1e2120;background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0))}
+      .content aside.warning{background-color:#3e1414}
+      .content aside{background-color:#122b36}
+      .content aside.success{background-color:#1a3220}
+      .content table tr:nth-child(2n+1)>td,.content table tr:nth-child(2n+1)>th,.content table tr:last-child{background-color:black;border-bottom-color:#1e2120}
+      .page-wrapper .dark-box{background-color:#111}
+      .content pre,.content blockquote,.content blockquote>p{background-color:#060606;color:#aaa}
+    </style>
+  </head>
+  <body class="index">
+    <a href="#" id="nav-button"><span>III</span></a>
+    <div class="toc-wrapper">
+      <a href="/"><img src="assets/documentation-logo.png" class="logo" alt="logo"></a>
+      <div class="search">
+      <input type="text" class="search" id="input-search" placeholder="Search">
+      </div>
+      <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+        <!-- AUTO-GENERATED NAVIGATION -->
+        <li><a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a><ul class="toc-list-h2"><li><a href="#requirements" class="toc-h2 toc-link" data-title="Requirements">Requirements</a></li><li><a href="#additional-data" class="toc-h2 toc-link" data-title="Additional Data">Additional Data</a></li></ul></li><li><a href="#constants" class="toc-h1 toc-link" data-title="Constants">Constants</a><ul class="toc-list-h2"><li><a href="#is-web-explorer" class="toc-h2 toc-link" data-title="Is Web Explorer">Is Web Explorer</a></li><li><a href="#is-computer" class="toc-h2 toc-link" data-title="Is Computer">Is Computer</a></li><li><a href="#user-time-zone" class="toc-h2 toc-link" data-title="User Time Zone">User Time Zone</a></li><li><a href="#dark-mode-enabled" class="toc-h2 toc-link" data-title="Dark Mode Enabled">Dark Mode Enabled</a></li></ul></li><li><a href="#javascript-debug" class="toc-h1 toc-link" data-title="JavaScript Debug">JavaScript Debug</a><ul class="toc-list-h2"><li><a href="#console-log" class="toc-h2 toc-link" data-title="Console Log">Console Log</a></li><li><a href="#alert" class="toc-h2 toc-link" data-title="Alert">Alert</a></li><li><a href="#prompt" class="toc-h2 toc-link" data-title="Prompt">Prompt</a></li></ul></li><li><a href="#user-interface" class="toc-h1 toc-link" data-title="User Interface">User Interface</a><ul class="toc-list-h2"><li><a href="#restart-project" class="toc-h2 toc-link" data-title="Restart Project">Restart Project</a></li><li><a href="#achievement" class="toc-h2 toc-link" data-title="Achievement">Achievement</a></li></ul></li><li><a href="#checking-hardware" class="toc-h1 toc-link" data-title="Checking Hardware">Checking Hardware</a><ul class="toc-list-h2"><li><a href="#check-one-key-in-a-list" class="toc-h2 toc-link" data-title="Check One Key in a List">Check One Key in a List</a></li><li><a href="#check-all-keys-in-a-list" class="toc-h2 toc-link" data-title="Check All Keys in a List">Check All Keys in a List</a></li><li><a href="#check-controller-buttons" class="toc-h2 toc-link" data-title="Check Controller Buttons">Check Controller Buttons</a></li><li><a href="#check-controller-axes" class="toc-h2 toc-link" data-title="Check Controller Axes">Check Controller Axes</a></li><li><a href="#read-the-last-scroll-point" class="toc-h2 toc-link" data-title="Read the Last Scroll Point">Read the Last Scroll Point</a></li></ul></li><li><a href="#local-save-data" class="toc-h1 toc-link" data-title="Local Save Data">Local Save Data</a><ul class="toc-list-h2"><li><a href="#read-from-save-data" class="toc-h2 toc-link" data-title="Read from Save Data">Read from Save Data</a></li><li><a href="#write-to-save-data" class="toc-h2 toc-link" data-title="Write to Save Data">Write to Save Data</a></li><li><a href="#delete-save-data" class="toc-h2 toc-link" data-title="Delete Save Data">Delete Save Data</a></li></ul></li><li><a href="#url-actions" class="toc-h1 toc-link" data-title="URL Actions">URL Actions</a><ul class="toc-list-h2"><li><a href="#url-popup" class="toc-h2 toc-link" data-title="URL Popup">URL Popup</a></li><li><a href="#go-to-url" class="toc-h2 toc-link" data-title="Go to URL">Go to URL</a></li></ul></li><li><a href="#hopscotch-data" class="toc-h1 toc-link" data-title="Hopscotch Data">Hopscotch Data</a><ul class="toc-list-h2"><li><a href="#load-user-data" class="toc-h2 toc-link" data-title="Load User Data">Load User Data</a></li><li><a href="#read-user-traits" class="toc-h2 toc-link" data-title="Read User Traits">Read User Traits</a></li></ul></li><li><a href="#global-variables" class="toc-h1 toc-link" data-title="Global Variables">Global Variables</a><ul class="toc-list-h2"><li><a href="#connect-to-the-server" class="toc-h2 toc-link" data-title="Connect to the Server">Connect to the Server</a></li><li><a href="#read-global-values" class="toc-h2 toc-link" data-title="Read Global Values">Read Global Values</a></li><li><a href="#write-global-values" class="toc-h2 toc-link" data-title="Write Global Values">Write Global Values</a></li></ul></li><li><a href="#multiplayer-actions" class="toc-h1 toc-link" data-title="Multiplayer Actions">Multiplayer Actions</a><ul class="toc-list-h2"><li><a href="#start-a-session" class="toc-h2 toc-link" data-title="Start a Session">Start a Session</a></li><li><a href="#join-a-session" class="toc-h2 toc-link" data-title="Join a Session">Join a Session</a></li><li><a href="#leave-the-session" class="toc-h2 toc-link" data-title="Leave the Session">Leave the Session</a></li><li><a href="#get-the-users-id" class="toc-h2 toc-link" data-title="Get the User's ID">Get the User's ID</a></li><li><a href="#lock-the-session" class="toc-h2 toc-link" data-title="Lock the Session">Lock the Session</a></li><li><a href="#unlock-the-session" class="toc-h2 toc-link" data-title="Unlock the Session">Unlock the Session</a></li><li><a href="#read-session-data" class="toc-h2 toc-link" data-title="Read Session Data">Read Session Data</a></li><li><a href="#write-session-data" class="toc-h2 toc-link" data-title="Write Session Data">Write Session Data</a></li></ul></li>
+      </ul>
+      <ul class="toc-footer">
+        <li><a href="https://github.com/slatedocs/slate">Documentation Powered by Slate</a></li>
+        <li><a href="/">Back to Site Homepage</a></li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div id="content" class="content">
 <!-- Written in Markdown, HTML Generated Using Marked -->
 <h1 id="introduction">Introduction</h1>
 <p>This is the official documentation for Awesome_E's modded player actions.</p>
@@ -581,8 +581,8 @@ This Hopscotch code will set the variable "Dark Mode" to <code>1</code> if the u
 <p>You can check controller buttons using the following modes:</p>
 <ol start="0">
   <li>
-    Checks the value of the specified controller button. This will return a floating point number between <code>0</code> and <code>1</code>, inclusive.
-    <br><em><strong>NOTE:</strong></em> Most buttons will either return <code>0</code> or <code>1</code>, but some buttons, such as triggers, can return decimals.
+  Checks the value of the specified controller button. This will return a floating point number between <code>0</code> and <code>1</code>, inclusive.
+  <br><em><strong>NOTE:</strong></em> Most buttons will either return <code>0</code> or <code>1</code>, but some buttons, such as triggers, can return decimals.
   </li>
   <li>Checks if <em>any</em> of the specified button IDs are pressed. Returns <code>1</code> if any button is pressed, otherwise returns <code>0</code></li>
   <li>Checks if <em>all</em> of the specified button IDs are pressed. Returns <code>1</code> if every button is pressed, otherwise returns <code>0</code></li>
@@ -1186,8 +1186,8 @@ Assuming the Clone Index is the Player ID it renders, this command will set the 
 <p><code>key</code> just refers to what you are setting; it's essentially the name of the variable.</p>
 <p><code>value</code> will override the existing value, and it can be a number, string, boolean, or null.</p>
 <!-- END MARKDOWN CONTENT -->
-            </div>
-        </div>
-        <script>$(function() { setupCodeCopy(); });</script>
-    </body>
+      </div>
+    </div>
+    <script>$(function() { setupCodeCopy(); });</script>
+  </body>
 </html>
