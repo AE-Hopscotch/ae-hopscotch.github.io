@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <style>body{font-family:sans-serif}</style>
+        <meta charset="utf-8">
+        <title>Webplayer Action Reference</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Documentation on how to use modded webplayer actions, complete with sample code and use cases for each action."/>
+        <meta name="keywords" content="hopscotch, website, coding, projects, modding"/>
+        <meta property="og:title" content="Webplayer Action Documentation">
+        <meta property="og:description" content="Documentation on how to use modded webplayer actions, complete with sample code and use cases for each action.">
+        <meta property="og:image" content="/images/icon.png">
+        <meta property="og:site_name" content="Awesome_E's Hopscotch Website">
+        <style media="print">
+            * {-webkit-transition:none!important;transition:none!important;}
+            .highlight table td {padding:5px;}
+            .highlight table pre {margin:0;}
+            .highlight,.highlight .w{color:#586e75;}
+            img{max-width:100%;}
+            a{text-decoration:none;color:#191D1F}
+        </style>
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+        <link rel="manifest" href="/icons/site.webmanifest">
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#603cba">
+        <meta name="msapplication-config" content="/icons/browserconfig.xml">
+        <meta name="theme-color" content="#000000">
+        <link href="slate-styles-screen.css" rel="stylesheet" media="screen">
+        <link href="slate-styles-print.css" rel="stylesheet" media="print">
+        <script src="slatedocs.js"></script>
+        <style>
+            .cm-qualifier{color:#eee!important}
+            .cm-punctuation,.cm-unit,.cm-negative{color:#e09142!important}
+            .cm-string{color:#ffa852!important}
+            .cm-positive{color:#6a51e6!important}
+            .cm-def{color:#eee!important}
+            .cm-variable{color:#fb4!important}
+            .cm-variable-2,.cm-variable-3,.cm-string-2,.cm-url{color:#6a51e6!important}
+            .cm-tag{color:#eee!important}
+            .cm-bracket,/*.cm-comment,*/ .CodeMirror{color:#20b2aa!important}
+            .cm-string{color:#ffc0cb!important}
+            .cm-atom{color:#fafad2!important}
+            .cm-number{color:#0ff!important}
+            .cm-property{color:#add8e6!important}
+            .cm-keyword,.cm-operator,.cm-attribute{color:#ff4ade!important}
+            .toc-link,.toc-footer li{transition-property:background, color;}
+            .toc-wrapper .toc-link.active {background-color:#1b5b62;}
+            .highlight {position:relative;}
+            .copy-clipboard {position:absolute;top:24px;right:24px;}
+            .content pre {padding:0;overflow:hidden;}
+            .content pre > div:not(.copy-clipboard) {padding:2em 28px;overflow:auto;}
+            a{color:#3b6072}
+            #nav-button {padding: 0 1.5em 1.5em 0}
+        </style>
+        <style media="(prefers-color-scheme: dark)">
+            html,body{color:#949390;background-color:black}
+            body img{opacity:.67}
+            #nav-button span{background-color:rgba(25,25,25,0.7);color:#ddd}
+            .toc-wrapper{background-color:#111}
+            .toc-wrapper .toc-link.active{background-color:#083d41}
+            .toc-link,.toc-footer li{color:#ababab;}
+            .toc-wrapper .toc-link.active-parent,.toc-wrapper .toc-footer li,.toc-wrapper .toc-footer a{color:#c5c5c5}
+            .page-wrapper{background-color:black}
+            .content h1{border-top-color:#1e2120;border-bottom-color:#1e2120;background-color:black}
+            .content h2{border-top-color:#1e2120;background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0))}
+            .content aside.warning{background-color:#3e1414}
+            .content aside{background-color:#122b36}
+            .content aside.success{background-color:#1a3220}
+            .content table tr:nth-child(2n+1)>td,.content table tr:nth-child(2n+1)>th,.content table tr:last-child{background-color:black;border-bottom-color:#1e2120}
+            .page-wrapper .dark-box{background-color:#111}
+            .content pre,.content blockquote,.content blockquote>p{background-color:#060606;color:#aaa}
+        </style>
+    </head>
+    <body class="index">
+        <a href="#" id="nav-button"><span>III</span></a>
+        <div class="toc-wrapper">
+            <a href="/"><img src="assets/documentation-logo.png" class="logo" alt="logo"></a>
+            <div class="search">
+            <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+            <ul id="toc" class="toc-list-h1">
+                <!-- AUTO-GENERATED NAVIGATION -->
+                <li><a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a><ul class="toc-list-h2"><li><a href="#requirements" class="toc-h2 toc-link" data-title="Requirements">Requirements</a></li><li><a href="#additional-data" class="toc-h2 toc-link" data-title="Additional Data">Additional Data</a></li></ul></li><li><a href="#constants" class="toc-h1 toc-link" data-title="Constants">Constants</a><ul class="toc-list-h2"><li><a href="#is-web-explorer" class="toc-h2 toc-link" data-title="Is Web Explorer">Is Web Explorer</a></li><li><a href="#is-computer" class="toc-h2 toc-link" data-title="Is Computer">Is Computer</a></li><li><a href="#user-time-zone" class="toc-h2 toc-link" data-title="User Time Zone">User Time Zone</a></li><li><a href="#dark-mode-enabled" class="toc-h2 toc-link" data-title="Dark Mode Enabled">Dark Mode Enabled</a></li></ul></li><li><a href="#javascript-debug" class="toc-h1 toc-link" data-title="JavaScript Debug">JavaScript Debug</a><ul class="toc-list-h2"><li><a href="#console-log" class="toc-h2 toc-link" data-title="Console Log">Console Log</a></li><li><a href="#alert" class="toc-h2 toc-link" data-title="Alert">Alert</a></li><li><a href="#prompt" class="toc-h2 toc-link" data-title="Prompt">Prompt</a></li></ul></li><li><a href="#user-interface" class="toc-h1 toc-link" data-title="User Interface">User Interface</a><ul class="toc-list-h2"><li><a href="#restart-project" class="toc-h2 toc-link" data-title="Restart Project">Restart Project</a></li><li><a href="#achievement" class="toc-h2 toc-link" data-title="Achievement">Achievement</a></li></ul></li><li><a href="#checking-hardware" class="toc-h1 toc-link" data-title="Checking Hardware">Checking Hardware</a><ul class="toc-list-h2"><li><a href="#check-one-key-in-a-list" class="toc-h2 toc-link" data-title="Check One Key in a List">Check One Key in a List</a></li><li><a href="#check-all-keys-in-a-list" class="toc-h2 toc-link" data-title="Check All Keys in a List">Check All Keys in a List</a></li><li><a href="#check-controller-buttons" class="toc-h2 toc-link" data-title="Check Controller Buttons">Check Controller Buttons</a></li><li><a href="#check-controller-axes" class="toc-h2 toc-link" data-title="Check Controller Axes">Check Controller Axes</a></li><li><a href="#read-the-last-scroll-point" class="toc-h2 toc-link" data-title="Read the Last Scroll Point">Read the Last Scroll Point</a></li></ul></li><li><a href="#local-save-data" class="toc-h1 toc-link" data-title="Local Save Data">Local Save Data</a><ul class="toc-list-h2"><li><a href="#read-from-save-data" class="toc-h2 toc-link" data-title="Read from Save Data">Read from Save Data</a></li><li><a href="#write-to-save-data" class="toc-h2 toc-link" data-title="Write to Save Data">Write to Save Data</a></li><li><a href="#delete-save-data" class="toc-h2 toc-link" data-title="Delete Save Data">Delete Save Data</a></li></ul></li><li><a href="#url-actions" class="toc-h1 toc-link" data-title="URL Actions">URL Actions</a><ul class="toc-list-h2"><li><a href="#url-popup" class="toc-h2 toc-link" data-title="URL Popup">URL Popup</a></li><li><a href="#go-to-url" class="toc-h2 toc-link" data-title="Go to URL">Go to URL</a></li></ul></li><li><a href="#hopscotch-data" class="toc-h1 toc-link" data-title="Hopscotch Data">Hopscotch Data</a><ul class="toc-list-h2"><li><a href="#load-user-data" class="toc-h2 toc-link" data-title="Load User Data">Load User Data</a></li><li><a href="#read-user-traits" class="toc-h2 toc-link" data-title="Read User Traits">Read User Traits</a></li></ul></li><li><a href="#global-variables" class="toc-h1 toc-link" data-title="Global Variables">Global Variables</a><ul class="toc-list-h2"><li><a href="#connect-to-the-server" class="toc-h2 toc-link" data-title="Connect to the Server">Connect to the Server</a></li><li><a href="#read-global-values" class="toc-h2 toc-link" data-title="Read Global Values">Read Global Values</a></li><li><a href="#write-global-values" class="toc-h2 toc-link" data-title="Write Global Values">Write Global Values</a></li></ul></li><li><a href="#multiplayer-actions" class="toc-h1 toc-link" data-title="Multiplayer Actions">Multiplayer Actions</a><ul class="toc-list-h2"><li><a href="#start-a-session" class="toc-h2 toc-link" data-title="Start a Session">Start a Session</a></li><li><a href="#join-a-session" class="toc-h2 toc-link" data-title="Join a Session">Join a Session</a></li><li><a href="#leave-the-session" class="toc-h2 toc-link" data-title="Leave the Session">Leave the Session</a></li><li><a href="#get-the-users-id" class="toc-h2 toc-link" data-title="Get the User's ID">Get the User's ID</a></li><li><a href="#lock-the-session" class="toc-h2 toc-link" data-title="Lock the Session">Lock the Session</a></li><li><a href="#unlock-the-session" class="toc-h2 toc-link" data-title="Unlock the Session">Unlock the Session</a></li><li><a href="#read-session-data" class="toc-h2 toc-link" data-title="Read Session Data">Read Session Data</a></li><li><a href="#write-session-data" class="toc-h2 toc-link" data-title="Write Session Data">Write Session Data</a></li></ul></li>
+            </ul>
+            <ul class="toc-footer">
+                <li><a href="https://github.com/slatedocs/slate">Documentation Powered by Slate</a></li>
+                <li><a href="/">Back to Site Homepage</a></li>
+            </ul>
+        </div>
+        <div class="page-wrapper">
+            <div class="dark-box"></div>
+            <div id="content" class="content">
+<!-- Written in Markdown, HTML Generated Using Marked -->
+<h1 id="introduction">Introduction</h1>
+<p>This is the official documentation for Awesome_E's modded player actions.</p>
+<h2 id="requirements">Requirements</h2>
+<blockquote>
+<p><img src="assets/block1.png" alt="block1">
+The <em>first</em> parameter of the comment block (shown above) contains all of the webplayer command text (shown below).</p>
+</blockquote>
+<blockquote>
+<br>
+</blockquote>
+<blockquote>
+<p>The code below shows the basic structure of a webplayer command:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"isComputer"</span>
+}</div></pre>
+
+
+<p><strong>In order to be recognized by the webplayer, there are a few requirements:</strong></p>
+<ol>
+<li>You must acquire secret blocks. Otherwise, you will not have access to the "comment" block that is required to perform any webplayer actions.</li>
+<li>You must be using the comment block, or if inside a conditional, the "»" block.</li>
+<li>Both the "comment" block and the "»" block have the ID 22. No other blocks will be recognized by the modded webplayer.</li>
+<li>Every webplayer command must begin with <code>_ae_webplayer_action:</code>, then have all of its JSON data after it.</li>
+<li>Your entire command string is put into the first parameter of the comment block.</li>
+</ol>
+<p><strong>Every command has two traits at the root level:</strong></p>
+<ol>
+<li>Name: This is the name of the command</li>
+<li>Args: These are arguments that describe the behavior of that command. If the command does not require any arguments, you may omit (remove) this trait.</li>
+</ol>
+<p>*Note: In this documentation, arguments for commands may appear as "args" (referring to the entire list <code>[arg0, arg1, arg2, ...]</code>) or as "arg0","arg1", etc. (individual arguments).</p>
+<p>Any additional traits are ignored.</p>
+<h2 id="additional-data">Additional Data</h2>
+<blockquote>
+<p><img src="assets/block2.png" alt="block2">
+Any additional data is passed through the <em>second</em> parameter of the comment block (shown above). It replaces any location where the string <code>"_data"</code> (with quotes) shows up.</p>
+</blockquote>
+<blockquote>
+<p>Usage:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"checkKey"</span>,
+  <span class="cm-property">"args"</span>: [<span class="cm-keyword">"_data"</span>]
+}</div></pre>
+<p>This is <strong>NOT required</strong>. If you are new to using webplayer actions, I recommend <strong>skipping</strong> this section until you need to pass <strong>variable data</strong> into your webplayer action.</p>
+<aside class="warning">Anything replacing <code>"_data"</code> will replace it literally/exactly. So, if you are passing in a string through the parameter, make sure that you embed it in quotes to avoid a parsing error.</aside>
+
+<p>Examples:</p>
+<ol>
+<li><code>"args":["_data"]</code> with parameter data LAST_TOUCH_X will be replaced with the output <code>"args":[512]</code></li>
+<li><code>"args":["_data"]</code> with parameter data USERNAME will be replaced with the output <code>"args":[Awesome_E]</code> and <strong>will throw a parsing error</strong> because <code>Awesome_E</code> is not a defined variable in the player's JS file</li>
+<li><code>"args":[""_data""]</code> with parameter data USERNAME will be replaced with the output<code>"args":["Awesome_E"]</code> and <strong>will run successfully</strong></li>
+</ol>
+<h1 id="constants">Constants</h1>
+<p>These actions will return the same value every time and are useful for identifying basic information about the user's device to enhance their experience with the project.</p>
+<h2 id="is-web-explorer">Is Web Explorer</h2>
+<blockquote>
+<p><img src="assets/block3.png" alt="block3">
+Because you want to use the data that the webplayer action returns, you should use the "»" block, as that will convert the output into something Hopscotch can read. If you are in the modded player, the variable gets set to <code>1</code>; otherwise it gets set to <code>0</code>.</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"isWebExp"</span>
+}</div></pre>
+
+<p>This action returns true every time, allowing for a quick and easy method to detect whether a user is in my modded player. In my modded player, it simply returns <code>1</code>.</p>
+<p>You can use this action to determine whether other modded features will work in the current player.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">args</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">isWebExp</td>
+<td align="center">&lt;This command has no arguments&gt;</td>
+<td align="center"><code>1</code></td>
+</tr>
+</tbody></table>
+<h2 id="is-computer">Is Computer</h2>
+<blockquote>
+<p><img src="assets/block4.png" alt="block4">
+This will set the variable "On Computer" to <code>1</code> or <code>0</code>, depending on whether the user is on a computer. If run from the Hopscotch App, the blank string returned from the "»" block is still not equal to <code>1</code>, so it gets set to <code>0</code>.</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"isComputer"</span>
+}</div></pre>
+
+<p>This action returns <code>1</code> if the user is on a computer and <code>0</code> if they are not.</p>
+<aside class="notice">In player versions where Hopscotch supports strings, this (and any other actions) will return an empty string (<code>""</code>) if run from inside the Hopscotch app.</aside>
+
+<p>One use case of this is removing touch controls for a platformer for computer players in order to free up screen space, then adding keyboard support to better the user experience (UX).</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">args</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">isComputer</td>
+<td align="center">&lt;This command has no arguments&gt;</td>
+<td align="center"><code>0</code> or <code>1</code></td>
+</tr>
+</tbody></table>
+<h2 id="user-time-zone">User Time Zone</h2>
+<blockquote>
+<p><img src="assets/block5.png" alt="block5">
+This Hopscotch code will set the variable "Time Zone" to the device's time zone.</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"user-tz"</span>
+}</div></pre>
+
+<p>This action returns the user's time zone, rounded to the nearest hour offset from UTC/GMT time. For example, EDT returns <code>-4</code> because it is 4 hours behind UTC/GMT.</p>
+<p>While the recent addition of user variables allows you to do this by checking the hour and the Unix Timestamp, this option is available for non-subscribers as well as older player versions.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">args</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">user-tz</td>
+<td align="center">&lt;This command has no arguments&gt;</td>
+<td align="center">integer, <code>-12</code> to <code>12</code></td>
+</tr>
+</tbody></table>
+<h2 id="dark-mode-enabled">Dark Mode Enabled</h2>
+<blockquote>
+<p><img src="assets/block8.png" alt="block8">
+This Hopscotch code will set the variable "Dark Mode" to <code>1</code> if the user is in dark mode in the modded player when the action is run.</p>
+</blockquote>
+<blockquote>
+<p>Usage:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"user-darkmode"</span>
+}</div></pre>
+
+<p>This actions returns <code>1</code> if the user is in dark mode, and <code>0</code> if the user is not.</p>
+<p>This is useful in projects that default to a light-theme because it would allow the default to be set to dark mode if the user prefers dark mode, and it would also allow the user to switch the project theme by toggling their system setting.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">args</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">user-darkmode</td>
+<td align="center">&lt;This command has no arguments&gt;</td>
+<td align="center"><code>0</code> or <code>1</code></td>
+</tr>
+</tbody></table>
+<h1 id="javascript-debug">JavaScript Debug</h1>
+<p>While unconventional for drag-n-drop programming, logging data, alerting it, or freezing the project for an input can be extremely useful for debugging a project (especially because you aren't editing it in the Hopscotch app when you run it in my player).</p>
+<p>The following actions perform standard JavaScript methods to help with just that.</p>
+<h2 id="console-log">Console Log</h2>
+<blockquote>
+<p><img src="assets/block1.png" alt="block1"></p>
+</blockquote>
+<blockquote>
+<p>This will log <code>hello,123</code> to the browser console:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"js-console-log"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-string">"hello"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-number">123</span>
+  ]
+}</div></pre>
+
+<p>As the name implies, this simply logs a message to the browser console.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">args</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">js-console-log</td>
+<td align="center">Items to log in the browser console. Array entries are joined with commas.</td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<aside class="success">Infinite arguments are supported, meaning you can log multiple values with one webplayer action.</aside>
+
+
+<h2 id="alert">Alert</h2>
+<blockquote>
+<p><img src="assets/block6.png" alt="block6"></p>
+</blockquote>
+<blockquote>
+<p>This will alert the current object's <code>X Position</code> to the user:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"js-alert"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [<span class="cm-keyword">"_data"</span>]
+}</div></pre>
+
+<p>This behaves exactly like <code>js-console-log</code>, but it alerts the arguments in a popup dialog instead of logging them to the browser console.</p>
+<p>This is more useful for testing projects from iOS, since you need a Mac to access the browser's console (which is not accessible to everyone) whereas a popup dialog will show up on the iOS device itself.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">args</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">js-alert</td>
+<td align="center">Items to display in the popup. Entries are joined with commas.</td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<h2 id="prompt">Prompt</h2>
+<blockquote>
+<p><img src="assets/block7.png" alt="block7"></p>
+</blockquote>
+<blockquote>
+<p>This will freeze the project to ask for the user's favorite fruit (prefilled with "Apple"), then save that user input to the variable "Preference"</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"js-prompt"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"Enter your preferred fruit:"</span>, <span class="cm-string">"Apple"</span>]
+}</div></pre>
+
+<p>Stops the project to ask for a user input, which is returned as output.</p>
+<aside class="warning">This action <b>returns a string</b>. To convert this into a number in Hopscotch, leave the second addition parameter empty (not even a zero), then round the output.</aside>
+
+<p>This is useful in cases where you don't want other objects to continue executing code while the user is inputting text. For example, if you want to space objects apart when game starts, you wouldn't want any objects to set position before the user inputs the global value.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">arg0</th>
+<th align="center">arg1</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">js-prompt</td>
+<td align="center">The prompt message [string]</td>
+<td align="center">Default (prefilled) value [string]</td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<h1 id="user-interface">User Interface</h1>
+<p>These actions interact with the user interface in the player.</p>
+<h2 id="restart-project">Restart Project</h2>
+<blockquote>
+<p><img src="assets/block1.png" alt="block1"></p>
+</blockquote>
+<blockquote>
+<p>This code restarts the project:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> <span class=" CodeMirror-matchingbracket">{</span>
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"restart"</span><span class="cm-tab" role="presentation" cm-text="    "> </span>
+<span class=" CodeMirror-matchingbracket">}</span></div></pre>
+
+<p>As the name indicates, this action will restart the project. It runs the click action for the restart button, giving the project a full restart.</p>
+<p>This may be useful for an "instant retry" mechanism in a speedrun project in a place where the player cannot progress.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">args</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">restart</td>
+<td align="center">&lt;This command has no arguments&gt;</td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<h2 id="achievement">Achievement</h2>
+<blockquote>
+<p><img src="assets/block1.png" alt="block1"></p>
+</blockquote>
+<blockquote>
+<p>This is the current syntax of the achievement command:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> <span class=" CodeMirror-matchingbracket">{</span>
+  <span class="cm-property">"name"</span>: <span class="cm-string">"achievement"</span>,
+  <span class="cm-property">"args"</span>: [
+    <span class="cm-string">"&lt;img src=\"https://i.imgur.com/S3Q882k.png\" width=\"48\"/&gt;&lt;div&gt;&lt;span class=\"achievement-name\"&gt;Starbound&lt;/span&gt;&lt;span class=\"achievement-description\"&gt;Collect 10 stars&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;i class=\"fa fa-close\" onclick=\"banner(false)\"&gt;&lt;/i&gt;"</span>
+  ]
+<span class=" CodeMirror-matchingbracket">}</span></div></pre>
+
+<p>The achievement action creates a dropdown from the upper-righthand corner, alerting the user that they unlocked a rare achievemnt in your game.</p>
+<p><strong>Current Syntax (supports custom HTML):</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">arg0</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">achievement</td>
+<td align="center">HTML to display inside of the achievement banner &lt;string&gt;</td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>The following syntax can also be used:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> <span class=" CodeMirror-matchingbracket">{</span>
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"achievement"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [
+  <span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-string">"Starbound"</span>,
+  <span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-string">"Collect 10 stars"</span>,
+  <span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-string">"https://i.imgur.com/S3Q882k.png"</span>
+<span class="cm-tab" role="presentation" cm-text="    ">  </span>]
+<span class=" CodeMirror-matchingbracket">}</span></div></pre>
+
+<p>The new syntax aims to simplify the creation of an achievement. It does get rid of custom HTML support, but it is supported <strong>alongside</strong> the original syntax.</p>
+<p><strong>Revised Syntax:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">arg0</th>
+<th align="center">arg1</th>
+<th align="center">arg2</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">achievement</td>
+<td align="center">Name &lt;string&gt;</td>
+<td align="center">Description &lt;string&gt;</td>
+<td align="center">Image URL [string]</td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<h1 id="checking-hardware">Checking Hardware</h1>
+<h2 id="check-one-key-in-a-list">Check One Key in a List</h2>
+<blockquote>
+<p><img src="assets/block9.png" alt="block9"></p>
+</blockquote>
+<blockquote>
+<p>The following code will return whether the right arrow or the letter "D" is pressed:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"checkKey"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [<span class="cm-number">39</span>,<span class="cm-number">68</span>]
+}</div></pre>
+
+<p>This action will return <code>1</code> if <em><strong>ANY</strong></em> of the keys in the arguments are currently being pressed.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">args</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">checkKey</td>
+<td align="center">Every <a href="https://keycode.info">keycode</a> to check for, in a comma-separated list</td>
+<td align="center"><code>0</code> or <code>1</code></td>
+</tr>
+</tbody></table>
+<p><strong>Advanced:</strong> If you want to have the keys being checked to be controlled by variables, use the "»" block with a data parameter, then pass in <code>"_data"</code> into the arguments list.</p>
+<h2 id="check-all-keys-in-a-list">Check All Keys in a List</h2>
+<blockquote>
+<p><img src="assets/block9.png" alt="block9"></p>
+</blockquote>
+<blockquote>
+<p>The following code will check if the shift key <em><strong>AND</strong></em> the letter "H" are prressed:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"checkKeyAll"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [<span class="cm-number">16</span>,<span class="cm-number">72</span>]
+}</div></pre>
+
+<p>This action, like <code>checkKey</code>, will check if certain keys are pressed. However, it will only return <code>1</code> if <em><strong>ALL KEYS</strong></em> on the list are being pressed.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">args</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">checkKeyAll</td>
+<td align="center">Every <a href="https://keycode.info">keycode</a> to check for, separated by commas</td>
+<td align="center"><code>0</code> or <code>1</code></td>
+</tr>
+</tbody></table>
+<p><strong>Advanced:</strong> If you want to have the keys being checked to be controlled by variables, use the "»" block with a data parameter, then pass in <code>"_data"</code> into the arguments list.</p>
+<h2 id="check-controller-buttons">Check Controller Buttons</h2>
+<blockquote>
+<p><img src="assets/block9.png" alt="block9"></p>
+</blockquote>
+<blockquote>
+<p>This conditional will be run if the <code>△</code> or <code>Y</code> button is pressed:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"checkControllerButton"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [<span class="cm-number">0</span>,<span class="cm-number">0</span>,<span class="cm-number">2</span>]
+}</div></pre>
+
+<blockquote>
+<p>The code below will check if both the left and right bumper buttons are pressed.
+<br><code>LB</code> + <code>RB</code> (XBOX) / <code>L1</code> + <code>R1</code> (PS)</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"checkControllerButton"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-number">0</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-number">2</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">  </span>[<span class="cm-number">4</span>,<span class="cm-number">5</span>]
+<span class="cm-tab" role="presentation" cm-text="    ">  </span>]
+}</div></pre>
+
+<blockquote>
+<p>This code will check if either the left or right joysticks are pressed on the <strong>2nd connected controller</strong> (index 1):</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"checkControllerButton"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-number">1</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-number">2</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-tab" role="presentation" cm-text="    ">  </span>[<span class="cm-number">10</span>,<span class="cm-number">11</span>]
+<span class="cm-tab" role="presentation" cm-text="    ">  </span>]
+}</div></pre>
+<blockquote>
+<p>Both pressed → <code>1</code>, either → <code>1</code>, none → <code>0</code><br><br></p>
+</blockquote>
+<blockquote>
+<p><img src="assets/block18.png" alt="block18"></p>
+</blockquote>
+<blockquote>
+<p>This will set the variable <code>P1 Left Trigger</code> to the left trigger's X value on the first controller (controller 0):</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"checkControllerButton"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [<span class="cm-number">0</span>,<span class="cm-number">0</span>,<span class="cm-number">6</span>]
+}</div></pre>
+<blockquote>
+<p>The value stored can range from anywhere between <code>0</code> (not pressed) and <code>1</code> (fully pressed), inclusive. If checking if a button press is equal to <code>1</code>, triggers will need to be fully pressed. Otherwise, check above a certain threshold or if the button press is <strong><code>not 0</code></strong>.</p>
+</blockquote>
+<p>This action checks the press state of buttons on a controller. It can:</p>
+<ol>
+<li>Check the press state of any one button</li>
+<li>Check if any buttons in a given array are pressed</li>
+<li>Check if all buttons in a given array are pressed</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">arg0</th>
+<th align="center">arg1</th>
+<th align="center">arg2</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">checkControllerButtons</td>
+<td align="center">Controller ID</td>
+<td align="center">Mode</td>
+<td align="center">Button ID</td>
+<td align="center">number</td>
+</tr>
+</tbody></table>
+<h3 id="controller-id">Controller ID</h3>
+<p>This is the index of the controller, as determined by the browser. The first controller connected will have and ID of <code>0</code>, the second controller <code>1</code>, and so on.</p>
+<h3 id="mode">Mode</h3>
+<p>You can check controller buttons using the following modes:</p>
+<ol start="0">
+  <li>
+    Checks the value of the specified controller button. This will return a floating point number between <code>0</code> and <code>1</code>, inclusive.
+    <br><em><strong>NOTE:</strong></em> Most buttons will either return <code>0</code> or <code>1</code>, but some buttons, such as triggers, can return decimals.
+  </li>
+  <li>Checks if <em>any</em> of the specified button IDs are pressed. Returns <code>1</code> if any button is pressed, otherwise returns <code>0</code></li>
+  <li>Checks if <em>all</em> of the specified button IDs are pressed. Returns <code>1</code> if every button is pressed, otherwise returns <code>0</code></li>
+</ol>
+
+<h3 id="button-id">Button ID</h3>
+<p>Every button on the controller is mapped to an ID. You can test your gamepad inputs using <a href="https://gamepad-tester.com/">this website</a> or refer to the following controller mappings:</p>
+<p><img src="assets/controller1.png" alt="controller1"></p>
+<p><a href="https://images.app.goo.gl/WE8dF1uMV7Pypt7d7">Original XBOX Controller Image</a></p>
+<p><img src="assets/controller2.png" alt="controller2"></p>
+<p><a href="https://images.app.goo.gl/3o6zqZLBPxBkRqpC7">Original PlayStation Controller Image</a></p>
+<p><strong>Advanced:</strong> If you want to have the buttons being checked to be controlled by variables, use the "»" block with a data parameter, then pass in <code>"_data"</code> into the arguments list.</p>
+<h2 id="check-controller-axes">Check Controller Axes</h2>
+<blockquote>
+<p><img src="assets/block19.png" alt="block19"></p>
+</blockquote>
+<blockquote>
+<p>The following command will set <code>Left Joystick Y</code> to the vertical (Y) value of the left joystick on the first connected controller:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"checkControllerAxis"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [<span class="cm-number">0</span>,<span class="cm-number">1</span>]
+}</div></pre>
+
+
+<blockquote>
+<p><img src="assets/block20.png" alt="block20"></p>
+</blockquote>
+<blockquote>
+<p>This command will set <code>P2 Right Stick X</code> to the hoizontal (X) value of the right joystick on the second connected controller:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"checkControllerAxis"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [<span class="cm-number">1</span>,<span class="cm-number">2</span>]
+}</div></pre>
+
+<p>This action returns the value of one of your controller's axes. Each joystick is separated into 2 axes, one for X direction (horizontal inputs) and one for Y direction (vertical inputs).</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">arg0</th>
+<th align="center">arg1</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">checkControllerButtons</td>
+<td align="center">Controller ID</td>
+<td align="center">Axis ID</td>
+<td align="center">number</td>
+</tr>
+</tbody></table>
+<h3 id="controller-id-1">Controller ID</h3>
+<p>This is the index of the controller, as determined by the browser. The first controller connected will have and ID of <code>0</code>, the second controller <code>1</code>, and so on.</p>
+<h3 id="axis-id">Axis ID</h3>
+<p>For most controllers, axes <code>0</code> and <code>1</code> are the X and Y values (respectively) of the left joystick, and axes <code>2</code> and <code>3</code> are the X and Y values (respectively) of the right joystick.</p>
+<h3 id="output">Output</h3>
+<p>A floating point number between <code>-1</code> and <code>1</code>, depending on the position of each joystick or axis.</p>
+<aside class="warning">Note: the vertical axes will return <b>positive</b> values when the joystick is moved <b>down</b>, and they will return <b>negative</b> values when the joystick is moved <b>up</b>.</aside>
+
+<h2 id="read-the-last-scroll-point">Read the Last Scroll Point</h2>
+<aside class="notice">This action is not fully developed yet.</aside>
+
+<!--
+>![block_](assets/block_.png)
+
+WARNING MAY CHANGE IN FUTURE
+scrollData
+
+-->
+
+<h1 id="local-save-data">Local Save Data</h1>
+<!-- *Local save data is currently being reworked, as these methods have a complicated syntax for such a limited functionality.* -->
+
+<p>These actions allow you to work with data that gets stored locally in the user's web browser. This data will persist between plays and whenever the user closes the browser (unless in private browsing mode, in which case the data gets cleared by the browser). While Hopscotch offers an easier-to-use implementation called "User Variables", this feature is free, although it only works in my modded player.</p>
+<h2 id="read-from-save-data">Read from Save Data</h2>
+<blockquote>
+<p><img src="assets/block10.png" alt="block10"></p>
+</blockquote>
+<blockquote>
+<p>This code will set the variable "Level" to the local save called "Stage". If that doesn't exist, it will default to 1, as specified in the arguments:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"newdata-read"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"Stage"</span>,<span class="cm-number">1</span>]
+}</div></pre>
+
+<p>Reading from local savedata allows you to retrieve information previously stored locally in the user's browser. For example, you can load a stage/level so that a user can save their progress.</p>
+<aside class="warning">Be careful! This action returns a <b>string</b>, so make sure to <i>round</i> or <i>save</i> it under a Hopscotch variable before performing any math operations.</aside>
+
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">arg0</th>
+<th align="center">arg1</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">savedata-read</td>
+<td align="center">property &lt;string&gt;</td>
+<td align="center">default &lt;number/string&gt;</td>
+<td align="center">value &lt;string&gt;</td>
+</tr>
+</tbody></table>
+<p><code>property</code> refers to the name of the local save, e.g. "Level"</p>
+<p><code>default</code> is the value returned if the local save does not exist.</p>
+<p><code>value</code> is the value saved under the specified property name.</p>
+<h2 id="write-to-save-data">Write to Save Data</h2>
+<blockquote>
+<p><img src="assets/block14.png" alt="block14"></p>
+</blockquote>
+<blockquote>
+<p>When put into the block shown above, this code will create a local save called "Stage", and it will have the value of the variable "Level":</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"newdata-write"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"Stage"</span>,<span class="cm-keyword">"_data"</span>]
+}</div></pre>
+
+<p>Writing to Save Data refers to either creating a new property or modifying an existing one. This action allows you to specify a property to update, as well as its new value.</p>
+<p>If the property does not already exist, it will be created. Otherwise, it will be overwritten.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">arg0</th>
+<th align="center">arg1</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">savedata-write</td>
+<td align="center">property &lt;string&gt;</td>
+<td align="center">value &lt;number/string&gt;</td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<p><code>property</code> refers to the name of the local save, e.g. "Level"</p>
+<p><code>value</code> is the new value to be stored under that local save.</p>
+<h2 id="delete-save-data">Delete Save Data</h2>
+<blockquote>
+<p><img src="assets/block1.png" alt="block14"></p>
+</blockquote>
+<blockquote>
+<p>This will delete the locally stored "Stage":</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"newdata-delete"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"Stage"</span>]
+}</div></pre>
+
+<p>This action simply deletes any value that was stored under the specified <code>property</code>, which makes for a fast and simply reset mechanism in a game.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">arg0</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">savedata-write</td>
+<td align="center">property &lt;string&gt;</td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<h1 id="url-actions">URL Actions</h1>
+<p>These actions allow you to display approved webpages in frames or navigate to them. I am keeping a list of apprroved and rejected subdomains that determine whether the action will run or throw a popup error.</p>
+<h2 id="url-popup">URL Popup</h2>
+<blockquote>
+<p><img src="assets/block1.png" alt="block1"></p>
+</blockquote>
+<blockquote>
+<p>The following code will create a popup of HS Tools:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"url-iframe"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"https://awesome-e.github.io/hs-tools/"</span>]
+}</div></pre>
+
+<p>The URL Popup action displays a given URL in an iframe on the current page, which will be put on top of the project being played.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">arg0</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">url-iframe</td>
+<td align="center">url &lt;string&gt;</td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<h2 id="go-to-url">Go to URL</h2>
+<blockquote>
+<p><img src="assets/block1.png" alt="block1"></p>
+</blockquote>
+<blockquote>
+<p>The following code will redirect the user to HS Tools:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"url-goto"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"https://awesome-e.github.io/hs-tools/"</span>]
+}</div></pre>
+
+<p>This action will redirect the page to the URL passed in as input.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">arg0</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">url-goto</td>
+<td align="center">url &lt;string&gt;</td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<h1 id="hopscotch-data">Hopscotch Data</h1>
+<p>With these actions, you can display any user information provided by Hopscotch's <code>v2/users</code> API, which currently only includes nickname, avatar type, and plants.</p>
+<h2 id="load-user-data">Load User Data</h2>
+<blockquote>
+<p><img src="assets/block1.png" alt="block1"></p>
+</blockquote>
+<blockquote>
+<p>The code below will load the user data for user 5947972</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"userdata-read"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: <span class=" CodeMirror-matchingbracket">[</span><span class="cm-string">"5947972"</span><span class=" CodeMirror-matchingbracket">]</span>
+}</div></pre>
+
+<p>This block retrieves the user data of a specified User ID and stores it temporarily (until you leave or reload the page).</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">arg0</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">userdata-load</td>
+<td align="center">user_id &lt;integer&gt;</td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<p>You must load user data <em><strong>before</strong></em> reading it with the read user data command. Also, since it retrieves data from the internet, you will need some wait time between loading the data and reading traits. See the demo for a "wait until loaded" block (not a rainbow block/ability, just one block).</p>
+<h2 id="read-user-traits">Read User Traits</h2>
+<blockquote>
+<p><img src="assets/block11.png" alt="block11"></p>
+</blockquote>
+<blockquote>
+<p>This code will set the variable "Nickname" to the nickname of user 5947972, which is <code>Jeffery Jr.</code></p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"userdata-read"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"5947972"</span>,<span class="cm-string">"nickname"</span>]
+}</div></pre>
+
+<p>This block allows you to read user traits of users that have already been loaded usingthe <code>userdata-read</code> command. If no trait is specified in the second argument, this action will return the entire dictionary (JSON object).</p>
+<aside class="warning">You <b>must</b> run <code>userdata-load</code> for <b>every</b> user you want to read traits from. Otherwise, the traits cannot be read, as there is no local reference.</aside>
+
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">arg0</th>
+<th align="center">arg1</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">userdata-read</td>
+<td align="center">user_id &lt;integer&gt;</td>
+<td align="center">trait [string]</td>
+<td align="center">string or integer; the trait's value</td>
+</tr>
+</tbody></table>
+<p>*Currently, you can specify <code>trait</code> as <code>"nickname"</code>, <code>"avatar_type"</code>, or <code>"plants"</code>. You can also omit the <code>trait</code>.</p>
+<h1 id="global-variables">Global Variables</h1>
+<p>Global Variables provide you access to realtime variables that can be read from any device in the modded player. These are tied to the <strong>user</strong> and not the project, meaning that the same variables are <strong>shared across all of your projects</strong>. You can access variables that you set in one project in the future from any project, as long as the creator's user ID is the same. If you want your variables to be project-specific, I recommend adding the project UUID before the variable name. (Example: <code>10iu14ay37-world_record</code>)</p>
+<p>However, these are not intended for multiplayer use, as there are dedicated blocks to better manage multiplayer than just using global variables.</p>
+<h2 id="connect-to-the-server">Connect to the Server</h2>
+<blockquote>
+<p><img src="assets/block1.png" alt="block1">
+Run this exact command to connect to the global variables server:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"globalvar-connect"</span>
+}</div></pre>
+
+<p>This action will connect the project to the global variables server.</p>
+<aside class="success">This will work straight out of the box; no modifications are required</aside>
+
+<p>Run this command before reading or writing any global variables. I recommend running this block on game starts so you have access to global variables almost immediately.</p>
+<p><small>(I don't automatically run this for every project because I don't want every project, most of which are not modded in any way, to connect automatically and use bandwidth.)</small></p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">args</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">globalvar-connect</td>
+<td align="center">&lt;This command has no arguments&gt;</td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<h2 id="read-global-values">Read Global Values</h2>
+<blockquote>
+<p><img src="assets/block12.png" alt="block12"></p>
+</blockquote>
+<blockquote>
+<p>This Hopscotch block (above) will set the project's "High Score" variable to the global variable called <code>global_best</code>, using the code below:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"globalvar-read"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: <span class=" CodeMirror-matchingbracket">[</span><span class="cm-string">"global_best"</span><span class=" CodeMirror-matchingbracket">]</span>
+}</div></pre>
+
+<p>Once you have connected to the global variables server, run this command along with a key (variable name) to read the data stored under it.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">arg0</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">globalvar-read</td>
+<td align="center">key &lt;string&gt;</td>
+<td align="center">any; the key's value</td>
+</tr>
+</tbody></table>
+<p>*Note: <code>key</code> simply refers to a string that the value is stored under. Essentially, it is just the variable name.</p>
+<h2 id="write-global-values">Write Global Values</h2>
+<blockquote>
+<p><img src="assets/block15.png" alt="block15"></p>
+</blockquote>
+<blockquote>
+<p>Using the command below, the Hopscotch block (shown above) will set the global variable called <code>global_best</code> to the current project's high score.</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"globalvar-write"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"global_best"</span>,<span class="cm-keyword">"_data"</span>]
+}</div></pre>
+
+<p>After connecting to the global variable server, running the <code>globalvar-write</code> block will override the specified key with the value you provide. More times than not, you will run this block inside of a conditional.</p>
+<aside class="notice">To prevent code modification, writing to global variables will not execute if the project is run from the Project Builder. This applies to all variables <b>EXCEPT</b> for those whose names begin with <code>@UNLOCKED_</code></aside>
+
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">arg0</th>
+<th align="center">arg1</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">globalvar-write</td>
+<td align="center">key &lt;string&gt;</td>
+<td align="center">new value &lt;any&gt;</td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<h1 id="multiplayer-actions">Multiplayer Actions</h1>
+<aside class="notice">These methods will be deprecated when the multiplayer functionality is rewritten.</aside>
+
+<p>This set of actions was designed specifically to run lightweight multiplayer games, with small loads being passed between games. Large, constant data reads/writes will cause a huge drop in performance. Try to limit data transfers to player attributes only in addition to the occasional global setting (avoid excessive amounts of projectiles and spawned items).</p>
+<p>Given that, it still provides the foundation for the core aspects of multiplayer: creating, joining, and leaving rooms, in addition to reading and writing user-specific and global (limited to each room, of course) data.</p>
+<p>To prevent code modification, multiplayer actions will not execute if the project is run from the Project Builder.</p>
+<h2 id="start-a-session">Start a Session</h2>
+<blockquote>
+<p><img src="assets/block1.png" alt="block1"></p>
+</blockquote>
+<blockquote>
+<p>Use this exact code in your game to start a session:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"session-new"</span>
+}</div></pre>
+
+<p>This action starts a multiplayer session with a random 6-character-long join code consisting of only numbers and lowercase letters. For safety reasons, there is no configuration to change this join code.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">arg0</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">session-new</td>
+<td align="center">max_players [integer]</td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<p>If you are already in a session, you will be asked to confirm that you want to leave it.</p>
+<h2 id="join-a-session">Join a Session</h2>
+<blockquote>
+<p><img src="assets/block1.png" alt="block1"></p>
+</blockquote>
+<blockquote>
+<p>Use this exact code in your game to join a session:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"session-join"</span>
+}</div></pre>
+
+<p>This action prompts the user to join a multiplayer room by entering/pasting in the 6-character join code generated by the host's device. Be aware that reading session data in the same rule may cause issues in the project, as joining a session requires a small amount of time.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">args</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">session-join</td>
+<td align="center">&lt;This command has no arguments&gt;</td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<h2 id="leave-the-session">Leave the Session</h2>
+<blockquote>
+<p><img src="assets/block1.png" alt="block1"></p>
+</blockquote>
+<blockquote>
+<p>Run this exact code to leave the multiplayer room:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"session-leave"</span>
+}</div></pre>
+
+<p>This command will disconnect you from the multiplayer room. If you are currently the host of this room, it will end the game for everyone.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">args</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">session-leave</td>
+<td align="center">&lt;This command has no arguments&gt;</td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<h2 id="get-the-users-id">Get the User's ID</h2>
+<blockquote>
+<p><img src="assets/block17.png" alt="block17"></p>
+</blockquote>
+<blockquote>
+<p>This Hopscotch code will save the user's index to the project variable called "Player ID"</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"session-myindex"</span>
+}</div></pre>
+
+<p>As the name implies, this command returns the user's index in the multiplayer room. The host is <code>0</code>, and the player indices are in chronological order of time joined.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">args</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">session-myindex</td>
+<td align="center">&lt;This command has no arguments&gt;</td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<p>If you are the first person to join a host's game, this command will return <code>1</code>. If you are the second person to join, it will return <code>2</code>. And so on...</p>
+<h2 id="lock-the-session">Lock the Session</h2>
+<blockquote>
+<p><img src="assets/block1.png" alt="block1"></p>
+</blockquote>
+<blockquote>
+<p>The code below will lock the multiplayer room and prevent new people from joining:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"session-close"</span>
+}</div></pre>
+
+<p>As the name states, this command will make it so that no one else can join the multiplayer session.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">args</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">session-close</td>
+<td align="center">&lt;This command has no arguments&gt;</td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<h2 id="unlock-the-session">Unlock the Session</h2>
+<blockquote>
+<p><img src="assets/block1.png" alt="block1"></p>
+</blockquote>
+<blockquote>
+<p>The code below will reopen the multiplayer room if it has been closed:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"session-open"</span>
+}</div></pre>
+
+<p>As the name states, this command will reopen the multiplayer room (if it has been closed), allowing people to join again.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">args</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">session-open</td>
+<td align="center">&lt;This command has no arguments&gt;</td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<h2 id="read-session-data">Read Session Data</h2>
+<blockquote>
+<p><img src="assets/block13.png" alt="block13">
+Assuming the Clone Index is the Player ID it renders, this command will set the self variable "Powerup" to the session's value for <em>that player's</em> <code>power</code>:</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"session-read"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"session.data.game[session.getUser("</span>,<span class="cm-keyword">"_data"</span>,<span class="cm-string">")].power"</span>]
+}</div></pre>
+
+<p>This command reads the path provided by concatenating (joining) all of the arguments passed through as input.</p>
+<p>In the example shown, the second parameter of the "»" block refers to the Player's index, with <code>0</code> being the host and <code>-1</code> being a shorthand for "self" (your actual index will be greater than or equal to zero)</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">args</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">session-read</td>
+<td align="center">path to data <string></string></td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<p>In the example, suppose the Clone Index is <code>1</code>. The <code>args</code> are then joined to form the string <code>"session.data.game[session.getUser(1)].power"</code>, which will then get the value for <code>power</code> that is assigned to player with index 1</p>
+<h2 id="write-session-data">Write Session Data</h2>
+<blockquote>
+<p><img src="assets/block16.png" alt="block16"></p>
+</blockquote>
+<blockquote>
+<p>This block will set the current (self, as defined in the first argument) user's <code>power</code> (in the remote server, for this game) to the value of the self variable passed into the data parameter.</p>
+</blockquote>
+<pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"session-write"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [<span class="cm-number">-1</span>,<span class="cm-string">"power"</span>,<span class="cm-keyword">"_data"</span>]
+}</div></pre>
+
+<p>This command writes data to the server when given the following: a player index to write to, the key, and the value.</p>
+<table>
+<thead>
+<tr>
+<th align="center">name</th>
+<th align="center">arg0</th>
+<th align="center">arg1</th>
+<th align="center">arg2</th>
+<th align="center">output</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">session-write</td>
+<td align="center">user_index &lt;integer&gt;</td>
+<td align="center">key &lt;string&gt;</td>
+<td align="center">value &lt;any&gt;</td>
+<td align="center">&lt;nothing&gt;</td>
+</tr>
+</tbody></table>
+<p><code>user_index</code> refers to the target user, that is, the user whose data will be overwritten. Use <code>-2</code> to set a global game variable, <code>-1</code> to set self, and any other integer greater than or equal to <code>0</code> to reference a player by index. In most cases, you will be using <code>-2</code> or <code>-1</code> because you will only write data to the game as a whole or to update information about your player.</p>
+<p><code>key</code> just refers to what you are setting; it's essentially the name of the variable.</p>
+<p><code>value</code> will override the existing value, and it can be a number, string, boolean, or null.</p>
+<!-- END MARKDOWN CONTENT -->
+            </div>
+        </div>
+        <script>$(function() { setupCodeCopy(); });</script>
+    </body>
+</html>

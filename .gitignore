@@ -4,3 +4,4 @@ __*
 *.mov
 node_modules/*
 **/.DS_Store
+.ENV
