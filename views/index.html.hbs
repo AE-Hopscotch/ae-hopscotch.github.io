@@ -24,15 +24,16 @@
   <link rel="stylesheet" href="/style.css">
   <title>Awesome_E Hopscotch</title>
   <style>
-    .wrapper > .section {
+    {{!-- .wrapper > .section {
       padding: 20px min(40px, 5vw);
-    }
+    } --}}
     .section:not(.footer) p {
       font-size: 24px;
       line-height: 32px;
       /* text-align: left; */
     }
-    @media only screen and (min-width: 925px) {
+    {{!-- only screen and (max-width: 1023px) --}}
+    @media only screen and (min-width: 1024px) {
       .section-upper {
         width: 80%;
         max-width: calc(100% - 280px);
@@ -65,35 +66,31 @@
             <div class="flex">
               <p><img alt="HS Tools icon" data-screen="" width="190px" src="/hs-tools/icons/android-chrome-192x192.png" style="float:right;margin:24px 12px 16px 20px;"/>It's finally here! These docs cover all of my modded player actions, as well as different ways you can use my player in your own projects! Learn about every single webplayer action I've coded and how you can incorporate them into your own project to make them stand out!</p>
             </div>
-            <div class="center" data-screen="medium large"><a class="button" href="/player/docs/">Go to Documentation &nbsp;<i class="fa fa-file-text-o"></i></a></div>
           </div>
           <div class="section-lower vflex">
             <div class="center">
               <img alt="HS Tools icon" style="box-shadow:none" data-screen="tiny small medium large" style="margin-bottom:16px" width="100%" src="/hs-tools/icons/android-chrome-512x512.png"/>
-              <br data-screen="tiny small medium"/><br data-screen="tiny small medium"/>
-              <a data-screen="tiny small" class="button game-link" href="/player/docs/">Go to Documentation &nbsp;<i class="fa fa-file-text-o"></i></a>
             </div>
           </div>
         </div>
+        <div class="center"><a class="button" href="/player/docs/">Go to Documentation &nbsp;<i class="fa fa-file-text-o"></i></a></div>
       </div>
       <!-- <hr/> -->
       <div class="section">
         <h3>High Score Competitions</h3>
         <div class="section-flex">
-          <div class="section-lower vflex">
-            <div class="center">
-              <img alt="scores image" style="box-shadow:none" data-screen="tiny small medium large" style="margin-bottom:16px" width="100%" src="/images/rank_scores.png"/>
-              <br data-screen="tiny small medium"/><br data-screen="tiny small medium"/>
-              <a data-screen="tiny small" class="button game-link" href="/high-scores/">More on Scores <i class="fa fa-trophy"></i></a>
-            </div>
-          </div>
           <div class="section-upper vflex">
             <div class="flex">
               <p><img alt="scores image" data-screen="" width="190px" src="/images/rank_scores.png" style="float:right;margin:24px 12px 16px 20px;"/>With the all-new high score leaderboard, you can compare your scores against other players with suppored games. It's time to turn up the intensity with realtime leaderboards as well as a revamped score ranking system for select games!</p>
             </div>
-            <div class="center" data-screen="medium large"><a class="button" href="/high-scores/">More on Scores <i class="fa fa-trophy"></i></a></div>
+          </div>
+          <div class="section-lower vflex">
+            <div class="center">
+              <img alt="scores image" style="box-shadow:none" data-screen="tiny small medium large" style="margin-bottom:16px" width="100%" src="/images/rank_scores.png"/>
+            </div>
           </div>
         </div>
+        <div class="center"><a class="button" href="/high-scores/">More on Scores <i class="fa fa-trophy"></i></a></div>
       </div>
       <!-- <hr/> -->
       {{> footer }}

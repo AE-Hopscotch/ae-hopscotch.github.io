@@ -1,0 +1,16 @@
+<div class="section">
+  <h3>{{> title}}</h3>
+  <div class="section-flex">
+    <div class="section-upper vflex">
+      <div class="flex">
+        <p><img alt="{{> title }} Thumbnail" data-screen="small" width="190px" src="{{> img}}"/>{{> description}}</p>
+      </div>
+    </div>
+    <div class="section-lower vflex" data-screen="tiny medium large">
+      <div class="center">
+        <img alt="{{> title }} Thumbnail" width="100%" src="{{> img }}"/>
+      </div>
+    </div>
+  </div>
+  <div class="center"><a class="button game-link" href="{{> button_link}}">{{> button_text}} <i class="fa {{> button_icon}}"></i></a></div>
+</div>
