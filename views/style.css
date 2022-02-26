@@ -41,6 +41,11 @@ table th, table td {
 html body .parallax_layer .invis-img {
 	display: none;
 }
+@supports not (-webkit-touch-callout: none) {
+  .ios-show {
+    display: none;
+  }
+}
 
 /* Top Navigation */
 div.topnav {
@@ -166,11 +171,11 @@ div.topnav {
 	left: -250px;
 	background-color: #080808fd;
 	overflow-x: hidden;
-	transition: 0.5s;
+	transition: left 0.5s;
 	width: 250px;
 	z-index: 101;
 	padding: 0;
-    margin: 0;
+  margin: 0;
 	font-family: "Lato", sans-serif;
 	font-weight: 600;
 	user-select: none;
@@ -210,6 +215,15 @@ div.topnav {
 	opacity: 0;
 	z-index: 100;
 	transition: opacity 0.5s;
+}
+#close-sidenav-btn {
+  position: fixed;
+  width: 244px;
+  background-color: #080808fd;
+  z-index: 1;
+  top: 0;
+  left: -250px;
+  transition: 0.5s;
 }
 
 @media only screen and (max-width: 614px) {

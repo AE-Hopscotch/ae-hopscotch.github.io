@@ -48,8 +48,8 @@
     </style>
 </head>
 <body>
+    {{> navigation_header }}
     <div class="parallax">
-      {{> navigation_header }}
         <div class="header parallax_layer parallax_layer_0">
             <div class="header-bg" style="background-image:url('images/banners/home.png')"></div>
             <img class="invis-img" src="images/banners/home.png" onload="this.previousElementSibling.classList.add('loaded'),this.remove()">
@@ -100,6 +100,6 @@
         </div>
     </div>
     <script src="/main.js"></script>
-    {{!-- <script src="/navigation-menu.js"></script> --}}
+    <script src="/navigation-menu.js"></script>
 </body>
 </html>

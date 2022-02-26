@@ -25,6 +25,7 @@
     <title>High Scores &ndash; Awesome_E Hopscotch</title>
 </head>
 <body>
+  {{> navigation_header }}
     <div class="parallax">
         <div class="header parallax_layer parallax_layer_0">
             <div class="header-bg" style="background-image:url('/images/banners/rank_scores.png')"></div>
@@ -51,6 +52,7 @@
                 <h3>How it Works</h3>
                 <p>To make high scores work, I need to first create a database with the high scores, and because it requires communication between the player when a high score is achieved and the server to store that info. So, I am using my global variable system within a modded version of each of these projects, where nothing is changed except for the high score global variables. I can then read those global variables from this website (which are the high scores) and display them to the user.</p>
             </div>
+            {{> footer }}
         </div>
     </div>
     <script src="/main.js"></script>

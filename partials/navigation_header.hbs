@@ -1,24 +1,78 @@
 <div class="topnav">
-  <div class="small-screen">
-    <div id="open-sidenav-btn">
+  <span class="small-screen">
+    <span id="open-sidenav-btn">
       <i class="fa fa-bars fa-fw" style="margin: 8px 8px 8px 12px;"></i>
-    </div>
+    </span>
     <a href="/">
-      <span style="background-image:url(/images/icon.png);background-size:cover;width:25px;height:25px;margin:0 4px 0 -4px;">⁣</span>
-      <b style="color: white; height: 25px; --darkreader-inline-color:#e8e6e3;" data-darkreader-inline-color="">Awesome_E</b>
+      <span style="background-image:url(/images/icon.png);background-size:cover;width:25px;height:25px;margin:0 4px 0 -4px;">&ic;</span>
+      <b style="color:white;height:25px;">Awesome_E</b>
     </a>
+  </span>
+  <a href="/" class="large-screen">
+    <img alt="site icon" src="/images/icon.png">
+    <span class="hidden">homepage</span>
+  </a>
+  <a href="/" class="nav-item">Home</a>
+  <div>
+    <a href="/projects/" class="nav-item">Projects</a>
+    <div class="submenu">
+      <a href="/projects/games/">Games</a><br>
+      <a href="/projects/templates/">Templates</a><br>
+      <a href="/projects/concepts/">Concepts</a>
+    </div>
   </div>
-  <a href="/" class="large-screen"><img alt="site icon" src="/images/icon.png"><span class="hidden">homepage</span></a><a
-    href="/" class="nav-item">Home</a>
-  <div style="width: 86px;"><a href="/projects/" class="nav-item">Projects</a>
-    <div class="submenu"><a href="/projects/games/">Games</a><br><a href="/projects/templates/">Templates</a><br><a
-        href="/projects/concepts/">Concepts</a></div>
+  <div>
+    <a href="/player/" class="nav-item">Webplayer</a>
+    <div class="submenu">
+      <a href="/player/docs/">Documentation</a>
+    </div>
   </div>
-  <div style="width: 102px;"><a href="/player/" class="nav-item">Webplayer</a>
-    <div class="submenu"><a href="/player/docs/">Documentation</a></div>
-  </div>
-  <div style="width: 76px;"><a href="/high-scores/" class="nav-item">Scores</a>
-    <div class="submenu"><a href="/high-scores/games/">Games</a><br><a href="/high-scores/speedruns/">Speedruns</a><br><a
-        href="/high-scores/rankings/">Rankings</a></div>
+  <div>
+    <a href="/high-scores/" class="nav-item">Scores</a>
+    <div class="submenu">
+      <a href="/high-scores/games/">Games</a><br>
+      <a href="/high-scores/speedruns/">Speedruns</a><br>
+      <a href="/high-scores/rankings/">Rankings</a>
+    </div>
   </div>
 </div>
+<ul class="sidenav">
+  <li id="close-sidenav-btn">
+    <span><i class="fa fa-fw fa-close" style="margin: 8px 4px;"></i>Close Menu</span>
+  </li>
+  <li style="line-height:24px;"><br></li>
+  <li><a href="/"><i class="fa fa-fw fa-home"></i>Home</a></li>
+  <li>
+    <a href="javascript:void(0)" onmousedown="event.preventDefault()" onclick="sidenav.subsection('1')">
+      <i id="c1" class="fa fa-fw fa-caret-right"></i><span class="hidden">open submenu</span>
+    </a>
+    <a href="/projects/">Projects</a>
+  </li>
+  <ul id="g1" hidden="">
+    <li><a href="/projects/games/"><i class="fa fa-fw fa-gamepad"></i>Games</a></li>
+    <li><a href="/projects/templates/"><i class="fa fa-fw fa-code"></i>Templates</a></li>
+    <li><a href="/projects/concepts/"><i class="fa fa-fw fa-flask"></i>Concepts</a></li>
+  </ul>
+  <li>
+    <a href="javascript:void(0)" onmousedown="event.preventDefault()" onclick="sidenav.subsection('2')">
+      <i id="c2" class="fa fa-fw fa-caret-right"></i><span class="hidden">open submenu</span>
+    </a>
+    <a href="/player/">Webplayer</a>
+  </li>
+  <ul id="g2" hidden="">
+    <li><a href="/player/docs/"><i class="fa fa-fw fa-file-text-o"></i>Documentation</a></li>
+  </ul>
+  <li>
+    <a href="javascript:void(0)" onmousedown="event.preventDefault()" onclick="sidenav.subsection('3')">
+      <i id="c3" class="fa fa-fw fa-caret-right"></i><span class="hidden">open submenu</span>
+    </a>
+    <a href="/high-scores/">Scores</a>
+  </li>
+  <ul id="g3" hidden="">
+    <li><a href="/high-scores/games/"><i class="fa fa-fw fa-h-square"></i>Games</a></li>
+    <li><a href="/high-scores/speedruns/"><i class="fa fa-fw fa-flag-checkered"></i>Speedruns</a></li>
+    <li><a href="/high-scores/rankings/"><i class="fa fa-fw fa-trophy"></i>Rankings</a></li>
+  </ul>
+  <li><br><br><br></li>
+</ul>
+<div class="overlay"></div>
