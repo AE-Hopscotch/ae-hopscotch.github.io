@@ -7,6 +7,7 @@ changeEmitter.setMaxListeners(10 ** 30)
 const Handlebars = require('handlebars')
 const sass = require('sass')
 const htmlMinify = require('html-minifier').minify
+const slateBuild = require('./slate-build')
 if (!fs.existsSync('.ENV')) {
   fs.copyFileSync('EXAMPLE.ENV', '.ENV')
   console.log('Created .ENV file from example')
@@ -107,6 +108,20 @@ function buildApp () {
           } catch (error) {
             console.log(error)
             console.log(`\x1b[31mSass CSS compile error: ${path}\nSee traceback above for more information.\x1b[0m`)
+          }
+        } else if (routeName.match(/\.slate\.md$/)) {
+          const content = fs.readFileSync('./views' + routeName, 'utf-8')
+          const result = slateBuild(content, routeName)
+          try {
+            const minified = htmlMinify(result, {
+              collapseWhitespace: true,
+              minifyJS: true,
+              minifyCSS: true
+            })
+            fs.writeFileSync('./docs' + routeName.replace(/\.slate\.md$/, '.html'), minified)
+          } catch (error) {
+            console.log(error)
+            console.log(`\x1b[31mSlate Compile Error: ${routeName}\nSee traceback above for more information.\x1b[0m`)
           }
         } else {
           // Copy other (static) files
