@@ -49,8 +49,9 @@
       .toc-wrapper .toc-link.active {background-color:#1b5b62;}
       .highlight {position:relative;}
       .copy-clipboard {position:absolute;top:24px;right:24px;}
-      .content pre {padding:0;overflow:hidden;}
-      .content pre > div:not(.copy-clipboard) {padding:2em 28px;overflow:auto;}
+      .content pre {padding:0;overflow:hidden;position:relative;}
+      .content pre > :is(code, div:not(.copy-clipboard)) {padding:2em 28px;overflow:auto;}
+      .content pre > code {display:block;overflow:auto;width:100%;box-sizing:border-box;}
       a{color:#3b6072}
       #nav-button {padding: 0 1.5em 1.5em 0}
     </style>

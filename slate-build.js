@@ -1,5 +1,17 @@
 const fs = require('fs')
 const { marked } = require('marked')
+const hljs = require('highlight.js')
+marked.setOptions({
+  highlight: function (code, lang) {
+    if (typeof lang === 'undefined') {
+      return hljs.highlightAuto(code).value
+    } else if (lang === 'nohighlight') {
+      return code
+    } else {
+      return hljs.highlight(lang, code).value
+    }
+  }
+})
 const Handlebars = require('handlebars')
 
 // Config using config.js and ENV vars
@@ -37,6 +49,7 @@ function build (content, path) {
   }
   const pageConfig = JSON.parse(pageConfigStr)
   const parsedMarkdown = marked.parse(content.replace(/^(.|\n)*---/, ''))
+    .replace(/<div data-copy>[\n\s]*<\/div>[\n\s]*<pre>/g, '<pre class="highlight">')
 
   const h1Regex = new RegExp(expressions.h1)
   const h2Regex = new RegExp(expressions.h2)

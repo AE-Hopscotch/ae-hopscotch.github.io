@@ -41,14 +41,13 @@ Returns the entire list of blocks being used by HS Tools
 >`GET https://hs-tools-api.up.railway.app/hopscotch-data/blocks/19`
 
 >200 OK
-<pre><div>{
+<pre class="highlight"><code>{
   <span class="cm-property">"about"</span>: <span class="cm-string">"Community Description"</span>,
   <span class="cm-property">"authors"</span>: [<span class="cm-string">"Awesome_E"</span>],
   <span class="cm-property">"availability"</span>: <span class="cm-string">"all"</span>,
   <span class="cm-property">"blockHTML"</span>: <span class="cm-string">"fish &lt;i class=\"ps fa fa-volume-up\"&gt;&lt;/i&gt; "</span>,
   <span class="cm-property">"collapsible"</span>: <span class="cm-atom">false</span>,
   <span class="cm-property">"community_links"</span>: [<span class="cm-string">"..."</span>],
-  <span class="cm-property">"community_links"</span>: [
   <span class="cm-property">"description"</span>: <span class="cm-string">"N/A –&nbsp;There is no app description"</span>,
   <span class="cm-property">"id"</span>: <span class="cm-number">-1</span>,
   <span class="cm-property">"key"</span>: <span class="cm-string">"-1"</span>,
@@ -57,8 +56,14 @@ Returns the entire list of blocks being used by HS Tools
   <span class="cm-property">"parameters"</span>: <span class=" CodeMirror-matchingbracket">[</span><span class="cm-string">"..."</span><span class=" CodeMirror-matchingbracket">]</span>,
   <span class="cm-property">"type"</span>: <span class="cm-string">"old"</span>,
   <span class="cm-property">"useful_for"</span>: [<span class="cm-string">"Fishing"</span>]
-}</div></pre>
+}</code></pre>
 
 `GET /hopscotch-data/blocks/:id`
 
+<div data-copy></div>
 
+```json
+{
+  "testing": "test"
+}
+```
