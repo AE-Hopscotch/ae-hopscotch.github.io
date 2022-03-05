@@ -356,7 +356,7 @@ date|number|The unix timestamp of when this webplayer file was last modified|164
 pixi|string|The latest version of PIXI that accompanies this webplayer|4.8.6
 player|string|The exact version number of this minor webplayer release|1.5.21
 
-## Getting the Webplayer File
+## Getting Webplayer Files
 
 Using this API, you can also get the any Hopscotch webplayer file.
 
