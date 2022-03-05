@@ -338,7 +338,7 @@ Version|No|Results will only show metadata of the latest minor webplayer release
 
 >Example Response for a non-existent webplayer version
 ```json
-200 OK
+404 Not Found
 
 null
 ```
@@ -358,7 +358,7 @@ player|string|The exact version number of this minor webplayer release|1.5.21
 
 ## Getting Webplayer Files
 
-Using this API, you can also get the any Hopscotch webplayer file.
+Using this API endpoint, you can also get the any Hopscotch webplayer file.
 
 >Get the latest 1.5.x webplayer
 
@@ -375,7 +375,7 @@ curl https://hs-tools-api.up.railway.app/webplayer/1.5.0
 ### HTTP Request
 `GET /webplayer/:version`
 
->This will also get the latest 1.5.x player, even though a specific version is specified
+>This will also get the latest 1.5.x player, even though a minor version is specified
 
 !<div data-copy data-language="js"></div>
 ```js
@@ -404,7 +404,7 @@ fetch('https://hs-tools-api.up.railway.app/webplayer/1.5.12?newest=0')
 ```
 !<div data-copy data-language="shell"></div>
 ```shell
-curl 'https://hs-tools-api.up.railway.app/webplayer/1.5.0?newest=0'
+curl 'https://hs-tools-api.up.railway.app/webplayer/1.5.12?newest=0'
 ```
 
 ### Request Query
@@ -429,11 +429,123 @@ console.log("Webplayer v1.5.20 - 2021/11/23 (production)");
 
 >Sample Response for non-existent version:
 ```json
-200 OK
+404 Not Found
 
 null
 ```
 ### Response Data
 
 The response contains the JavaScript code for the webplayer, exactly as retrieved from Hopscotch's servers.
+
+## Project Data Types
+
+This endpoint will retrieve the webplayer file, and from it, determine all of the block, object, and parameter types.
+
+>Get data types for the latest 1.5.x webplayer
+
+!<div data-copy data-language="js"></div>
+```js
+fetch('https://hs-tools-api.up.railway.app/webplayer/1.5.0/project-datatypes')
+  .then(r => r.json())
+  .then(d => console.log(d))
+```
+!<div data-copy data-language="shell"></div>
+```shell
+curl https://hs-tools-api.up.railway.app/webplayer/1.5.0/project-datatypes
+```
+!<div data-copy></div>
+```js
+200 OK
+
+{
+  "blocks": {
+    "19": "WaitTilTimestamp",
+    "20": "WaitUntilInputIsDone",
+    ...
+  },
+  "objects": {
+    "0": "monkey",
+    "1": "text",
+    ...
+  },
+  "parameters": {
+    "42": "Default",
+    "43": "LineWidth",
+    ...
+  },
+  "length": 3
+}
+```
+
+### HTTP Request
+`GET /webplayer/:version/project-datatypes`
+
+>This will return JavaScript that sets a variable to the data types in the latest 1.5.x player (even though a specific version is present):
+
+!<div data-copy data-language="js"></div>
+```js
+fetch('https://hs-tools-api.up.railway.app/webplayer/1.5.7/project-datatypes?var=datatypes')
+  .then(r => r.text())
+  .then(d => console.log(d))
+```
+!<div data-copy data-language="shell"></div>
+```shell
+curl 'https://hs-tools-api.up.railway.app/webplayer/1.5.7/project-datatypes?var=datatypes'
+```
+```js
+200 OK
+
+datatypes = {
+  "blocks": {
+    "19": "WaitTilTimestamp",
+    "20": "WaitUntilInputIsDone",
+    ...
+  },
+  ...
+  "length": 3
+}
+```
+
+### Request Parameters
+
+Name|Required|Description
+:-:|:-:|:-:
+version|Yes|The version of the webplayer file you want
+
+>Call a function called `foo` with the data types as input, based on webplayer 1.5.12 instead of the newest version:
+
+!<div data-copy data-language="js"></div>
+```js
+fetch('https://hs-tools-api.up.railway.app/webplayer/1.5.12/project-datatypes?newest=0&callback=foo')
+  .then(r => r.text())
+  .then(d => console.log(d))
+```
+!<div data-copy data-language="shell"></div>
+```shell
+curl 'https://hs-tools-api.up.railway.app/webplayer/1.5.12/project-datatypes?newest=0&callback=foo'
+```
+
+### Request Query
+
+Name|Required|Default|Description
+:-:|:-:|:-:|:-:
+newest|No|1|`0` or `1`, whether you want to get the newest release for the major version provided
+
+For example, if you `GET /webplayer/1.5.11` but the latest is `1.5.20`, the response will be the `1.5.20` webplayer instead of the version you provided (webplayer `1.5.11`). Set the newest flag to `0` if you do not want this behavior.
+
+>Sample Response for non-existent version:
+```json
+404 Not Found
+
+null
+```
+### Response Data
+
+The response contains the JavaScript code for the webplayer, exactly as retrieved from Hopscotch's servers.
+
+<aside class="notice">All data types are in the format of an Object, with keys being the ID of the instance, and values being the name.</aside>
+
+For example, in `19: "waitTilTimestamp"`, `19` is the ID of the block, and `"waitTilTimestamp"` is the name.
+The same applies to objects and parameters.
+
 
