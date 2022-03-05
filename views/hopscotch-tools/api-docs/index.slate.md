@@ -33,7 +33,7 @@ fetch('https://hs-tools-api.up.railway.app/hopscotch-data/blocks')
   .then(r => r.json())
   .then(d => console.log(d))
 ```
-!<div data-copy data-language="curl"></div>
+!<div data-copy data-language="shell"></div>
 ```shell
 curl https://hs-tools-api.up.railway.app/hopscotch-data/blocks
 ```
@@ -45,12 +45,14 @@ curl https://hs-tools-api.up.railway.app/hopscotch-data/blocks
 
 There are no request parameters
 
->This endpoint will return, with status `200 OK`, an array of blocks
+>This endpoint will return an array of dictionaries that contain info about Hopscotch blocks
 
 ```json
+200 OK
+
 [
-  {...},
-  {...},
+  { ... },
+  { ... },
   ...
 ]
 ```
@@ -72,7 +74,7 @@ fetch('https://hs-tools-api.up.railway.app/hopscotch-data/blocks/-1')
   .then(r => r.json())
   .then(d => console.log(d))
 ```
-!<div data-copy data-language="curl"></div>
+!<div data-copy data-language="shell"></div>
 ```shell
 curl https://hs-tools-api.up.railway.app/hopscotch-data/blocks/-1
 ```
@@ -86,10 +88,12 @@ Name|Required|Description
 :-:|:-:|:-:
 id|Yes|The numeric ID of the Hopscotch block you want information about
 
->A `200 OK` response will return a JSON with this structure:
+>The response will contain JSON with this structure:
 
 !<div data-copy></div>
 ```json
+200 OK
+
 {
   "about": "Community Description",
   "authors": ["Awesome_E"],
@@ -108,8 +112,10 @@ id|Yes|The numeric ID of the Hopscotch block you want information about
 }
 ```
 
->If the block does not exist, it will return this error with status `404 Not Found`:
+>If the block does not exist, it will return this error:
 ```json
+404 Not Found
+
 {
   "status": "error",
   "error": "No block was found with ID -1"
@@ -159,7 +165,7 @@ fetch('https://hs-tools-api.up.railway.app/hopscotch-data/objects')
   .then(r => r.json())
   .then(d => console.log(d))
 ```
-!<div data-copy data-language="curl"></div>
+!<div data-copy data-language="shell"></div>
 ```shell
 curl https://hs-tools-api.up.railway.app/hopscotch-data/objects
 ```
@@ -171,12 +177,14 @@ curl https://hs-tools-api.up.railway.app/hopscotch-data/objects
 
 There are no request parameters
 
->This endpoint will return, with status `200 OK`, an array of objects
+>This endpoint will return an array of dictionaries that have information about Hopscotch objects
 
 ```json
+200 OK
+
 [
-  {...},
-  {...},
+  { ... },
+  { ... },
   ...
 ]
 ```
@@ -199,7 +207,7 @@ fetch('https://hs-tools-api.up.railway.app/hopscotch-data/objects/1')
   .then(r => r.json())
   .then(d => console.log(d))
 ```
-!<div data-copy data-language="curl"></div>
+!<div data-copy data-language="shell"></div>
 ```shell
 curl https://hs-tools-api.up.railway.app/hopscotch-data/objects/1
 ```
@@ -213,10 +221,12 @@ Name|Required|Description
 :-:|:-:|:-:
 id|Yes|The numeric ID of the Hopscotch object you want information about
 
->A `200 OK` response will return a JSON with this structure:
+>The response will contain JSON with this structure:
 
 !<div data-copy></div>
 ```json
+200 OK
+
 {
   "codename": "text",
   "description": "An alphabet soup of letters, numbers, symbols, and emoji.",
@@ -226,8 +236,10 @@ id|Yes|The numeric ID of the Hopscotch object you want information about
 }
 ```
 
->If the object does not exist, it will return this error with status `404 Not Found`:
+>If the object does not exist, it will return this error:
 ```json
+404 Not Found
+
 {
   "status": "error",
   "error": "No object was found with ID 1"
@@ -245,3 +257,183 @@ key|string|Same as above, but as a string
 name|string|The name of the object, as seen in the Hopscotch Editor
 
 ## Specific Trait of an Object
+
+# Retrieving Webplayer Files
+
+## Webplayer Metadata
+
+This retrieves the file path, modification date, and version of the latest minor releases under each major webplayer version.
+
+>To retrieve information about the latest webplayer release for *every* major version (1.0, 1.1, 1.2, 1.3, 2.0, etc.):
+
+!<div data-copy data-language="js"></div>
+```js
+fetch('https://hs-tools-api.up.railway.app/webplayer/metadata')
+  .then(r => r.json())
+  .then(d => console.log(d))
+```
+!<div data-copy data-language="shell"></div>
+```shell
+curl https://hs-tools-api.up.railway.app/webplayer/metadata
+```
+### HTTP Request
+`GET /webplayer/metadata/:version`
+
+>To retrieve information about the latest webplayer release for *only 1.5.x* webplayers:
+
+!<div data-copy data-language="js"></div>
+```js
+fetch('https://hs-tools-api.up.railway.app/webplayer/metadata/1.5')
+  .then(r => r.json())
+  .then(d => console.log(d))
+```
+!<div data-copy data-language="shell"></div>
+```shell
+curl https://hs-tools-api.up.railway.app/webplayer/metadata/1.5
+```
+
+### Request Parameters
+Name|Required|Description
+:-:|:-:|:-:
+Version|No|Results will only show metadata of the latest minor webplayer release under this major version (i.e. 1.5 or 2.0) &ndash; see example requests
+
+>A sample response for getting the latest webplayer metadata for all major releases
+
+```json
+200 OK
+
+{
+  "1.0": {
+    "path": "versions/1.0.14/webplayer.min.js",
+    "date": 1593469128976,
+    "pixi": "4.8.6",
+    "player": "1.0.14"
+  },
+  "1.1": { ... },
+  "1.2": { ... },
+  "1.3": { ... },
+  "1.4": { ... },
+  "1.5": {
+    "path": "versions/1.5.20/webplayer.min.js",
+    "date": 1637679789463,
+    "pixi": "4.8.6",
+    "player": "1.5.20"
+  }
+}
+```
+
+
+>Example response for getting the latest webplayer metadata for only 1.5.x
+
+```json
+200 OK
+
+{
+  "path": "versions/1.5.20/webplayer.min.js",
+  "date": 1637679789463,
+  "pixi": "4.8.6",
+  "player": "1.5.20"
+}
+```
+
+>Example Response for a non-existent webplayer version
+```json
+200 OK
+
+null
+```
+
+### Response Data
+
+- If a major version is specified in your request, the response will only contain metadata about the latest release under that major version (i.e. only the latest 1.5.x webplayer info).
+- If no major version is specified, it will return the latest release for all major webplayer versions.
+
+The metadata of each webplayer follows this structure:
+Key|Type|Description|Example
+:-:|:-:|:-:|:-:
+path|string|The file path to this webplayer|versions/1.5.21/webplayer.min.js
+date|number|The unix timestamp of when this webplayer file was last modified|1645448507469
+pixi|string|The latest version of PIXI that accompanies this webplayer|4.8.6
+player|string|The exact version number of this minor webplayer release|1.5.21
+
+## Getting the Webplayer File
+
+Using this API, you can also get the any Hopscotch webplayer file.
+
+>Get the latest 1.5.x webplayer
+
+!<div data-copy data-language="js"></div>
+```js
+fetch('https://hs-tools-api.up.railway.app/webplayer/1.5.0')
+  .then(r => r.text())
+  .then(d => console.log(d))
+```
+!<div data-copy data-language="shell"></div>
+```shell
+curl https://hs-tools-api.up.railway.app/webplayer/1.5.0
+```
+### HTTP Request
+`GET /webplayer/:version`
+
+>This will also get the latest 1.5.x player, even though a specific version is specified
+
+!<div data-copy data-language="js"></div>
+```js
+fetch('https://hs-tools-api.up.railway.app/webplayer/1.5.7')
+  .then(r => r.text())
+  .then(d => console.log(d))
+```
+!<div data-copy data-language="shell"></div>
+```shell
+curl 'https://hs-tools-api.up.railway.app/webplayer/1.5.7'
+```
+
+### Request Parameters
+
+Name|Required|Description
+:-:|:-:|:-:
+version|Yes|The version of the webplayer file you want
+
+>Get webplayer with exact version 1.5.12
+
+!<div data-copy data-language="js"></div>
+```js
+fetch('https://hs-tools-api.up.railway.app/webplayer/1.5.12?newest=0')
+  .then(r => r.text())
+  .then(d => console.log(d))
+```
+!<div data-copy data-language="shell"></div>
+```shell
+curl 'https://hs-tools-api.up.railway.app/webplayer/1.5.0?newest=0'
+```
+
+### Request Query
+
+Name|Required|Default|Description
+:-:|:-:|:-:|:-:
+newest|No|1|`0` or `1`, whether you want to get the newest release for the major version provided
+
+For example, if you `GET /webplayer/1.5.11` but the latest is `1.5.20`, the response will be the `1.5.20` webplayer instead of the version you provided (webplayer `1.5.11`). Set the newest flag to `0` if you do not want this behavior.
+
+>Sample Response for existing version (truncated for obvious reasons):
+```js
+200 OK
+
+/**
+ * Hopscotch Technologies
+ * Webplayer v1.5.20 - 2021/11/23 (production)
+ */
+console.log("Webplayer v1.5.20 - 2021/11/23 (production)");
+!function(e){var t={}; ...
+```
+
+>Sample Response for non-existent version:
+```json
+200 OK
+
+null
+```
+### Response Data
+
+The response contains the JavaScript code for the webplayer, exactly as retrieved from Hopscotch's servers.
+
