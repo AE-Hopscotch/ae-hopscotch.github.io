@@ -41,7 +41,7 @@ const expressions = {
   heading: '<h[12] id="([^"]*)">([^<]*)'
 }
 function build (content, path) {
-  const pageConfigStr = content.match(/^(.|\n)*---/)[0].replace(/---$/, '')
+  const pageConfigStr = content.match(/^(.|\n)*?---/)[0].replace(/---$/, '')
   try { JSON.parse(pageConfigStr) } catch (e) {
     const err = new Error('Could not parse page config')
     console.error(err)
@@ -49,7 +49,7 @@ function build (content, path) {
   }
   const detectedLanguages = []
   const pageConfig = JSON.parse(pageConfigStr)
-  const parsedMarkdown = marked.parse(content.replace(/^(.|\n)*---/, ''))
+  const parsedMarkdown = marked.parse(content.replace(/^(.|\n)*?---/, ''))
     .replace(/(?:<p>!(?:<\/p>)?[\n\s]*)?<div data-copy(?: data-language="([^"]*)")?>[\n\s]*<\/div>(?:[\n\s]*(?:<p>)?[\n\s]*<\/p>)?[\n\s]*<pre>/g, (m0, m1) => {
       if (m1) {
         detectedLanguages.push(m1)
