@@ -50,7 +50,7 @@ function build (content, path) {
   const detectedLanguages = []
   const pageConfig = JSON.parse(pageConfigStr)
   const parsedMarkdown = marked.parse(content.replace(/^(.|\n)*---/, ''))
-    .replace(/<div data-copy(?: data-language="([^"]*)")?>[\n\s]*<\/div>[\n\s]*<pre>/g, (m0, m1) => {
+    .replace(/(?:<p>!(?:<\/p>)?[\n\s]*)?<div data-copy(?: data-language="([^"]*)")?>[\n\s]*<\/div>(?:[\n\s]*(?:<p>)?[\n\s]*<\/p>)?[\n\s]*<pre>/g, (m0, m1) => {
       if (m1) {
         detectedLanguages.push(m1)
         return `<pre class="highlight lang-specific ${m1}">`
