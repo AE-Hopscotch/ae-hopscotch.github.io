@@ -3,9 +3,9 @@ const { marked } = require('marked')
 const hljs = require('highlight.js')
 marked.setOptions({
   highlight: function (code, lang) {
-    if (typeof lang === 'undefined') {
+    if (typeof lang === 'undefined' || !lang) {
       return hljs.highlightAuto(code).value
-    } else if (lang === 'nohighlight') {
+    } else if (lang === 'text') {
       return code
     } else {
       return hljs.highlight(lang, code).value
@@ -47,9 +47,16 @@ function build (content, path) {
     console.error(err)
     return err
   }
+  const detectedLanguages = []
   const pageConfig = JSON.parse(pageConfigStr)
   const parsedMarkdown = marked.parse(content.replace(/^(.|\n)*---/, ''))
-    .replace(/<div data-copy>[\n\s]*<\/div>[\n\s]*<pre>/g, '<pre class="highlight">')
+    .replace(/<div data-copy(?: data-language="([^"]*)")?>[\n\s]*<\/div>[\n\s]*<pre>/g, (m0, m1) => {
+      if (m1) {
+        detectedLanguages.push(m1)
+        return `<pre class="highlight lang-specific ${m1}">`
+      }
+      return '<pre class="highlight">'
+    })
 
   const h1Regex = new RegExp(expressions.h1)
   const h2Regex = new RegExp(expressions.h2)
@@ -83,6 +90,7 @@ function build (content, path) {
   Object.assign(buildConfig, {
     content: parsedMarkdown,
     navigation: navHTML,
+    languageSelection: new Set(detectedLanguages),
     ...pageConfig
   })
   const template = fs.readFileSync('./src/slatedocs.html.hbs', 'utf-8')

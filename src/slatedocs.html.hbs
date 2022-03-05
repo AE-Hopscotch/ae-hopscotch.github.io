@@ -45,13 +45,30 @@
       .cm-number{color:#0ff!important}
       .cm-property{color:#add8e6!important}
       .cm-keyword,.cm-operator,.cm-attribute{color:#ff4ade!important}
+      .hljs-attr{color:#caf3ec}
+      .hljs-keyword,.hljs-variable.language_{color:#95cff5}
+      .hljs-literal{color:#fafad2}
+      .hljs-meta{color:#ff4ade!important}
+      .hljs-number{color:#0ff}
+      .hljs-operator{color:#eee}
+      .hljs-positive{color:#6a51e6}
+      .hljs-punctuation{color:#20b2aa}
+      .hljs-qualifier{color:#eee}
+      .hljs-string{color:#ffc0cb}
+      .hljs-symbol{color:#fb4}
+      .hljs-tag{color:#eee}
+      .hljs-title.function_{color:#f4f7aa}
+      .hljs-unit,.hljs-negative{color:#e09142}
+      .hljs-url{color:#6a51e6}
       .toc-link,.toc-footer li{transition-property:background, color;}
       .toc-wrapper .toc-link.active {background-color:#1b5b62;}
-      .highlight {position:relative;}
+      .content pre.highlight {position:relative;}
+      .highlight::before {content:' ';position:absolute;top:33px;right:29px;background-color:inherit;width:58px;height:50px;transform:translate(50%,-50%)}
       .copy-clipboard {position:absolute;top:24px;right:24px;}
       .content pre {padding:0;overflow:hidden;position:relative;}
       .content pre > :is(code, div:not(.copy-clipboard)) {padding:2em 28px;overflow:auto;}
-      .content pre > code {display:block;overflow:auto;width:100%;box-sizing:border-box;}
+      .content pre.highlight > :is(code, div:not(.copy-clipboard)) {padding-right:68px;}
+      .content pre > code {display:block;overflow:auto;width:100%;box-sizing:border-box;color:#20b2aa;}
       a{color:#3b6072}
       #nav-button {padding: 0 1.5em 1.5em 0}
     </style>
@@ -92,13 +109,19 @@
       </ul>
     </div>
     <div class="page-wrapper">
-      <div class="dark-box"></div>
+      <div class="dark-box">
+        <div class="lang-selector">
+          {{#each languageSelection}}
+            <a href="#" data-language-name="{{this}}">{{this}}</a>
+          {{/each}}
+        </div>
+      </div>
       <div id="content" class="content">
       <!-- Written in Markdown, HTML Generated Using MarkedJS -->
       {{{ content }}}
       <!-- END MARKDOWN CONTENT -->
       </div>
     </div>
-    <script>$(function() { setupCodeCopy(); });</script>
+    <script>$(function() { setupCodeCopy(); setupLanguages([...document.querySelectorAll('.lang-selector > a')].map(e => e.innerText)); });</script>
   </body>
 </html>

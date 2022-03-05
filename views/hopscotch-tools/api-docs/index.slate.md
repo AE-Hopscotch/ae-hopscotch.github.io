@@ -36,34 +36,58 @@ With this API, you can get hand-created data that the HS Tools website uses. Cur
 
 Returns the entire list of blocks being used by HS Tools
 
-## Information About a Specific Block
+## Info About a Specific Block
 
->`GET https://hs-tools-api.up.railway.app/hopscotch-data/blocks/19`
+<div data-copy data-language="js"></div>
 
->200 OK
-<pre class="highlight"><code>{
-  <span class="cm-property">"about"</span>: <span class="cm-string">"Community Description"</span>,
-  <span class="cm-property">"authors"</span>: [<span class="cm-string">"Awesome_E"</span>],
-  <span class="cm-property">"availability"</span>: <span class="cm-string">"all"</span>,
-  <span class="cm-property">"blockHTML"</span>: <span class="cm-string">"fish &lt;i class=\"ps fa fa-volume-up\"&gt;&lt;/i&gt; "</span>,
-  <span class="cm-property">"collapsible"</span>: <span class="cm-atom">false</span>,
-  <span class="cm-property">"community_links"</span>: [<span class="cm-string">"..."</span>],
-  <span class="cm-property">"description"</span>: <span class="cm-string">"N/A –&nbsp;There is no app description"</span>,
-  <span class="cm-property">"id"</span>: <span class="cm-number">-1</span>,
-  <span class="cm-property">"key"</span>: <span class="cm-string">"-1"</span>,
-  <span class="cm-property">"name"</span>: <span class="cm-string">"fish"</span>,
-  <span class="cm-property">"other_info"</span>: [<span class="cm-string">"..."</span>],
-  <span class="cm-property">"parameters"</span>: <span class=" CodeMirror-matchingbracket">[</span><span class="cm-string">"..."</span><span class=" CodeMirror-matchingbracket">]</span>,
-  <span class="cm-property">"type"</span>: <span class="cm-string">"old"</span>,
-  <span class="cm-property">"useful_for"</span>: [<span class="cm-string">"Fishing"</span>]
-}</code></pre>
+```js
+fetch({
+  url: 'https://hs-tools-api.up.railway.app/hopscotch-data/blocks/1',
+  method: 'GET'
+}).then(r => r.json())
+  .then(d => console.log(d))
+```
 
-`GET /hopscotch-data/blocks/:id`
+<div data-copy data-language="curl"></div>
 
-<div data-copy></div>
+```shell
+curl https://hs-tools-api.up.railway.app/hopscotch-data/blocks/1
+```
 
+>A 200 OK response will return a JSON with this structure:
 ```json
 {
-  "testing": "test"
+  "about": "Community Description",
+  "authors": ["Awesome_E"],
+  "availability": "all",
+  "blockHTML": "fish <i class=\"ps fa fa-volume-up\"></i> ",
+  "collapsible": false,
+  "community_links": ["..."],
+  "description": "N/A – There is no app description",
+  "id": -1,
+  "key": "-1",
+  "name": "fish",
+  "other_info": ["..."],
+  "parameters": ["..."],
+  "type": "old",
+  "useful_for": ["Fishing"]
 }
 ```
+
+Returns information about the block with the specified ID
+
+### HTTP Request
+`GET https://hs-tools-api.up.railway.app/hopscotch-data/blocks/:id`
+
+### Request Parameters
+
+Name|Required|Description
+:-:|:-:|:-:
+id|Yes|The numeric ID of the Hopscotch block you want information about
+
+### Response Data
+
+Key|Description
+:-:|:-:
+
+
