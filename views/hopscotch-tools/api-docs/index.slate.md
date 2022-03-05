@@ -34,8 +34,8 @@ fetch('https://hs-tools-api.up.railway.app/hopscotch-data/blocks')
   .then(d => console.log(d))
 ```
 !<div data-copy data-language="shell"></div>
-```shell
-curl https://hs-tools-api.up.railway.app/hopscotch-data/blocks
+```bash
+curl "https://hs-tools-api.up.railway.app/hopscotch-data/blocks"
 ```
 
 ### HTTP Request
@@ -75,8 +75,8 @@ fetch('https://hs-tools-api.up.railway.app/hopscotch-data/blocks/-1')
   .then(d => console.log(d))
 ```
 !<div data-copy data-language="shell"></div>
-```shell
-curl https://hs-tools-api.up.railway.app/hopscotch-data/blocks/-1
+```bash
+curl "https://hs-tools-api.up.railway.app/hopscotch-data/blocks/-1"
 ```
 
 ### HTTP Request
@@ -166,8 +166,8 @@ fetch('https://hs-tools-api.up.railway.app/hopscotch-data/objects')
   .then(d => console.log(d))
 ```
 !<div data-copy data-language="shell"></div>
-```shell
-curl https://hs-tools-api.up.railway.app/hopscotch-data/objects
+```bash
+curl "https://hs-tools-api.up.railway.app/hopscotch-data/objects"
 ```
 
 ### HTTP Request
@@ -208,8 +208,8 @@ fetch('https://hs-tools-api.up.railway.app/hopscotch-data/objects/1')
   .then(d => console.log(d))
 ```
 !<div data-copy data-language="shell"></div>
-```shell
-curl https://hs-tools-api.up.railway.app/hopscotch-data/objects/1
+```bash
+curl "https://hs-tools-api.up.railway.app/hopscotch-data/objects/1"
 ```
 
 ### HTTP Request
@@ -273,8 +273,8 @@ fetch('https://hs-tools-api.up.railway.app/webplayer/metadata')
   .then(d => console.log(d))
 ```
 !<div data-copy data-language="shell"></div>
-```shell
-curl https://hs-tools-api.up.railway.app/webplayer/metadata
+```bash
+curl "https://hs-tools-api.up.railway.app/webplayer/metadata"
 ```
 ### HTTP Request
 `GET /webplayer/metadata/:version`
@@ -288,8 +288,8 @@ fetch('https://hs-tools-api.up.railway.app/webplayer/metadata/1.5')
   .then(d => console.log(d))
 ```
 !<div data-copy data-language="shell"></div>
-```shell
-curl https://hs-tools-api.up.railway.app/webplayer/metadata/1.5
+```bash
+curl "https://hs-tools-api.up.railway.app/webplayer/metadata/1.5"
 ```
 
 ### Request Parameters
@@ -369,8 +369,8 @@ fetch('https://hs-tools-api.up.railway.app/webplayer/1.5.0')
   .then(d => console.log(d))
 ```
 !<div data-copy data-language="shell"></div>
-```shell
-curl https://hs-tools-api.up.railway.app/webplayer/1.5.0
+```bash
+curl "https://hs-tools-api.up.railway.app/webplayer/1.5.0"
 ```
 ### HTTP Request
 `GET /webplayer/:version`
@@ -384,8 +384,8 @@ fetch('https://hs-tools-api.up.railway.app/webplayer/1.5.7')
   .then(d => console.log(d))
 ```
 !<div data-copy data-language="shell"></div>
-```shell
-curl 'https://hs-tools-api.up.railway.app/webplayer/1.5.7'
+```bash
+curl "https://hs-tools-api.up.railway.app/webplayer/1.5.7"
 ```
 
 ### Request Parameters
@@ -403,8 +403,8 @@ fetch('https://hs-tools-api.up.railway.app/webplayer/1.5.12?newest=0')
   .then(d => console.log(d))
 ```
 !<div data-copy data-language="shell"></div>
-```shell
-curl 'https://hs-tools-api.up.railway.app/webplayer/1.5.12?newest=0'
+```bash
+curl "https://hs-tools-api.up.railway.app/webplayer/1.5.12?newest=0"
 ```
 
 ### Request Query
@@ -450,8 +450,8 @@ fetch('https://hs-tools-api.up.railway.app/webplayer/1.5.0/project-datatypes')
   .then(d => console.log(d))
 ```
 !<div data-copy data-language="shell"></div>
-```shell
-curl https://hs-tools-api.up.railway.app/webplayer/1.5.0/project-datatypes
+```bash
+curl "https://hs-tools-api.up.railway.app/webplayer/1.5.0/project-datatypes"
 ```
 !<div data-copy></div>
 ```js
@@ -489,8 +489,8 @@ fetch('https://hs-tools-api.up.railway.app/webplayer/1.5.7/project-datatypes?var
   .then(d => console.log(d))
 ```
 !<div data-copy data-language="shell"></div>
-```shell
-curl 'https://hs-tools-api.up.railway.app/webplayer/1.5.7/project-datatypes?var=datatypes'
+```bash
+curl "https://hs-tools-api.up.railway.app/webplayer/1.5.7/project-datatypes?var=datatypes"
 ```
 ```js
 200 OK
@@ -521,8 +521,8 @@ fetch('https://hs-tools-api.up.railway.app/webplayer/1.5.12/project-datatypes?ne
   .then(d => console.log(d))
 ```
 !<div data-copy data-language="shell"></div>
-```shell
-curl 'https://hs-tools-api.up.railway.app/webplayer/1.5.12/project-datatypes?newest=0&callback=foo'
+```bash
+curl "https://hs-tools-api.up.railway.app/webplayer/1.5.12/project-datatypes?newest=0&callback=foo"
 ```
 
 ### Request Query
@@ -531,7 +531,7 @@ Name|Required|Default|Description
 :-:|:-:|:-:|:-:
 newest|No|1|`0` or `1`, whether you want to get the newest release for the major version provided
 
-For example, if you `GET /webplayer/1.5.11` but the latest is `1.5.20`, the response will be the `1.5.20` webplayer instead of the version you provided (webplayer `1.5.11`). Set the newest flag to `0` if you do not want this behavior.
+For example, if you `GET /webplayer/1.5.11/project-datatypes` but the latest is `1.5.20`, the response will be the `1.5.20` data types instead of the version you provided (webplayer `1.5.11`). Set the newest flag to `0` if you do not want this behavior.
 
 >Sample Response for non-existent version:
 ```json
@@ -548,4 +548,152 @@ The response contains the JavaScript code for the webplayer, exactly as retrieve
 For example, in `19: "waitTilTimestamp"`, `19` is the ID of the block, and `"waitTilTimestamp"` is the name.
 The same applies to objects and parameters.
 
+## Modding on the Fly
 
+You can have the power of the modded webplayer anywhere! With this API endpoint, you can choose the mods applied to the latest webplayer and create a completely customized version of it.
+
+### HTTP Request
+`GET /webplayer/:version/project-datatypes`
+
+>Mod the latest 1.5 webplayer with default settings
+
+!<div data-copy data-language="js"></div>
+```js
+fetch('https://hs-tools-api.up.railway.app/webplayer/1.5.0/modded')
+  .then(r => r.json())
+  .then(d => console.log(d))
+```
+!<div data-copy data-language="shell"></div>
+```bash
+curl "https://hs-tools-api.up.railway.app/webplayer/1.5.0/modded"
+```
+
+### Request Parameters
+
+Name|Required|Description
+:-:|:-:|:-:
+version|Yes|The version of the webplayer file you want
+
+>Mod webplayer version 1.5.12 with default settings
+
+!<div data-copy data-language="js"></div>
+```js
+fetch('https://hs-tools-api.up.railway.app/webplayer/1.5.12/modded?newest=0')
+  .then(r => r.text())
+  .then(d => console.log(d))
+```
+!<div data-copy data-language="shell"></div>
+```bash
+curl "https://hs-tools-api.up.railway.app/webplayer/1.5.12/modded?newest=0"
+```
+
+>Sample Response (truncated for obvious reasons):
+
+!<div data-copy></div>
+```js
+200 OK
+
+/**
+ * Hopscotch Technologies
+ * Webplayer v1.5.20 - 2021/11/23 (production)
+ */
+console.log("Webplayer v1.5.20 - 2021/11/23 (production)");
+!function(e){var t={}; ...
+```
+
+### Request Query
+
+Name|Required|Default|Description
+:-:|:-:|:-:|:-:
+newest|No|1|`0` or `1`, whether you want to get the newest release for the major version provided
+include|No|-|The identifiers of specific modifications to include, separated with spaces. Use ALL to include everything.
+exclude|No|-|The identifiers of specific modifications to exlcude, separated with spaces. Use ALL to exclude everything.
+
+Note: In a URL, a `+` is often decoded into a space when put in the URL query. So, decoding `include=AE+CS` results in `include` being set to `AE CS`
+
+Whether or not a certain modification is included is determined in this order:
+1. Is it specifically included? If so, include it. If not, continue.
+2. Is it specifically excluded? If so, skip it. If not, continue.
+3. Is `ALL` included? If so, include it. If not, continue.
+4. Is `ALL` excluded? If so, exlcude it. If not, continue.
+5. Use the default setting for this item.
+
+>Mod the latest 1.5 player, but only include the data retriever:
+
+!<div data-copy data-language="js"></div>
+```js
+fetch('https://hs-tools-api.up.railway.app/webplayer/1.5.12/modded?exclude=ALL&include=DR')
+  .then(r => r.text())
+  .then(d => console.log(d))
+```
+!<div data-copy data-language="shell"></div>
+```bash
+curl -G "https://hs-tools-api.up.railway.app/webplayer/1.5.2/modded?exclude=ALL&include=DR"
+```
+```js
+200 OK
+
+/**
+ * Hopscotch Technologies
+ * Webplayer v1.5.20 - 2021/11/23 (production)
+ */
+console.log("Webplayer v1.5.20 - 2021/11/23 (production)");
+!function(e){var t={}; ...
+```
+
+<pre style="margin-top:16px"></pre>
+
+>Modify webplayer 1.2.5, including everything except modded actions, custom sounds, and inclusion of the modded action bundle:
+
+!<div data-copy data-language="js"></div>
+```js
+const exclude = ['AE', 'CS', 'IW']
+fetch('https://hs-tools-api.up.railway.app/webplayer/1.2.5/modded'
+  + '?include=ALL'
+  + '&exclude=' + exclude.join('+')
+  + '&newest=0'
+).then(r => r.text()).then(d => console.log(d))
+```
+!<div data-copy data-language="shell"></div>
+```bash
+curl -G "https://hs-tools-api.up.railway.app/webplayer/1.2.5/modded" \
+  -d "include=ALL" \
+  -d "exclude=AE+CS+IW" \
+  -d "newest=0"
+```
+```js
+200 OK
+
+function sendToApp(a,b,c){void 0===c&&(c="hopscotch");
+var d=window.webkit;if(d&&d.messageHandlers){d.messageHandlers[c]
+.postMessage((e={},e[a]=b,e));var e}} ...
+```
+
+<pre style="margin-top:16px"></pre>
+
+>In the case that the provided webplayer version does not exist:
+```json
+404 Not Found
+
+null
+```
+
+### Available Modifications
+id|Name|Default|Description
+:-:|:-:|:-:|:-:
+CF|Container Fix|Included|Locks the player to the parent `div` instead of the `hopscotch-webplayer` element
+ES|Emoji Source|Included|Fixes any requests that go to the wrong emoji source
+DR|Data Retriever|Included|Retrieves data from the variable `AE_MOD.projectData` instead of from the `data` attribute of the element with ID `project_data`
+SS|Sound Source|Included|Gets sounds from `ae-hopscotch.github.io` instead so the request isn't blocked.
+AE|Modded Commands|Included|"None" and Comment blocks can be used with `_ae_webplayer_action` to run custom modded actions
+IW|Include Web Action Bundle|Skipped|Bundle a copy of `webplayer_action` with the webplayer (experimental)
+PL|Project Link Patch|Included|Project linking will use the project metadata endpoint and redirect properly
+PD|Prompt Defaults|Included|A third parameter in `Save Input` will be treated as the prompt's default value
+SF|Screen Size Fix|Included|Fixes resizing the screen for certain HTML layouts
+SC|Screenshots|Included|Makes the canvas screenshot method accessible in the global scope
+CS|Custom Sounds|Included|Allow loading custom sounds from `ae-hopscotch.github.io`
+EL|Error Logs|Included|Log an error when a block causes the project to freeze (beta)
+
+### Response Data
+
+The webplayer's JavaScript code, modified with either the default settings or your custom configuration.
