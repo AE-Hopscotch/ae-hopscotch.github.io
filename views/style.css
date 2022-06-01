@@ -128,6 +128,7 @@ div.topnav {
 .topnav > div .submenu {
 	margin: 0;
 	padding: 0;
+  position: absolute;
 	list-style-type: none;
 	display: none;
 	width: fit-content;
@@ -151,8 +152,7 @@ div.topnav {
 	color: rgb(31, 240, 255);
 }
 .topnav > div:last-child .submenu {
-	position: absolute;
-    right: 0;
+  right: 0;
 	border-top-left-radius: 8px;
 }
 
