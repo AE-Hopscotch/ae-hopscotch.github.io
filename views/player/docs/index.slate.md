@@ -787,15 +787,15 @@ Note: the `sort` operator follows the form `<sort:[direction]:criteria?:index>`,
 
 >This block will set the current (self, as defined in the first argument) user's `power` (in the remote server, for this game) to the value of the self variable passed into the data parameter.
 <pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
-<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"session-write"</span>,
-<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [<span class="cm-number">-1</span>,<span class="cm-string">"power"</span>,<span class="cm-keyword">"_data"</span>]
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"socket-write"</span>,
+<span class="cm-tab" role="presentation" cm-text="    ">  </span><span class="cm-property">"args"</span>: [<span class="cm-number">-1</span>, <span class="cm-string">"power"</span>, <span class="cm-keyword">"_data"</span>]
 }</div></pre>
 
 This command writes data to the server when given the following: a player index to write to, the property path (same as read), and the value.
 
 name|arg0|arg1|arg2|output
 :-:|:-:|:-:|:-:|:-:
-session-write|Player ID <integer\>|Property Path <string\>|Value <any\>|<nothing\>
+socket-write|Player ID <integer\>|Property Path <string\>|Value <any\>|<nothing\>
 
 `Player ID` refers to the target user, that is, the user whose data will be overwritten.
 - Use `-2` to set a global game variable

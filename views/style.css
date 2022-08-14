@@ -15,7 +15,6 @@ html, body {
 	--section-bg-1: #2b3e4e;
 	--section-bg-2: #374c6d;
 	--section-bg-3: #435769;
-	overflow: hidden;
 }
 a {
 	color: inherit;
@@ -407,7 +406,6 @@ hr {
 /* Parallax */
 .parallax {
 	perspective: 50vw;
-	height: 100vh;
 	overflow-x: hidden;
 	overflow-y: auto;
 	position: absolute;
