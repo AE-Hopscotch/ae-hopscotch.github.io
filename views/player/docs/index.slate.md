@@ -482,7 +482,7 @@ These actions allow you to display approved webpages in frames or navigate to th
 >The following code will create a popup of HS Tools:
 <pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
 <span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"url-iframe"</span>,
-<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"https://awesome-e.github.io/hs-tools/"</span>]
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"https://ae-hopscotch.github.io/hs-tools/"</span>]
 }</div></pre>
 
 The URL Popup action displays a given URL in an iframe on the current page, which will be put on top of the project being played.
@@ -497,7 +497,7 @@ url-iframe|url <string\>|<nothing\>
 >The following code will redirect the user to HS Tools:
 <pre class="highlight"><div><span class="cm-variable">_ae_webplayer_action:</span> {
 <span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"name"</span>: <span class="cm-string">"url-goto"</span>,
-<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"https://awesome-e.github.io/hs-tools/"</span>]
+<span class="cm-tab" role="presentation" cm-text="	">  </span><span class="cm-property">"args"</span>: [<span class="cm-string">"https://ae-hopscotch.github.io/hs-tools/"</span>]
 }</div></pre>
 
 This action will redirect the page to the URL passed in as input.
